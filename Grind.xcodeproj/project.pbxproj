@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E7DCF8728D0F209000D43B5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7DCF8628D0F209000D43B5 /* HomeViewController.swift */; };
+		1E7DCF8F28D0F3EB000D43B5 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7DCF8E28D0F3EB000D43B5 /* SettingViewController.swift */; };
+		1E7DCF9128D0F3F6000D43B5 /* StatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7DCF9028D0F3F6000D43B5 /* StatViewController.swift */; };
 		1EA4D07928CF9EB500A9E444 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA4D07828CF9EB500A9E444 /* AppDelegate.swift */; };
 		1EA4D07B28CF9EB500A9E444 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA4D07A28CF9EB500A9E444 /* SceneDelegate.swift */; };
 		1EA4D07D28CF9EB500A9E444 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA4D07C28CF9EB500A9E444 /* ViewController.swift */; };
@@ -27,6 +30,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1E7DCF8628D0F209000D43B5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		1E7DCF8E28D0F3EB000D43B5 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		1E7DCF9028D0F3F6000D43B5 /* StatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatViewController.swift; sourceTree = "<group>"; };
 		1EA4D07528CF9EB500A9E444 /* Grind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Grind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EA4D07828CF9EB500A9E444 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1EA4D07A28CF9EB500A9E444 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -143,6 +149,7 @@
 		1EA4D0A728CFA5BA00A9E444 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				1E7DCF8628D0F209000D43B5 /* HomeViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -150,6 +157,7 @@
 		1EA4D0A828CFA5BF00A9E444 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				1E7DCF8E28D0F3EB000D43B5 /* SettingViewController.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -157,6 +165,7 @@
 		1EA4D0A928CFA5C400A9E444 /* Stat */ = {
 			isa = PBXGroup;
 			children = (
+				1E7DCF9028D0F3F6000D43B5 /* StatViewController.swift */,
 			);
 			path = Stat;
 			sourceTree = "<group>";
@@ -258,6 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E7DCF9128D0F3F6000D43B5 /* StatViewController.swift in Sources */,
 				1EA4D07D28CF9EB500A9E444 /* ViewController.swift in Sources */,
 				1EA4D09228CFA2CF00A9E444 /* BaseViewController.swift in Sources */,
 				1EA4D0AB28CFA60600A9E444 /* BaseCollectionViewCell.swift in Sources */,
@@ -265,9 +275,11 @@
 				1EA4D0A328CFA47B00A9E444 /* Color.swift in Sources */,
 				1EA4D09F28CFA40900A9E444 /* BaseView.swift in Sources */,
 				1EA4D0A528CFA49300A9E444 /* Font.swift in Sources */,
+				1E7DCF8728D0F209000D43B5 /* HomeViewController.swift in Sources */,
 				1EA4D07928CF9EB500A9E444 /* AppDelegate.swift in Sources */,
 				1EA4D07B28CF9EB500A9E444 /* SceneDelegate.swift in Sources */,
 				1EA4D0A128CFA46C00A9E444 /* Constants.swift in Sources */,
+				1E7DCF8F28D0F3EB000D43B5 /* SettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

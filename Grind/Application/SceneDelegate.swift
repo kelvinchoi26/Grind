@@ -16,7 +16,38 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        guard let scene = (scene as? UIWindowScene) else { return }
+        window = UIWindow(windowScene: scene)
+        
+        let homeViewController = HomeViewController()
+        let homeNavigationController = UINavigationController(rootViewController: homeViewController)
+        
+        let statViewController = StatViewController()
+        let statNavigationController = UINavigationController(rootViewController: statViewController)
+        
+        let settingViewController = SettingViewController()
+        let settingNavigationController = UINavigationController(rootViewController: settingViewController)
+        
+        let tabBarController = UITabBarController()
+        
+        tabBarController.setViewControllers([statViewController, homeViewController, settingViewController], animated: true)
+        
+        if let items = tabBarController.tabBar.items {
+            items[0].selectedImage = UIImage(systemName: "waveform.path.ecg.rectangle.fill")
+            items[0].image = UIImage(systemName: "waveform.path.ecg.rectangle")
+            items[0].title = "통계"
+            
+            items[1].selectedImage = UIImage(systemName: "house.fill")
+            items[1].image = UIImage(systemName: "house")
+            items[1].title = "홈"
+            
+            items[2].selectedImage = UIImage(systemName: "gearshape.fill")
+            items[2].image = UIImage(systemName: "gearshape")
+            items[2].title = "설정"
+        }
+        
+        window?.rootViewController = tabBarController
+        window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
