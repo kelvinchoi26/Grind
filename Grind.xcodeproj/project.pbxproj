@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1E52825D28D248BF002FB4EE /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 1E52825C28D248BF002FB4EE /* .gitignore */; };
+		1E52825F28D24A0F002FB4EE /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E52825E28D24A0F002FB4EE /* Food.swift */; };
 		1E7DCF8728D0F209000D43B5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7DCF8628D0F209000D43B5 /* HomeViewController.swift */; };
 		1E7DCF8F28D0F3EB000D43B5 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7DCF8E28D0F3EB000D43B5 /* SettingViewController.swift */; };
 		1E7DCF9128D0F3F6000D43B5 /* StatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7DCF9028D0F3F6000D43B5 /* StatViewController.swift */; };
@@ -27,11 +28,12 @@
 		1EA4D0A328CFA47B00A9E444 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA4D0A228CFA47B00A9E444 /* Color.swift */; };
 		1EA4D0A528CFA49300A9E444 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA4D0A428CFA49300A9E444 /* Font.swift */; };
 		1EA4D0AB28CFA60600A9E444 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA4D0AA28CFA60600A9E444 /* BaseCollectionViewCell.swift */; };
-		1EA4D0AF28CFA6B500A9E444 /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA4D0AE28CFA6B500A9E444 /* RealmModel.swift */; };
+		1EA4D0AF28CFA6B500A9E444 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA4D0AE28CFA6B500A9E444 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1E52825C28D248BF002FB4EE /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		1E52825E28D24A0F002FB4EE /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		1E7DCF8628D0F209000D43B5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		1E7DCF8E28D0F3EB000D43B5 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		1E7DCF9028D0F3F6000D43B5 /* StatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatViewController.swift; sourceTree = "<group>"; };
@@ -49,7 +51,7 @@
 		1EA4D0A228CFA47B00A9E444 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		1EA4D0A428CFA49300A9E444 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		1EA4D0AA28CFA60600A9E444 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
-		1EA4D0AE28CFA6B500A9E444 /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
+		1EA4D0AE28CFA6B500A9E444 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E52826028D24AC4002FB4EE /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		1EA4D06C28CF9EB500A9E444 = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +96,7 @@
 		1EA4D07728CF9EB500A9E444 /* Grind */ = {
 			isa = PBXGroup;
 			children = (
+				1E52826028D24AC4002FB4EE /* Network */,
 				1EA4D0AD28CFA6A900A9E444 /* Realm */,
 				1EA4D0A628CFA5A700A9E444 /* Scene */,
 				1EA4D08E28CFA27A00A9E444 /* Utility */,
@@ -183,7 +193,8 @@
 		1EA4D0AD28CFA6A900A9E444 /* Realm */ = {
 			isa = PBXGroup;
 			children = (
-				1EA4D0AE28CFA6B500A9E444 /* RealmModel.swift */,
+				1EA4D0AE28CFA6B500A9E444 /* User.swift */,
+				1E52825E28D24A0F002FB4EE /* Food.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -275,9 +286,10 @@
 				1EA4D07D28CF9EB500A9E444 /* ViewController.swift in Sources */,
 				1EA4D09228CFA2CF00A9E444 /* BaseViewController.swift in Sources */,
 				1EA4D0AB28CFA60600A9E444 /* BaseCollectionViewCell.swift in Sources */,
-				1EA4D0AF28CFA6B500A9E444 /* RealmModel.swift in Sources */,
+				1EA4D0AF28CFA6B500A9E444 /* User.swift in Sources */,
 				1EA4D0A328CFA47B00A9E444 /* Color.swift in Sources */,
 				1EA4D09F28CFA40900A9E444 /* BaseView.swift in Sources */,
+				1E52825F28D24A0F002FB4EE /* Food.swift in Sources */,
 				1EA4D0A528CFA49300A9E444 /* Font.swift in Sources */,
 				1E7DCF8728D0F209000D43B5 /* HomeViewController.swift in Sources */,
 				1EA4D07928CF9EB500A9E444 /* AppDelegate.swift in Sources */,
