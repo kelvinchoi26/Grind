@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1E52825D28D248BF002FB4EE /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 1E52825C28D248BF002FB4EE /* .gitignore */; };
 		1E52825F28D24A0F002FB4EE /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E52825E28D24A0F002FB4EE /* Food.swift */; };
+		1E52826628D3648C002FB4EE /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E52826528D3648C002FB4EE /* HomeCollectionViewCell.swift */; };
+		1E52826B28D39F43002FB4EE /* tway_air.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1E52826A28D39F43002FB4EE /* tway_air.ttf */; };
 		1E7DCF8728D0F209000D43B5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7DCF8628D0F209000D43B5 /* HomeViewController.swift */; };
 		1E7DCF8F28D0F3EB000D43B5 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7DCF8E28D0F3EB000D43B5 /* SettingViewController.swift */; };
 		1E7DCF9128D0F3F6000D43B5 /* StatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7DCF9028D0F3F6000D43B5 /* StatViewController.swift */; };
@@ -34,6 +36,8 @@
 /* Begin PBXFileReference section */
 		1E52825C28D248BF002FB4EE /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		1E52825E28D24A0F002FB4EE /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
+		1E52826528D3648C002FB4EE /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		1E52826A28D39F43002FB4EE /* tway_air.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = tway_air.ttf; sourceTree = "<group>"; };
 		1E7DCF8628D0F209000D43B5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		1E7DCF8E28D0F3EB000D43B5 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		1E7DCF9028D0F3F6000D43B5 /* StatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +80,30 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		1E52826428D35E12002FB4EE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1E52826528D3648C002FB4EE /* HomeCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1E52826828D39F01002FB4EE /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				1E52826928D39F0A002FB4EE /* Fonts */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		1E52826928D39F0A002FB4EE /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				1E52826A28D39F43002FB4EE /* tway_air.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		1EA4D06C28CF9EB500A9E444 = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +124,7 @@
 		1EA4D07728CF9EB500A9E444 /* Grind */ = {
 			isa = PBXGroup;
 			children = (
+				1E52826828D39F01002FB4EE /* Resource */,
 				1E52826028D24AC4002FB4EE /* Network */,
 				1EA4D0AD28CFA6A900A9E444 /* Realm */,
 				1EA4D0A628CFA5A700A9E444 /* Scene */,
@@ -162,6 +191,7 @@
 		1EA4D0A728CFA5BA00A9E444 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				1E52826428D35E12002FB4EE /* View */,
 				1E7DCF8628D0F209000D43B5 /* HomeViewController.swift */,
 			);
 			path = Home;
@@ -271,6 +301,7 @@
 				1E52825D28D248BF002FB4EE /* .gitignore in Resources */,
 				1EA4D08528CF9EB700A9E444 /* LaunchScreen.storyboard in Resources */,
 				1EA4D08228CF9EB700A9E444 /* Assets.xcassets in Resources */,
+				1E52826B28D39F43002FB4EE /* tway_air.ttf in Resources */,
 				1EA4D08028CF9EB500A9E444 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,6 +318,7 @@
 				1EA4D09228CFA2CF00A9E444 /* BaseViewController.swift in Sources */,
 				1EA4D0AB28CFA60600A9E444 /* BaseCollectionViewCell.swift in Sources */,
 				1EA4D0AF28CFA6B500A9E444 /* User.swift in Sources */,
+				1E52826628D3648C002FB4EE /* HomeCollectionViewCell.swift in Sources */,
 				1EA4D0A328CFA47B00A9E444 /* Color.swift in Sources */,
 				1EA4D09F28CFA40900A9E444 /* BaseView.swift in Sources */,
 				1E52825F28D24A0F002FB4EE /* Food.swift in Sources */,

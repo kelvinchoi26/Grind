@@ -7,4 +7,11 @@
 
 final class HomeViewController: BaseViewController {
     
+    override func configureUI() {
+        <#code#>
+    }
+    
+    override func setConstraints() {
+        <#code#>
+    }
 }
