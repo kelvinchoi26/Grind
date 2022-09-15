@@ -6,8 +6,9 @@
 //
 
 import Foundation
-import Then
 import UIKit
+import SnapKit
+import Then
 
 class BaseCollectionViewCell: UICollectionViewCell {
     

@@ -10,7 +10,7 @@ import UIKit
 
 extension Constants {
     
-    enum FontSize {
+    enum Font {
         static let titleFont = UIFont(name: "tway_air", size: 36)
         static let subTitleFont = UIFont(name: "tway_air", size: 18)
         static let textFont = UIFont(name: "tway_air", size: 14)

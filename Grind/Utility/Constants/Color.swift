@@ -10,7 +10,7 @@ import UIKit
 
 extension Constants {
     
-    enum BaseColor {
+    enum Color {
         static let accentColor = UIColor(named: "accentColor")
         static let backgroundColor = UIColor(named: "backgroundColor")
         static let cellText = UIColor(named: "cellText")
