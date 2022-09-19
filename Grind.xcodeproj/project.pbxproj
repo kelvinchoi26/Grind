@@ -9,8 +9,15 @@
 /* Begin PBXBuildFile section */
 		1E52825D28D248BF002FB4EE /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 1E52825C28D248BF002FB4EE /* .gitignore */; };
 		1E52825F28D24A0F002FB4EE /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E52825E28D24A0F002FB4EE /* Food.swift */; };
-		1E52826628D3648C002FB4EE /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E52826528D3648C002FB4EE /* HomeCollectionViewCell.swift */; };
+		1E52826628D3648C002FB4EE /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E52826528D3648C002FB4EE /* HomeView.swift */; };
 		1E52826B28D39F43002FB4EE /* tway_air.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1E52826A28D39F43002FB4EE /* tway_air.ttf */; };
+		1E52827228D43D2B002FB4EE /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E52827128D43D2B002FB4EE /* HealthKitManager.swift */; };
+		1E52827428D445E1002FB4EE /* HealthKitSetupError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E52827328D445E1002FB4EE /* HealthKitSetupError.swift */; };
+		1E52828228D77FE3002FB4EE /* HomeCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E52828128D77FE3002FB4EE /* HomeCircleView.swift */; };
+		1E52828428D78631002FB4EE /* HomeWeightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E52828328D78631002FB4EE /* HomeWeightView.swift */; };
+		1E52828628D7863D002FB4EE /* HomeCalorieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E52828528D7863D002FB4EE /* HomeCalorieView.swift */; };
+		1E52828828D78B1F002FB4EE /* HomeAdviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E52828728D78B1F002FB4EE /* HomeAdviceView.swift */; };
+		1E52828A28D797D8002FB4EE /* HomeWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E52828928D797D8002FB4EE /* HomeWorkoutView.swift */; };
 		1E7DCF8728D0F209000D43B5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7DCF8628D0F209000D43B5 /* HomeViewController.swift */; };
 		1E7DCF8F28D0F3EB000D43B5 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7DCF8E28D0F3EB000D43B5 /* SettingViewController.swift */; };
 		1E7DCF9128D0F3F6000D43B5 /* StatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7DCF9028D0F3F6000D43B5 /* StatViewController.swift */; };
@@ -36,8 +43,16 @@
 /* Begin PBXFileReference section */
 		1E52825C28D248BF002FB4EE /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		1E52825E28D24A0F002FB4EE /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
-		1E52826528D3648C002FB4EE /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		1E52826528D3648C002FB4EE /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		1E52826A28D39F43002FB4EE /* tway_air.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = tway_air.ttf; sourceTree = "<group>"; };
+		1E52826C28D40853002FB4EE /* Grind.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Grind.entitlements; sourceTree = "<group>"; };
+		1E52827128D43D2B002FB4EE /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
+		1E52827328D445E1002FB4EE /* HealthKitSetupError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitSetupError.swift; sourceTree = "<group>"; };
+		1E52828128D77FE3002FB4EE /* HomeCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCircleView.swift; sourceTree = "<group>"; };
+		1E52828328D78631002FB4EE /* HomeWeightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWeightView.swift; sourceTree = "<group>"; };
+		1E52828528D7863D002FB4EE /* HomeCalorieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCalorieView.swift; sourceTree = "<group>"; };
+		1E52828728D78B1F002FB4EE /* HomeAdviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAdviceView.swift; sourceTree = "<group>"; };
+		1E52828928D797D8002FB4EE /* HomeWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorkoutView.swift; sourceTree = "<group>"; };
 		1E7DCF8628D0F209000D43B5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		1E7DCF8E28D0F3EB000D43B5 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		1E7DCF9028D0F3F6000D43B5 /* StatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +91,7 @@
 		1E52826028D24AC4002FB4EE /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				1E52827028D43D19002FB4EE /* HealthKit */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -83,7 +99,12 @@
 		1E52826428D35E12002FB4EE /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1E52826528D3648C002FB4EE /* HomeCollectionViewCell.swift */,
+				1E52826528D3648C002FB4EE /* HomeView.swift */,
+				1E52828128D77FE3002FB4EE /* HomeCircleView.swift */,
+				1E52828328D78631002FB4EE /* HomeWeightView.swift */,
+				1E52828528D7863D002FB4EE /* HomeCalorieView.swift */,
+				1E52828728D78B1F002FB4EE /* HomeAdviceView.swift */,
+				1E52828928D797D8002FB4EE /* HomeWorkoutView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -102,6 +123,15 @@
 				1E52826A28D39F43002FB4EE /* tway_air.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		1E52827028D43D19002FB4EE /* HealthKit */ = {
+			isa = PBXGroup;
+			children = (
+				1E52827128D43D2B002FB4EE /* HealthKitManager.swift */,
+				1E52827328D445E1002FB4EE /* HealthKitSetupError.swift */,
+			);
+			path = HealthKit;
 			sourceTree = "<group>";
 		};
 		1EA4D06C28CF9EB500A9E444 = {
@@ -124,6 +154,7 @@
 		1EA4D07728CF9EB500A9E444 /* Grind */ = {
 			isa = PBXGroup;
 			children = (
+				1E52826C28D40853002FB4EE /* Grind.entitlements */,
 				1E52826828D39F01002FB4EE /* Resource */,
 				1E52826028D24AC4002FB4EE /* Network */,
 				1EA4D0AD28CFA6A900A9E444 /* Realm */,
@@ -318,13 +349,20 @@
 				1EA4D09228CFA2CF00A9E444 /* BaseViewController.swift in Sources */,
 				1EA4D0AB28CFA60600A9E444 /* BaseCollectionViewCell.swift in Sources */,
 				1EA4D0AF28CFA6B500A9E444 /* User.swift in Sources */,
-				1E52826628D3648C002FB4EE /* HomeCollectionViewCell.swift in Sources */,
+				1E52826628D3648C002FB4EE /* HomeView.swift in Sources */,
+				1E52828428D78631002FB4EE /* HomeWeightView.swift in Sources */,
 				1EA4D0A328CFA47B00A9E444 /* Color.swift in Sources */,
 				1EA4D09F28CFA40900A9E444 /* BaseView.swift in Sources */,
+				1E52828A28D797D8002FB4EE /* HomeWorkoutView.swift in Sources */,
+				1E52827228D43D2B002FB4EE /* HealthKitManager.swift in Sources */,
+				1E52828828D78B1F002FB4EE /* HomeAdviceView.swift in Sources */,
 				1E52825F28D24A0F002FB4EE /* Food.swift in Sources */,
 				1EA4D0A528CFA49300A9E444 /* Font.swift in Sources */,
 				1E7DCF8728D0F209000D43B5 /* HomeViewController.swift in Sources */,
 				1EA4D07928CF9EB500A9E444 /* AppDelegate.swift in Sources */,
+				1E52828228D77FE3002FB4EE /* HomeCircleView.swift in Sources */,
+				1E52828628D7863D002FB4EE /* HomeCalorieView.swift in Sources */,
+				1E52827428D445E1002FB4EE /* HealthKitSetupError.swift in Sources */,
 				1EA4D07B28CF9EB500A9E444 /* SceneDelegate.swift in Sources */,
 				1EA4D0A128CFA46C00A9E444 /* Constants.swift in Sources */,
 				1E7DCF8F28D0F3EB000D43B5 /* SettingViewController.swift in Sources */,
@@ -472,16 +510,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Grind/Grind.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = AFMSUTLF6S;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Grind/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -500,16 +541,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Grind/Grind.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = AFMSUTLF6S;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Grind/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

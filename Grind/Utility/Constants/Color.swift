@@ -18,6 +18,8 @@ extension Constants {
         static let secondaryText = UIColor(named: "secondaryText")
         static let tertiaryText = UIColor(named: "tertiaryText")
         static let supportingColor = UIColor(named: "supportingColor")
+        static let borderColor = UIColor(named: "borderColor")?.cgColor
+        static let emojiColor = UIColor(named: "emojiColor")
     }
     
 }

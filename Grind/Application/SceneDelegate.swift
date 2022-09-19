@@ -30,7 +30,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let tabBarController = UITabBarController()
         
-        tabBarController.setViewControllers([statViewController, homeViewController, settingViewController], animated: true)
+        tabBarController.setViewControllers([statNavigationController, homeNavigationController, settingNavigationController], animated: true)
         
         if let items = tabBarController.tabBar.items {
             items[0].selectedImage = UIImage(systemName: "waveform.path.ecg.rectangle.fill")

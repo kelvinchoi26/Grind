@@ -11,8 +11,10 @@ import UIKit
 enum Constants {
     
     enum Design {
-        static let cornerRadius: CGFloat = 20
+        static let cornerRadius: CGFloat = 5
         static let borderWidth: CGFloat = 1
+        
+        
     }
     
 }

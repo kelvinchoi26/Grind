@@ -11,41 +11,54 @@ import Then
 
 final class HomeViewController: BaseViewController {
     
-    required init?(coder: NSCoder) {
-        super.init(coder: <#T##NSCoder#>)
-    }
-    private lazy var collectionView: UICollectionView {
-        let view = UICollectionView(frame: CGRect(), collectionViewLayout: )
-        view.backgroundColor = .clear
-        view
+    let homeView = HomeView()
+    
+    let leftBarTitle = UILabel()
+    let rightBarTitle = UILabel()
+    
+    override func loadView() {
+        super.loadView()
+        
+        self.view = homeView
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+  
     }
     
     override func configureUI() {
-        
+        view.backgroundColor = Constants.Color.backgroundColor
     }
     
-    override func setConstraints() {
-        <#code#>
+    override func configureNavigationController() {
+        super.configureNavigationController()
+        
+//        let recordBarButton = UIBarButtonItem(title: "기록", style: .plain, target: self, action: nil)
+//        let cameraBarButton = UIBarButtonItem(title: "카메라", style: .plain, target: self, action: nil)
+        
+        leftBarTitle.do {
+            $0.textColor = Constants.Color.primaryText
+            $0.text = "기록"
+            $0.font = Constants.Font.textFont
+        }
+        
+        rightBarTitle.do {
+            $0.textColor = Constants.Color.primaryText
+            $0.text = "카메라"
+            $0.font = Constants.Font.textFont
+        }
+        
+        // 오늘의 날짜
+        self.navigationItem.title = "8월 13일"
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: Constants.Font.subTitleFont as Any]
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: leftBarTitle)
+//        self.navigationItem.leftBarButtonItem = recordBarButton
+//        self.navigationItem.rightBarButtonItem = cameraBarButton
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(customView: rightBarTitle)
+        self.navigationItem.titleView?.tintColor = Constants.Color.primaryText
+        self.navigationItem.titleView?.backgroundColor = Constants.Color.backgroundColor
+        
     }
 }
 
-extension HomeViewController {
-    func configureCellLayout() {
-        // 컬렉션뷰의 셀 크기, 셀 사이 간격 등 설정
-        let layout = UICollectionViewFlowLayout()
-        // FlowLayout!
-        let spacing: CGFloat = 10
-        let width = UIScreen.main.bounds.width - (spacing * 4)
-        // 여백없이 디바이스를 3으로 나눔
-        layout.itemSize = CGSize(width: width / 3, height: (width / 3) * 1.2)
-        layout.scrollDirection = .vertical
-        layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
-        layout.minimumLineSpacing = spacing
-        layout.minimumInteritemSpacing = spacing
-        collectionView.collectionViewLayout = layout
-    }
-}
