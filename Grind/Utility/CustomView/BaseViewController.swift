@@ -11,6 +11,8 @@ import Then
 import RealmSwift
 
 class BaseViewController: UIViewController {
+    
+    let userDefaults = UserDefaults.standard
 
     override func viewDidLoad() {
         super.viewDidLoad()

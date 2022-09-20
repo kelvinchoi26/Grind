@@ -18,6 +18,10 @@
 		1E52828628D7863D002FB4EE /* HomeCalorieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E52828528D7863D002FB4EE /* HomeCalorieView.swift */; };
 		1E52828828D78B1F002FB4EE /* HomeAdviceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E52828728D78B1F002FB4EE /* HomeAdviceView.swift */; };
 		1E52828A28D797D8002FB4EE /* HomeWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E52828928D797D8002FB4EE /* HomeWorkoutView.swift */; };
+		1E52828C28D8D433002FB4EE /* WalkThroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E52828B28D8D433002FB4EE /* WalkThroughViewController.swift */; };
+		1E52828E28D8D444002FB4EE /* WalkThroughView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E52828D28D8D444002FB4EE /* WalkThroughView.swift */; };
+		1E52829128D8DEAC002FB4EE /* DailyRecordRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E52829028D8DEAC002FB4EE /* DailyRecordRepository.swift */; };
+		1E52829828D98A07002FB4EE /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E52829728D98A07002FB4EE /* Text.swift */; };
 		1E7DCF8728D0F209000D43B5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7DCF8628D0F209000D43B5 /* HomeViewController.swift */; };
 		1E7DCF8F28D0F3EB000D43B5 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7DCF8E28D0F3EB000D43B5 /* SettingViewController.swift */; };
 		1E7DCF9128D0F3F6000D43B5 /* StatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7DCF9028D0F3F6000D43B5 /* StatViewController.swift */; };
@@ -37,7 +41,7 @@
 		1EA4D0A328CFA47B00A9E444 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA4D0A228CFA47B00A9E444 /* Color.swift */; };
 		1EA4D0A528CFA49300A9E444 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA4D0A428CFA49300A9E444 /* Font.swift */; };
 		1EA4D0AB28CFA60600A9E444 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA4D0AA28CFA60600A9E444 /* BaseCollectionViewCell.swift */; };
-		1EA4D0AF28CFA6B500A9E444 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA4D0AE28CFA6B500A9E444 /* User.swift */; };
+		1EA4D0AF28CFA6B500A9E444 /* DailyRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA4D0AE28CFA6B500A9E444 /* DailyRecord.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +57,10 @@
 		1E52828528D7863D002FB4EE /* HomeCalorieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCalorieView.swift; sourceTree = "<group>"; };
 		1E52828728D78B1F002FB4EE /* HomeAdviceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAdviceView.swift; sourceTree = "<group>"; };
 		1E52828928D797D8002FB4EE /* HomeWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorkoutView.swift; sourceTree = "<group>"; };
+		1E52828B28D8D433002FB4EE /* WalkThroughViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkThroughViewController.swift; sourceTree = "<group>"; };
+		1E52828D28D8D444002FB4EE /* WalkThroughView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkThroughView.swift; sourceTree = "<group>"; };
+		1E52829028D8DEAC002FB4EE /* DailyRecordRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyRecordRepository.swift; sourceTree = "<group>"; };
+		1E52829728D98A07002FB4EE /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
 		1E7DCF8628D0F209000D43B5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		1E7DCF8E28D0F3EB000D43B5 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		1E7DCF9028D0F3F6000D43B5 /* StatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatViewController.swift; sourceTree = "<group>"; };
@@ -70,7 +78,7 @@
 		1EA4D0A228CFA47B00A9E444 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		1EA4D0A428CFA49300A9E444 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		1EA4D0AA28CFA60600A9E444 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
-		1EA4D0AE28CFA6B500A9E444 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		1EA4D0AE28CFA6B500A9E444 /* DailyRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyRecord.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +140,31 @@
 				1E52827328D445E1002FB4EE /* HealthKitSetupError.swift */,
 			);
 			path = HealthKit;
+			sourceTree = "<group>";
+		};
+		1E52828F28D8D451002FB4EE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1E52828D28D8D444002FB4EE /* WalkThroughView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1E52829228D8DEB5002FB4EE /* DailyRecord */ = {
+			isa = PBXGroup;
+			children = (
+				1EA4D0AE28CFA6B500A9E444 /* DailyRecord.swift */,
+				1E52829028D8DEAC002FB4EE /* DailyRecordRepository.swift */,
+			);
+			path = DailyRecord;
+			sourceTree = "<group>";
+		};
+		1E52829328D8DEBF002FB4EE /* Food */ = {
+			isa = PBXGroup;
+			children = (
+				1E52825E28D24A0F002FB4EE /* Food.swift */,
+			);
+			path = Food;
 			sourceTree = "<group>";
 		};
 		1EA4D06C28CF9EB500A9E444 = {
@@ -204,6 +237,7 @@
 				1EA4D0A028CFA46C00A9E444 /* Constants.swift */,
 				1EA4D0A228CFA47B00A9E444 /* Color.swift */,
 				1EA4D0A428CFA49300A9E444 /* Font.swift */,
+				1E52829728D98A07002FB4EE /* Text.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -247,6 +281,8 @@
 		1EA4D0AC28CFA68900A9E444 /* WalkThrough */ = {
 			isa = PBXGroup;
 			children = (
+				1E52828F28D8D451002FB4EE /* View */,
+				1E52828B28D8D433002FB4EE /* WalkThroughViewController.swift */,
 			);
 			path = WalkThrough;
 			sourceTree = "<group>";
@@ -254,8 +290,8 @@
 		1EA4D0AD28CFA6A900A9E444 /* Realm */ = {
 			isa = PBXGroup;
 			children = (
-				1EA4D0AE28CFA6B500A9E444 /* User.swift */,
-				1E52825E28D24A0F002FB4EE /* Food.swift */,
+				1E52829228D8DEB5002FB4EE /* DailyRecord */,
+				1E52829328D8DEBF002FB4EE /* Food */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -348,20 +384,24 @@
 				1EA4D07D28CF9EB500A9E444 /* ViewController.swift in Sources */,
 				1EA4D09228CFA2CF00A9E444 /* BaseViewController.swift in Sources */,
 				1EA4D0AB28CFA60600A9E444 /* BaseCollectionViewCell.swift in Sources */,
-				1EA4D0AF28CFA6B500A9E444 /* User.swift in Sources */,
+				1EA4D0AF28CFA6B500A9E444 /* DailyRecord.swift in Sources */,
 				1E52826628D3648C002FB4EE /* HomeView.swift in Sources */,
 				1E52828428D78631002FB4EE /* HomeWeightView.swift in Sources */,
 				1EA4D0A328CFA47B00A9E444 /* Color.swift in Sources */,
+				1E52829828D98A07002FB4EE /* Text.swift in Sources */,
 				1EA4D09F28CFA40900A9E444 /* BaseView.swift in Sources */,
 				1E52828A28D797D8002FB4EE /* HomeWorkoutView.swift in Sources */,
+				1E52829128D8DEAC002FB4EE /* DailyRecordRepository.swift in Sources */,
 				1E52827228D43D2B002FB4EE /* HealthKitManager.swift in Sources */,
 				1E52828828D78B1F002FB4EE /* HomeAdviceView.swift in Sources */,
 				1E52825F28D24A0F002FB4EE /* Food.swift in Sources */,
+				1E52828C28D8D433002FB4EE /* WalkThroughViewController.swift in Sources */,
 				1EA4D0A528CFA49300A9E444 /* Font.swift in Sources */,
 				1E7DCF8728D0F209000D43B5 /* HomeViewController.swift in Sources */,
 				1EA4D07928CF9EB500A9E444 /* AppDelegate.swift in Sources */,
 				1E52828228D77FE3002FB4EE /* HomeCircleView.swift in Sources */,
 				1E52828628D7863D002FB4EE /* HomeCalorieView.swift in Sources */,
+				1E52828E28D8D444002FB4EE /* WalkThroughView.swift in Sources */,
 				1E52827428D445E1002FB4EE /* HealthKitSetupError.swift in Sources */,
 				1EA4D07B28CF9EB500A9E444 /* SceneDelegate.swift in Sources */,
 				1EA4D0A128CFA46C00A9E444 /* Constants.swift in Sources */,

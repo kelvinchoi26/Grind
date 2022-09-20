@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import HealthKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -45,6 +46,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             items[2].image = UIImage(systemName: "gearshape")
             items[2].title = "설정"
         }
+        
+        // 홈 탭을 기본 탭으로 설정
+        tabBarController.selectedViewController = homeNavigationController
         
         window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()

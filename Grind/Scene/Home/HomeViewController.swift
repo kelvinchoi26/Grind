@@ -11,10 +11,12 @@ import Then
 
 final class HomeViewController: BaseViewController {
     
-    let homeView = HomeView()
+    private let repository = DailyRecordRepository.repository
     
-    let leftBarTitle = UILabel()
-    let rightBarTitle = UILabel()
+    private let homeView = HomeView()
+    
+    private let leftBarTitle = UILabel()
+    private let rightBarTitle = UILabel()
     
     override func loadView() {
         super.loadView()
@@ -25,6 +27,9 @@ final class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
   
+        checkInitialRun()
+        
+        HealthKitManager.shared.checkAuthorization()
     }
     
     override func configureUI() {
@@ -59,6 +64,18 @@ final class HomeViewController: BaseViewController {
         self.navigationItem.titleView?.tintColor = Constants.Color.primaryText
         self.navigationItem.titleView?.backgroundColor = Constants.Color.backgroundColor
         
+    }
+}
+
+extension HomeViewController {
+    func checkInitialRun() {
+        if !userDefaults.bool(forKey: "NotFirst") {
+            
+            let walkThrough = WalkThroughViewController()
+            walkThrough.modalPresentationStyle = .overFullScreen
+            
+            self.present(walkThrough, animated: true)
+        }
     }
 }
 

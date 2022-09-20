@@ -20,6 +20,8 @@ extension Constants {
         static let supportingColor = UIColor(named: "supportingColor")
         static let borderColor = UIColor(named: "borderColor")?.cgColor
         static let emojiColor = UIColor(named: "emojiColor")
+        static let buttonColor = UIColor(named: "buttonColor")
+        static let walkThroughColor = UIColor(named: "walkThroughColor")
     }
     
 }

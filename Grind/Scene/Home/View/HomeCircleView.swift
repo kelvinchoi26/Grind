@@ -26,7 +26,7 @@ final class HomeCircleView: BaseView {
         }
         
         cellContent.do {
-            $0.font = Constants.Font.textFont
+            $0.font = Constants.Font.subTitleFont
             $0.textColor = Constants.Color.primaryText
             $0.textAlignment = .center
             $0.numberOfLines = 1
