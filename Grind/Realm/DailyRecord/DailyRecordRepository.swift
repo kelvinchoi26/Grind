@@ -41,6 +41,37 @@ final class DailyRecordRepository: DailyRecordRepositoryType {
         }
     }
     
+    func editWorkoutRoutine(item: Results<DailyRecord>, routine: String) {
+        do {
+            try localRealm.write {
+                item[0].workoutRoutine = routine
+            }
+        } catch {
+            print(error)
+        }
+    }
+    
+    func editWorkoutTime(item: Results<DailyRecord>, time: String) {
+        do {
+            try localRealm.write {
+                item[0].workoutTime = time
+            }
+        } catch {
+            print(error)
+        }
+    }
+    
+    func editWeightCalorie(item: Results<DailyRecord>, weight: String, calorie: String) {
+        do {
+            try localRealm.write {
+                item[0].weight = Double(weight)
+                item[0].caloriesConsumed = Int(calorie)
+            }
+        } catch {
+            print(error)
+        }
+    }
+    
     // 오늘의 체중이 변화할 때 마다 실행
     func changeWeight(item: DailyRecord, updatedWeight: Double) {
         do {

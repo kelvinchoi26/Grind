@@ -23,6 +23,9 @@
 		1E52829128D8DEAC002FB4EE /* DailyRecordRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E52829028D8DEAC002FB4EE /* DailyRecordRepository.swift */; };
 		1E52829828D98A07002FB4EE /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E52829728D98A07002FB4EE /* Text.swift */; };
 		1E52829B28DA1C41002FB4EE /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 1E52829A28DA1C41002FB4EE /* FSCalendar */; };
+		1E5E760828DCBFAD004EA9FD /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5E760728DCBFAD004EA9FD /* RecordViewController.swift */; };
+		1E5E760A28DCC1F8004EA9FD /* RecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5E760928DCC1F8004EA9FD /* RecordView.swift */; };
+		1E5E760C28DCCED7004EA9FD /* RecordCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5E760B28DCCED7004EA9FD /* RecordCircleView.swift */; };
 		1E7DCF8728D0F209000D43B5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7DCF8628D0F209000D43B5 /* HomeViewController.swift */; };
 		1E7DCF8F28D0F3EB000D43B5 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7DCF8E28D0F3EB000D43B5 /* SettingViewController.swift */; };
 		1E7DCF9128D0F3F6000D43B5 /* StatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7DCF9028D0F3F6000D43B5 /* StatViewController.swift */; };
@@ -62,6 +65,9 @@
 		1E52828D28D8D444002FB4EE /* WalkThroughView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkThroughView.swift; sourceTree = "<group>"; };
 		1E52829028D8DEAC002FB4EE /* DailyRecordRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyRecordRepository.swift; sourceTree = "<group>"; };
 		1E52829728D98A07002FB4EE /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
+		1E5E760728DCBFAD004EA9FD /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
+		1E5E760928DCC1F8004EA9FD /* RecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordView.swift; sourceTree = "<group>"; };
+		1E5E760B28DCCED7004EA9FD /* RecordCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCircleView.swift; sourceTree = "<group>"; };
 		1E7DCF8628D0F209000D43B5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		1E7DCF8E28D0F3EB000D43B5 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		1E7DCF9028D0F3F6000D43B5 /* StatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +121,8 @@
 				1E52828528D7863D002FB4EE /* HomeCalorieView.swift */,
 				1E52828728D78B1F002FB4EE /* HomeAdviceView.swift */,
 				1E52828928D797D8002FB4EE /* HomeWorkoutView.swift */,
+				1E5E760928DCC1F8004EA9FD /* RecordView.swift */,
+				1E5E760B28DCCED7004EA9FD /* RecordCircleView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -260,6 +268,7 @@
 			children = (
 				1E52826428D35E12002FB4EE /* View */,
 				1E7DCF8628D0F209000D43B5 /* HomeViewController.swift */,
+				1E5E760728DCBFAD004EA9FD /* RecordViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -387,6 +396,8 @@
 				1E7DCF9128D0F3F6000D43B5 /* StatViewController.swift in Sources */,
 				1EA4D07D28CF9EB500A9E444 /* ViewController.swift in Sources */,
 				1EA4D09228CFA2CF00A9E444 /* BaseViewController.swift in Sources */,
+				1E5E760C28DCCED7004EA9FD /* RecordCircleView.swift in Sources */,
+				1E5E760828DCBFAD004EA9FD /* RecordViewController.swift in Sources */,
 				1EA4D0AB28CFA60600A9E444 /* BaseCollectionViewCell.swift in Sources */,
 				1EA4D0AF28CFA6B500A9E444 /* DailyRecord.swift in Sources */,
 				1E52826628D3648C002FB4EE /* HomeView.swift in Sources */,
@@ -400,6 +411,7 @@
 				1E52828828D78B1F002FB4EE /* HomeAdviceView.swift in Sources */,
 				1E52825F28D24A0F002FB4EE /* Food.swift in Sources */,
 				1E52828C28D8D433002FB4EE /* WalkThroughViewController.swift in Sources */,
+				1E5E760A28DCC1F8004EA9FD /* RecordView.swift in Sources */,
 				1EA4D0A528CFA49300A9E444 /* Font.swift in Sources */,
 				1E7DCF8728D0F209000D43B5 /* HomeViewController.swift in Sources */,
 				1EA4D07928CF9EB500A9E444 /* AppDelegate.swift in Sources */,

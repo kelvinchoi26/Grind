@@ -37,6 +37,8 @@ final class WalkThroughViewController: BaseViewController {
         
         repository.addRecord(item: record)
         
+        
+        
         userDefaults.set(true, forKey: "NotFirst")
         self.dismiss(animated: false)
     }
