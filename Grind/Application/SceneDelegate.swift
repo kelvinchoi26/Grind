@@ -37,18 +37,22 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             items[0].selectedImage = UIImage(systemName: "waveform.path.ecg.rectangle.fill")
             items[0].image = UIImage(systemName: "waveform.path.ecg.rectangle")
             items[0].title = "통계"
+            items[0].setTitleTextAttributes([NSAttributedString.Key.font: Constants.Font.textFont as Any], for: .normal)
             
             items[1].selectedImage = UIImage(systemName: "house.fill")
             items[1].image = UIImage(systemName: "house")
             items[1].title = "홈"
+            items[1].setTitleTextAttributes([NSAttributedString.Key.font: Constants.Font.textFont as Any], for: .normal)
             
             items[2].selectedImage = UIImage(systemName: "gearshape.fill")
             items[2].image = UIImage(systemName: "gearshape")
             items[2].title = "설정"
+            items[2].setTitleTextAttributes([NSAttributedString.Key.font: Constants.Font.textFont as Any], for: .normal)
         }
         
         // 홈 탭을 기본 탭으로 설정
         tabBarController.selectedViewController = homeNavigationController
+        tabBarController.tabBar.backgroundColor = Constants.Color.backgroundColor
         
         window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()

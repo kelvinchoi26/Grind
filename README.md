@@ -50,13 +50,69 @@
 
 ### 이슈
 
-![스크린샷 2022-09-19 오전 3.40.18.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f1221319-8157-4a66-b4c8-e3e2359a0993/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-09-19_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_3.40.18.png)
-
-![스크린샷 2022-09-19 오전 3.42.44.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/199867ca-75bd-444a-8ef9-f8f492aaf19a/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-09-19_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_3.42.44.png)
-
 - workoutView를 깜빡하고 subview에 추가 안해준 것이 이슈의 원인…ㅠ (자주 까먹는다..)
 
 ### 내일계획
 
 - fatSecretAPI 통신 완성
 - fatSecretAPI 화면과 연결
+
+### 2022-09-19 진행상황
+---
+### 진행사항
+
+- HealthKit에 관해서 참고한 사이트
+
+[The HealthKit Comprehendium](https://medium.com/1mgofficial/the-healthkit-comprehendium-7e9e8e03c03e)
+
+- 해외 이용자의 경우 HealthKit의 정보를 불러올 때 Date 설정 어떻게 해야할지 고민!
+    - UTC 사용? 검색 필요
+- 온보딩 화면에서 유저에게 체중만 입력받아 dailyRecord 객체 최초 생성
+    - date(시점)은 현재, 활동칼로리는 healthKit이 연결됐을 때 O, 연결 안 됐을 때는 X
+    - 섭취칼로리는 0, 사진/오늘의 운동/컨디션은 nil로 객체 생성
+- force unwrapping로 인해 발생할 수 있는 런타임 에러 발생 가능성 없애기
+    - do try catch로 에러 발생 관리
+- 사용자가 healthKit 접근 허용을 원하지 않는 경우, 헬창들의 평균 활동칼로리인 1000kcal 기본 설정
+
+### 이슈
+
+- Realm으로 날짜에 맞는 활동칼로리 불러올 때
+- navigationBar title에 FSCalendar를 여는 버튼 구현하는 방법.. (참고 앱: FatSecret)
+- 나중에 설정 앱에 건강 앱 권한 관련 수정할 수 있게 화면 추가
+
+###기타
+
+- 공유하기 기능 추가하면 좋을 것 같다! 코치한테 섭취칼로리/활동칼로리 오늘의 체중 보고 용으로 (사진까지 공유하면 너무 좋을듯하다!)
+
+### 2022-09-20 진행상황
+---
+### 진행사항
+
+- HealthKit 접근 허용 + 활동칼로리 불러오기 구현 완료
+- WalkThrough UI + 빈 값 들어갔을 때 조건 처리 완료
+
+### 이슈
+
+- NavigationTitle(날짜)를 클릭했을 때 FSCalendar를 띄우는 방법!
+1. 새로운 ViewController 띄우기 - 값 전달하기 복잡함
+2. FSCalendar의 스와이프 기능을 사용해서 구현!
+    - viewDidLoad에서는 FSCalendar의 height를 0으로 설정해서 아예 안 보이게
+    - 스와이프하면 height 높이를 설정하고 animation까지 추가해주면 구현 가능!
+
+###기타
+
+- 나만의 추천 운동 유튜브를 테이블뷰로 보여주기?
+
+### 2022-09-21 진행상황
+---
+### 진행사항
+
+- 위 아래로 swipe했을 때 fsCalendar가 보이게 하는 기능 구현
+- fsCalendar의 didSelect 기능 구현
+    - 해당 날짜 선택했을 때 해당 날짜의 realm 객체를 불러와서 label들에 정보들을 reload
+    - 해당 날짜에 정보가 입력 안 된 경우(realm 객체가 존재하지 않는 경우) realm 객체를 추가해줘야 오류가 안 뜬다
+
+### 이슈
+
+- fsCalendar scope이 week인 경우 height을 0으로 설정해도 Calendar의 타이틀이 뷰에 보인다
+    - 해결: height이 0인 경우 isHidden을 true로 설정, 아닌 경우 false로 해서 자연스럽게 보여지게 했다.

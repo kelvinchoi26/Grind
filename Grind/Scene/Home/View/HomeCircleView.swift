@@ -40,8 +40,6 @@ final class HomeCircleView: BaseView {
     override func setConstraints() {
         super.setConstraints()
         
-        
-        
         cellTitle.snp.makeConstraints {
             $0.centerX.equalTo(self)
             $0.top.equalTo(self).inset(10)
@@ -49,9 +47,9 @@ final class HomeCircleView: BaseView {
         }
         
         cellContent.snp.makeConstraints {
-            $0.top.equalTo(cellTitle).inset(20)
+            $0.top.equalTo(cellTitle).inset(10)
             $0.centerX.equalTo(self)
-            $0.bottom.equalTo(self).inset(20)
+            $0.bottom.equalTo(self).inset(10)
             $0.width.equalTo(self)
         }
         

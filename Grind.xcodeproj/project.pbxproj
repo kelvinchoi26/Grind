@@ -22,6 +22,7 @@
 		1E52828E28D8D444002FB4EE /* WalkThroughView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E52828D28D8D444002FB4EE /* WalkThroughView.swift */; };
 		1E52829128D8DEAC002FB4EE /* DailyRecordRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E52829028D8DEAC002FB4EE /* DailyRecordRepository.swift */; };
 		1E52829828D98A07002FB4EE /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E52829728D98A07002FB4EE /* Text.swift */; };
+		1E52829B28DA1C41002FB4EE /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 1E52829A28DA1C41002FB4EE /* FSCalendar */; };
 		1E7DCF8728D0F209000D43B5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7DCF8628D0F209000D43B5 /* HomeViewController.swift */; };
 		1E7DCF8F28D0F3EB000D43B5 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7DCF8E28D0F3EB000D43B5 /* SettingViewController.swift */; };
 		1E7DCF9128D0F3F6000D43B5 /* StatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7DCF9028D0F3F6000D43B5 /* StatViewController.swift */; };
@@ -89,6 +90,7 @@
 				1EA4D09D28CFA3DB00A9E444 /* RealmSwift in Frameworks */,
 				1EA4D09B28CFA3DB00A9E444 /* Realm in Frameworks */,
 				1EA4D09528CFA2F300A9E444 /* SnapKit in Frameworks */,
+				1E52829B28DA1C41002FB4EE /* FSCalendar in Frameworks */,
 				1EA4D09828CFA32500A9E444 /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -317,6 +319,7 @@
 				1EA4D09728CFA32500A9E444 /* Then */,
 				1EA4D09A28CFA3DB00A9E444 /* Realm */,
 				1EA4D09C28CFA3DB00A9E444 /* RealmSwift */,
+				1E52829A28DA1C41002FB4EE /* FSCalendar */,
 			);
 			productName = Grind;
 			productReference = 1EA4D07528CF9EB500A9E444 /* Grind.app */;
@@ -350,6 +353,7 @@
 				1EA4D09328CFA2F300A9E444 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				1EA4D09628CFA32500A9E444 /* XCRemoteSwiftPackageReference "Then" */,
 				1EA4D09928CFA3DB00A9E444 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				1E52829928DA1C41002FB4EE /* XCRemoteSwiftPackageReference "FSCalendar" */,
 			);
 			productRefGroup = 1EA4D07628CF9EB500A9E444 /* Products */;
 			projectDirPath = "";
@@ -631,6 +635,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		1E52829928DA1C41002FB4EE /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/WenchaoD/FSCalendar.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		1EA4D09328CFA2F300A9E444 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -658,6 +670,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		1E52829A28DA1C41002FB4EE /* FSCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1E52829928DA1C41002FB4EE /* XCRemoteSwiftPackageReference "FSCalendar" */;
+			productName = FSCalendar;
+		};
 		1EA4D09428CFA2F300A9E444 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 1EA4D09328CFA2F300A9E444 /* XCRemoteSwiftPackageReference "SnapKit" */;

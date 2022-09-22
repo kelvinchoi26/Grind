@@ -6,14 +6,37 @@
 //
 
 import RealmSwift
+import Foundation
 
-final class DailyRecordRepository {
+protocol DailyRecordRepositoryType {
+    func printFileLocation()
+    func addRecord(item: DailyRecord)
+    func changeWeight(item: DailyRecord, updatedWeight: Double)
+    func updateCalorieConsumed(item: DailyRecord, updatedCalorie: Int)
+    func updateCalorieBurned(item: DailyRecord, updatedCalorie: Int)
+}
+
+final class DailyRecordRepository: DailyRecordRepositoryType {
     
     private init() { }
     
     static let repository = DailyRecordRepository()
     
     private let localRealm = try! Realm()
+    
+    func printFileLocation() {
+        print("Realm is located at:", localRealm.configuration.fileURL!)
+    }
+    
+    func addRecord(item: DailyRecord) {
+        do {
+            try localRealm.write {
+                localRealm.add(item)
+            }
+        } catch {
+            print(error)
+        }
+    }
     
     // 오늘의 체중이 변화할 때 마다 실행
     func changeWeight(item: DailyRecord, updatedWeight: Double) {
@@ -48,7 +71,12 @@ final class DailyRecordRepository {
         }
     }
     
-//    func fetch(by date: Date) -> DailyRecord {
-//            return localRealm.objects(Diary.self).filter("diaryDate >= %@ AND diaryDate < %@", date, Date(timeInterval: 86400, since: date))
-//    }
+    func fetch() -> Results<DailyRecord> {
+        return localRealm.objects(DailyRecord.self).sorted(byKeyPath: "date", ascending: true)
+    }
+    
+    func fetch(by date: Date) -> Results<DailyRecord> {
+        return localRealm.objects(DailyRecord.self).filter("date >= %@ AND date < %@", date, Date(timeInterval: 86400, since: date))
+    }
+   
 }
