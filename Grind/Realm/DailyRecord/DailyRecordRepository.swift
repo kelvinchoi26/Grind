@@ -4,7 +4,6 @@
 //
 //  Created by 최형민 on 2022/09/20.
 //
-
 import RealmSwift
 import Foundation
 
@@ -23,6 +22,10 @@ final class DailyRecordRepository: DailyRecordRepositoryType {
     static let repository = DailyRecordRepository()
     
     private let localRealm = try! Realm()
+    
+    var count: Int {
+        return localRealm.objects(DailyRecord.self).count
+    }
     
     func printFileLocation() {
         print("Realm is located at:", localRealm.configuration.fileURL!)

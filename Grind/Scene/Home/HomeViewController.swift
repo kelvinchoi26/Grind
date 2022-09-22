@@ -57,6 +57,12 @@ final class HomeViewController: BaseViewController {
         reloadLabel()
     }
     
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        
+//        self.tasks = self.repository.fetch(by: self.currentDate)
+//    }
+    
     override func configureUI() {
         
         view.backgroundColor = Constants.Color.backgroundColor
@@ -144,8 +150,47 @@ extension HomeViewController: FSCalendarDelegate, FSCalendarDataSource, FSCalend
     }
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        
         currentDate = date
-        tasks = repository.fetch(by: currentDate)
+        var newTasks = repository.fetch(by: currentDate)
+        
+        if newTasks.count == 0 {
+            let record = DailyRecord(date: currentDate, weight: 0.0, caloriesBurned: nil, caloriesConsumed: nil, photo: nil, didWorkout: false, workoutRoutine: nil, workoutTime: nil, condition: nil)
+            
+            repository.addRecord(item: record)
+            tasks = repository.fetch(by: currentDate)
+        } else {
+            tasks = repository.fetch(by: currentDate)
+        }
+        
+//        var newTasks: Results<DailyRecord>?
+//        newTasks = repository.fetch(by: currentDate)
+//        print(newTasks ?? 0)
+        
+//        if newTasks?[0] != nil {
+//            tasks = repository.fetch(by: currentDate)
+//        } else {
+//            let record = DailyRecord(date: currentDate, weight: 0.0, caloriesBurned: nil, caloriesConsumed: nil, photo: nil, didWorkout: false, workoutRoutine: nil, workoutTime: nil, condition: nil)
+//
+//            repository.addRecord(item: record)
+//            tasks = repository.fetch(by: currentDate)
+//        }
+        
+        calendar.do {
+            $0.isHidden = true
+            $0.scope = .week
+        }
+        
+        // 일주일 단위일 때는 높이를 맞게 설정
+        calendar.snp.remakeConstraints {
+            $0.top.equalTo(self.view.safeAreaLayoutGuide)
+            $0.trailing.leading.equalToSuperview()
+            $0.height.equalTo(0)
+        }
+        
+        UIView.animate(withDuration: 0.5) {
+            self.view.layoutIfNeeded()
+        }
     }
     
     func calendar(_ calendar: FSCalendar, boundingRectWillChange bounds: CGRect, animated: Bool) {

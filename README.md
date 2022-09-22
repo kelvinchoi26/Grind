@@ -116,3 +116,13 @@
 
 - fsCalendar scope이 week인 경우 height을 0으로 설정해도 Calendar의 타이틀이 뷰에 보인다
     - 해결: height이 0인 경우 isHidden을 true로 설정, 아닌 경우 false로 해서 자연스럽게 보여지게 했다.
+
+### 2022-09-22 진행상황
+---
+- Realm의 primary key를 날짜로 할 수는 없는가?..
+    - 혹시나 같은 날에 객체가 여러 개 생길 경우를 대비하기 위해..
+
+### 이슈
+
+- 해당 날짜에 정보가 입력 안 된 경우의 조건처리를 안 해주니 fetch를 했을 때 RLMException 에러가 발생한다
+    - fsCalendar의 didSelect에 날짜에 정보가 없는 경우 해당 날짜의 객체를 add해줘서 에러 발생을 방지했다.
