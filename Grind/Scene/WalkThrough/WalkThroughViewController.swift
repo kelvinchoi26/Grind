@@ -37,7 +37,8 @@ final class WalkThroughViewController: BaseViewController {
         
         repository.addRecord(item: record)
         
-        
+        HealthKitManager.shared.checkAuthorization()
+        HealthKitManager.shared.fetchEnergyBurned()
         
         userDefaults.set(true, forKey: "NotFirst")
         self.dismiss(animated: false)

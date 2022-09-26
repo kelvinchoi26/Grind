@@ -78,6 +78,7 @@ final class HomeView: BaseView {
     }
     
     override func setConstraints() {
+        let spacing = 20
         
         calendar.snp.makeConstraints {
             $0.top.trailing.leading.equalTo(self.safeAreaLayoutGuide)
@@ -86,24 +87,24 @@ final class HomeView: BaseView {
         
         adviceView.snp.makeConstraints {
             $0.top.equalTo(calendar.snp.bottom)
-            $0.trailing.leading.equalToSuperview().inset(20)
+            $0.trailing.leading.equalToSuperview().inset(spacing)
         }
         
         weightView.snp.makeConstraints {
             $0.top.equalTo(adviceView.snp.bottom)
-            $0.trailing.leading.equalToSuperview().inset(20)
+            $0.trailing.leading.equalToSuperview().inset(spacing)
             $0.height.equalToSuperview().multipliedBy(0.1)
         }
         
         calorieView.snp.makeConstraints {
             $0.top.equalTo(weightView.snp.bottom)
-            $0.trailing.leading.equalToSuperview().inset(20)
+            $0.trailing.leading.equalToSuperview().inset(spacing)
             $0.height.equalToSuperview().multipliedBy(0.1)
         }
         
         workoutView.snp.makeConstraints {
             $0.top.equalTo(calorieView.snp.bottom)
-            $0.trailing.leading.equalToSuperview().inset(20)
+            $0.trailing.leading.equalToSuperview().inset(spacing)
             $0.height.equalToSuperview().multipliedBy(0.4)
         }
     }

@@ -18,7 +18,7 @@ final class HomeViewController: BaseViewController {
     
     private let homeView = HomeView()
     
-    private let leftBarTitle = UIBarButtonItem()
+//    private let leftBarTitle = UIBarButtonItem()
     private let rightBarTitle = UIBarButtonItem()
     
     var tasks: Results<DailyRecord>? {
@@ -46,8 +46,6 @@ final class HomeViewController: BaseViewController {
   
         checkInitialRun()
         
-        HealthKitManager.shared.checkAuthorization()
-        
         repository.printFileLocation()
         
         swipeAction()
@@ -67,15 +65,12 @@ final class HomeViewController: BaseViewController {
     override func configureUI() {
         
         view.backgroundColor = Constants.Color.backgroundColor
-
-    }
-    
-    override func setConstraints() {
+        
         
 //        let recordBarButton = UIBarButtonItem(title: "기록", style: .plain, target: self, action: nil)
 //        let cameraBarButton = UIBarButtonItem(title: "카메라", style: .plain, target: self, action: nil)
         
-        leftBarTitle.do {
+        rightBarTitle.do {
             $0.title = "기록"
             $0.setTitleTextAttributes([NSAttributedString.Key.font: Constants.Font.subTitleFont as Any], for: .normal)
             $0.tintColor = Constants.Color.primaryText
@@ -84,22 +79,28 @@ final class HomeViewController: BaseViewController {
             $0.action = #selector(recordButtonClicked)
         }
         
-        rightBarTitle.do {
-            $0.title = "카메라"
-            $0.setTitleTextAttributes([NSAttributedString.Key.font: Constants.Font.subTitleFont as Any], for: .normal)
-            $0.tintColor = Constants.Color.primaryText
-        }
+//        rightBarTitle.do {
+//            $0.title = "카메라"
+//            $0.setTitleTextAttributes([NSAttributedString.Key.font: Constants.Font.subTitleFont as Any], for: .normal)
+//            $0.tintColor = Constants.Color.primaryText
+//        }
         
         // 오늘의 날짜
         self.navigationItem.title = formatter.string(from: tasks?[0].date ?? Date())
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: Constants.Font.subTitleFont as Any]
-        self.navigationItem.leftBarButtonItem = leftBarTitle
         self.navigationItem.rightBarButtonItem = rightBarTitle
+//        self.navigationItem.rightBarButtonItem = rightBarTitle
         
         self.navigationItem.titleView?.tintColor = Constants.Color.primaryText
         self.navigationItem.titleView?.backgroundColor = Constants.Color.backgroundColor
         
+        let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+        backBarButtonItem.tintColor = Constants.Color.primaryText
+        self.navigationItem.backBarButtonItem = backBarButtonItem
+
+
     }
+    
 }
 
 extension HomeViewController {
@@ -152,8 +153,9 @@ extension HomeViewController {
         homeView.weightView.todayWeightView.cellContent.text = String(tasks?[0].weight ?? 0.0)
         homeView.weightView.WeightDiffView.cellContent.text = String(0.0)
         homeView.calorieView.calorieConsumed.cellContent.text = String(tasks?[0].caloriesConsumed ?? 0)
-        homeView.calorieView.calorieBurned.cellContent.text = String(tasks?[0].caloriesBurned ?? 0)
-        homeView.calorieView.calorieSurplus.cellContent.text = String(0)
+        homeView.calorieView.calorieBurned.cellContent.text = String(tasks?[0].caloriesBurned ?? 1000)
+
+        homeView.calorieView.calorieSurplus.cellContent.text = String(Int(tasks?[0].caloriesConsumed ?? 0) - Int(tasks?[0].caloriesBurned ?? 1000))
         homeView.workoutView.todayWorkoutTextField.text = String(tasks?[0].workoutRoutine ?? "")
         homeView.workoutView.workoutTimeTextField.text = String(tasks?[0].workoutTime ?? "")
         
@@ -174,8 +176,9 @@ extension HomeViewController: FSCalendarDelegate, FSCalendarDataSource, FSCalend
         repository.editWorkoutRoutine(item: tasks ?? repository.fetch(), routine: homeView.workoutView.todayWorkoutTextField.text ?? "")
         repository.editWorkoutTime(item: tasks ?? repository.fetch(), time: homeView.workoutView.workoutTimeTextField.text ?? "")
         
+        // 선택된 날짜에 realm 객체가 없을 경우
         currentDate = date
-        var newTasks = repository.fetch(by: currentDate)
+        let newTasks = repository.fetch(by: currentDate)
         
         if newTasks.count == 0 {
             let record = DailyRecord(date: currentDate, weight: 0.0, caloriesBurned: nil, caloriesConsumed: nil, photo: nil, didWorkout: false, workoutRoutine: nil, workoutTime: nil, condition: nil)
@@ -241,7 +244,7 @@ extension HomeViewController: FSCalendarDelegate, FSCalendarDataSource, FSCalend
             }
         }
         
-        UIView.animate(withDuration: 0.5) {
+        UIView.animate(withDuration: 0.3) {
             self.view.layoutIfNeeded()
         }
     }

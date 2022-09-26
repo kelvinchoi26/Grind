@@ -22,6 +22,7 @@ final class RecordViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        calorieAddTarget()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -33,6 +34,18 @@ final class RecordViewController: BaseViewController {
     override func configureUI() {
         view.backgroundColor = Constants.Color.backgroundColor
         
+    }
+}
+
+extension RecordViewController {
+    func calorieAddTarget() {
+        recordView.calorieButton.addTarget(self, action: #selector(addCalorie), for: .touchUpInside)
+    }
+    
+    @objc func addCalorie() {
+        let vc = FoodViewController()
+        
+        self.present(vc, animated: true, completion: nil)
     }
 }
 

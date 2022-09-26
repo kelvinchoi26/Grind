@@ -18,6 +18,7 @@ class DailyRecord: Object {
     @Persisted var workoutRoutine: String? // 운동 부위(옵션)
     @Persisted var workoutTime: String? // 운동 시간(옵션)
     @Persisted var condition: Int? // 컨디션 이모티콘(옵션) 0: 기본, 1: 우울, 2: 신남
+//    @Persisted var food: List<Food> // 음식
     
     // PK(필수): 타입: Int, UUID, ObjectID
     @Persisted(primaryKey: true) var objectId: ObjectId
@@ -33,5 +34,6 @@ class DailyRecord: Object {
         self.workoutRoutine = workoutRoutine
         self.workoutTime = workoutTime
         self.condition = condition
+//        self.food = food
     }
 }

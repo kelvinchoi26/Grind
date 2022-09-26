@@ -2,10 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSHealthShareUsageDescription</key>
-	<string>활동칼로리 데이터 읽기를 위한 권한을 요청드립니다.</string>
-	<key>NSHealthUpdateUsageDescription</key>
-	<string>활동칼로리 데이터 저장을 위한 권한을 요청드립니다.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>식단 촬영을 위해 카메라 촬영을 요청드립니다.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>식단 사진을 불러오기 위해 갤러리 접근을 요청드립니다.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>tway_air.ttf</string>
