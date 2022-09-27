@@ -21,7 +21,8 @@ final class FoodViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
+        addCameraTarget()
     }
     
     @objc func YPImagePickerButtonClicked() {
@@ -39,6 +40,12 @@ final class FoodViewController: BaseViewController {
             picker.dismiss(animated: true, completion: nil)
         }
         present(picker, animated: true, completion: nil)
+    }
+}
+
+extension FoodViewController {
+    func addCameraTarget() {
+        foodView.cameraButton.addTarget(self, action: #selector(YPImagePickerButtonClicked), for: .touchUpInside)
     }
 }
 

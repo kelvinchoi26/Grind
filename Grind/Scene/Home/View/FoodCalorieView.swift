@@ -16,25 +16,31 @@ final class FoodCalorieView: BaseView {
         super.configureUI()
         
         calorieLabel.do {
-            $0.font = Constants.Font.textFont
+            $0.font = Constants.Font.subTitleFont
             $0.textColor = Constants.Color.primaryText
+            $0.textAlignment = .left    
         }
         
         calorieTextField.do {
-            $0.font = Constants.Font.textFont
+            $0.font = Constants.Font.subTitleFont
             $0.textColor = Constants.Color.primaryText
             $0.textAlignment = .left
+        }
+        
+        [calorieLabel, calorieTextField].forEach {
+            self.addSubview($0)
         }
     }
     
     override func setConstraints() {
         calorieLabel.snp.makeConstraints {
             $0.leading.top.bottom.equalTo(self).inset(20)
+            $0.width.equalTo(100)
         }
         
         calorieTextField.snp.makeConstraints {
             $0.trailing.top.bottom.equalTo(self).inset(20)
-            $0.leading.equalTo(calorieLabel).offset(20)
+            $0.leading.equalTo(calorieLabel.snp.trailing).offset(20)
         }
     }
 

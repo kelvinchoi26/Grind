@@ -38,7 +38,6 @@
 		1E9DE88C28DD7C290022FCBC /* FoodSearchAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9DE88B28DD7C290022FCBC /* FoodSearchAPIManager.swift */; };
 		1E9DE88F28DD7C510022FCBC /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 1E9DE88E28DD7C510022FCBC /* SwiftyJSON */; };
 		1E9DE89228DD7C8D0022FCBC /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 1E9DE89128DD7C8D0022FCBC /* Alamofire */; };
-		1E9DE89528DD7CDA0022FCBC /* FatSecretModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9DE89428DD7CDA0022FCBC /* FatSecretModel.swift */; };
 		1EA4D07928CF9EB500A9E444 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA4D07828CF9EB500A9E444 /* AppDelegate.swift */; };
 		1EA4D07B28CF9EB500A9E444 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA4D07A28CF9EB500A9E444 /* SceneDelegate.swift */; };
 		1EA4D07D28CF9EB500A9E444 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA4D07C28CF9EB500A9E444 /* ViewController.swift */; };
@@ -87,7 +86,6 @@
 		1E7DCF9028D0F3F6000D43B5 /* StatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatViewController.swift; sourceTree = "<group>"; };
 		1E9DE88828DD79020022FCBC /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		1E9DE88B28DD7C290022FCBC /* FoodSearchAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSearchAPIManager.swift; sourceTree = "<group>"; };
-		1E9DE89428DD7CDA0022FCBC /* FatSecretModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FatSecretModel.swift; sourceTree = "<group>"; };
 		1EA4D07528CF9EB500A9E444 /* Grind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Grind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EA4D07828CF9EB500A9E444 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1EA4D07A28CF9EB500A9E444 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -217,14 +215,6 @@
 			path = Food;
 			sourceTree = "<group>";
 		};
-		1E9DE89328DD7CCD0022FCBC /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				1E9DE89428DD7CDA0022FCBC /* FatSecretModel.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		1EA4D06C28CF9EB500A9E444 = {
 			isa = PBXGroup;
 			children = (
@@ -245,7 +235,6 @@
 		1EA4D07728CF9EB500A9E444 /* Grind */ = {
 			isa = PBXGroup;
 			children = (
-				1E9DE89328DD7CCD0022FCBC /* Model */,
 				1E9DE88728DD78F60022FCBC /* Key */,
 				1E52826C28D40853002FB4EE /* Grind.entitlements */,
 				1E52826828D39F01002FB4EE /* Resource */,
@@ -451,7 +440,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E7DCF9128D0F3F6000D43B5 /* StatViewController.swift in Sources */,
-				1E9DE89528DD7CDA0022FCBC /* FatSecretModel.swift in Sources */,
 				1EA4D07D28CF9EB500A9E444 /* ViewController.swift in Sources */,
 				1EA4D09228CFA2CF00A9E444 /* BaseViewController.swift in Sources */,
 				1E5E760C28DCCED7004EA9FD /* RecordCircleView.swift in Sources */,

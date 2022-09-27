@@ -10,24 +10,35 @@ import UIKit
 final class FoodView: BaseView {
     
     let imageView = UIImageView()
+    let cameraButton = UIButton()
     let nutritionLabel = UILabel()
     let calorieView = FoodCalorieView()
     let carbView = FoodCalorieView()
     let proteinView = FoodCalorieView()
     let fatView = FoodCalorieView()
+    let unitLabel = UILabel()
+    let addButton = UIButton()
     
     override func configureUI() {
         super.configureUI()
         
-        self.backgroundColor = .clear
+        self.backgroundColor = Constants.Color.backgroundColor
         
         imageView.do {
             $0.contentMode = .scaleToFill
+            $0.layer.borderColor = Constants.Color.borderColor
+            $0.layer.borderWidth = Constants.Design.borderWidth
+        }
+        
+        cameraButton.do {
+            $0.setImage(UIImage(systemName: "photo.fill.on.rectangle.fill"), for: .normal)
+            $0.tintColor = Constants.Color.primaryText
         }
         
         nutritionLabel.do {
-            $0.font = Constants.Font.subTitleFont
+            $0.font = Constants.Font.titleFont
             $0.textColor = Constants.Color.primaryText
+            $0.text = "영양정보 입력"
         }
         
         calorieView.do {
@@ -50,7 +61,21 @@ final class FoodView: BaseView {
             $0.calorieTextField.placeholder = "입력"
         }
         
-        [imageView, calorieView, carbView, proteinView, fatView].forEach {
+        unitLabel.do {
+            $0.font = Constants.Font.textFont
+            $0.text = "단위: g(그램)"
+        }
+        
+        addButton.do {
+            $0.setTitle("식단 추가", for: .normal)
+            $0.titleLabel?.font = Constants.Font.subTitleFont
+            $0.setTitleColor(Constants.Color.primaryText, for: .normal)
+            $0.layer.borderWidth = Constants.Design.borderWidth
+            $0.layer.borderColor = Constants.Color.borderColor
+            $0.layer.cornerRadius = Constants.Design.cornerRadius
+        }
+        
+        [imageView, cameraButton, nutritionLabel, calorieView, carbView, proteinView, fatView, unitLabel, addButton].forEach {
             self.addSubview($0)
         }
         
@@ -63,7 +88,11 @@ final class FoodView: BaseView {
         
         imageView.snp.makeConstraints {
             $0.top.leading.trailing.equalTo(self.safeAreaLayoutGuide).inset(spacing)
-            $0.height.equalTo(300)
+            $0.height.equalTo(400)
+        }
+        
+        cameraButton.snp.makeConstraints {
+            $0.top.trailing.equalTo(imageView).inset(spacing)
         }
         
         nutritionLabel.snp.makeConstraints {
@@ -73,22 +102,33 @@ final class FoodView: BaseView {
         
         calorieView.snp.makeConstraints {
             $0.top.equalTo(nutritionLabel.snp.bottom)
-            $0.leading.equalTo(self.safeAreaLayoutGuide)
+            $0.leading.equalTo(self.safeAreaLayoutGuide).offset(spacing)
         }
         
         carbView.snp.makeConstraints {
-            $0.centerY.equalTo(calorieView)
-            $0.trailing.equalTo(self.safeAreaLayoutGuide)
-        }
-        
-        proteinView.snp.makeConstraints {
             $0.top.equalTo(calorieView.snp.bottom)
-            $0.leading.equalToSuperview()
+            $0.leading.equalTo(self.safeAreaLayoutGuide).offset(spacing)
+        }
+
+        proteinView.snp.makeConstraints {
+            $0.top.equalTo(carbView.snp.bottom)
+            $0.leading.equalTo(self.safeAreaLayoutGuide).offset(spacing)
+        }
+
+        fatView.snp.makeConstraints {
+            $0.top.equalTo(proteinView.snp.bottom)
+            $0.leading.equalTo(self.safeAreaLayoutGuide).offset(spacing)
         }
         
-        fatView.snp.makeConstraints {
-            $0.top.equalTo(carbView.snp.bottom)
-            $0.trailing.equalToSuperview()
+        unitLabel.snp.makeConstraints {
+            $0.top.equalTo(fatView.snp.bottom)
+            $0.leading.equalTo(self.safeAreaLayoutGuide).offset(spacing*2)
+        }
+        
+        addButton.snp.makeConstraints {
+            $0.top.equalTo(unitLabel).offset(spacing*2)
+            $0.leading.trailing.equalTo(self.safeAreaLayoutGuide).inset(spacing)
+            $0.height.equalTo(50)
         }
         
     }

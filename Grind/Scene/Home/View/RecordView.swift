@@ -40,7 +40,7 @@ final class RecordView: BaseView {
         }
         
         calorieButton.do {
-            $0.setTitle("칼로리 입력", for: .normal)
+            $0.setTitle("식단 영양정보 입력", for: .normal)
             $0.titleLabel?.font = Constants.Font.subTitleFont
             $0.setTitleColor(Constants.Color.primaryText, for: .normal)
             $0.layer.borderWidth = Constants.Design.borderWidth
