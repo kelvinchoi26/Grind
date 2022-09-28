@@ -170,3 +170,33 @@
 - DailyRecord Realm에 Food 배열 객체를 추가해서 하루의 식단 정보를 추가
 - 새로 영양정보 입력하는 뷰컨 UI 완성
 - RecordVC에 tabman 적용해서 새로운 탭에 식단 사진과 정보를 담고있는 CollectionView 추가 예정
+
+### 2022-09-27 진행상황
+---
+- 식단 정보 입력 VC UI 구현 + YPImagePicker 적용
+
+### 이슈
+
+- WalkThrough VC이 dismiss 될 때 HomeVC의 viewWillAppear이 호출이 안 되는 이슈가 있어서 홈화면에서 체중이 업데이트가 안 됐었다.
+    - WalkThroughVC의 modalPresentationStyle을 .fullScreen으로 바꾸면 새로운 VC이 띄워지는 효과 때문에 viewWillAppear이 호출되게 된다.
+    
+### 2022-09-28 진행상황
+---
+- DailyRecord 객체에 Food 객체 리스트를 추가
+    - 식단 추가/삭제 기능 모두 필요함
+- 활동칼로리/섭취칼로리 column의 옵셔널 가능성을 제거했다
+    - 기본값 0으로 설정
+- 이미지 저장하는 방식
+    - 첫번째는 사진을 데이터 타입으로 변환해서 Realm에 저장하는 것이다.
+        - 권장하지 않는 방법 - 용량 문제(추정)
+    - 두번째는 Document 폴더 내에 저장하는 것이다.
+    - realm 객체의 유니크한 키를 경로로 설정하여 저장하기로 했다.
+
+### 이슈
+
+- 선택된 dailyRecord 객체를 recordVC에 이어 foodVC에 까지 전달해야 하는 구조가 너무 비효율적으로 느껴짐…
+- 다음 프로젝트는 꼭 MVVM 구조로 해봐야겠다!!
+- 시간만 괜찮다면 MVVM 구조 리팩토링 해보고 싶다
+- food 객체는 추가가 정상적으로 되는데 dailyRecord 객체의 섭취칼로리에 반영이 잘 되지 않는 이슈 발생
+    - 내일 해결 예정
+- 생명주기에 대한 공부 더 많이 필요.. 데이터 업데이트 시점에 대한 고민이 너무 많이 필요해보임

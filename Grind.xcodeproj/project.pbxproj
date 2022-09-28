@@ -28,6 +28,10 @@
 		1E5CF07F28E21E3E004D9010 /* FoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5CF07E28E21E3E004D9010 /* FoodViewController.swift */; };
 		1E5CF08128E2202A004D9010 /* FoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5CF08028E2202A004D9010 /* FoodView.swift */; };
 		1E5CF08328E222EE004D9010 /* FoodCalorieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5CF08228E222EE004D9010 /* FoodCalorieView.swift */; };
+		1E5CF08B28E3DCCB004D9010 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 1E5CF08A28E3DCCB004D9010 /* Realm */; };
+		1E5CF08D28E3DCCB004D9010 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1E5CF08C28E3DCCB004D9010 /* RealmSwift */; };
+		1E5CF09328E4B9FD004D9010 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 1E5CF09228E4B9FD004D9010 /* Toast */; };
+		1E5CF09628E4BAA4004D9010 /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 1E5CF09528E4BAA4004D9010 /* JGProgressHUD */; };
 		1E5E760828DCBFAD004EA9FD /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5E760728DCBFAD004EA9FD /* RecordViewController.swift */; };
 		1E5E760A28DCC1F8004EA9FD /* RecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5E760928DCC1F8004EA9FD /* RecordView.swift */; };
 		1E5E760C28DCCED7004EA9FD /* RecordCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5E760B28DCCED7004EA9FD /* RecordCircleView.swift */; };
@@ -47,8 +51,6 @@
 		1EA4D09228CFA2CF00A9E444 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA4D09128CFA2CF00A9E444 /* BaseViewController.swift */; };
 		1EA4D09528CFA2F300A9E444 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1EA4D09428CFA2F300A9E444 /* SnapKit */; };
 		1EA4D09828CFA32500A9E444 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 1EA4D09728CFA32500A9E444 /* Then */; };
-		1EA4D09B28CFA3DB00A9E444 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 1EA4D09A28CFA3DB00A9E444 /* Realm */; };
-		1EA4D09D28CFA3DB00A9E444 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1EA4D09C28CFA3DB00A9E444 /* RealmSwift */; };
 		1EA4D09F28CFA40900A9E444 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA4D09E28CFA40900A9E444 /* BaseView.swift */; };
 		1EA4D0A128CFA46C00A9E444 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA4D0A028CFA46C00A9E444 /* Constants.swift */; };
 		1EA4D0A328CFA47B00A9E444 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA4D0A228CFA47B00A9E444 /* Color.swift */; };
@@ -108,10 +110,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E5CF08D28E3DCCB004D9010 /* RealmSwift in Frameworks */,
+				1E5CF08B28E3DCCB004D9010 /* Realm in Frameworks */,
 				1E9DE88F28DD7C510022FCBC /* SwiftyJSON in Frameworks */,
+				1E5CF09328E4B9FD004D9010 /* Toast in Frameworks */,
+				1E5CF09628E4BAA4004D9010 /* JGProgressHUD in Frameworks */,
 				1E9DE89228DD7C8D0022FCBC /* Alamofire in Frameworks */,
-				1EA4D09D28CFA3DB00A9E444 /* RealmSwift in Frameworks */,
-				1EA4D09B28CFA3DB00A9E444 /* Realm in Frameworks */,
 				1EA4D09528CFA2F300A9E444 /* SnapKit in Frameworks */,
 				1E52829B28DA1C41002FB4EE /* FSCalendar in Frameworks */,
 				1EA4D09828CFA32500A9E444 /* Then in Frameworks */,
@@ -366,12 +370,14 @@
 			packageProductDependencies = (
 				1EA4D09428CFA2F300A9E444 /* SnapKit */,
 				1EA4D09728CFA32500A9E444 /* Then */,
-				1EA4D09A28CFA3DB00A9E444 /* Realm */,
-				1EA4D09C28CFA3DB00A9E444 /* RealmSwift */,
 				1E52829A28DA1C41002FB4EE /* FSCalendar */,
 				1E9DE88E28DD7C510022FCBC /* SwiftyJSON */,
 				1E9DE89128DD7C8D0022FCBC /* Alamofire */,
 				1E5CF07728E2190A004D9010 /* YPImagePicker */,
+				1E5CF08A28E3DCCB004D9010 /* Realm */,
+				1E5CF08C28E3DCCB004D9010 /* RealmSwift */,
+				1E5CF09228E4B9FD004D9010 /* Toast */,
+				1E5CF09528E4BAA4004D9010 /* JGProgressHUD */,
 			);
 			productName = Grind;
 			productReference = 1EA4D07528CF9EB500A9E444 /* Grind.app */;
@@ -404,11 +410,13 @@
 			packageReferences = (
 				1EA4D09328CFA2F300A9E444 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				1EA4D09628CFA32500A9E444 /* XCRemoteSwiftPackageReference "Then" */,
-				1EA4D09928CFA3DB00A9E444 /* XCRemoteSwiftPackageReference "realm-swift" */,
 				1E52829928DA1C41002FB4EE /* XCRemoteSwiftPackageReference "FSCalendar" */,
 				1E9DE88D28DD7C510022FCBC /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				1E9DE89028DD7C8D0022FCBC /* XCRemoteSwiftPackageReference "Alamofire" */,
 				1E5CF07628E2190A004D9010 /* XCRemoteSwiftPackageReference "YPImagePicker" */,
+				1E5CF08928E3DCCB004D9010 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				1E5CF09128E4B9FD004D9010 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
+				1E5CF09428E4BAA3004D9010 /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
 			);
 			productRefGroup = 1EA4D07628CF9EB500A9E444 /* Products */;
 			projectDirPath = "";
@@ -729,6 +737,30 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		1E5CF08928E3DCCB004D9010 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.30.0;
+			};
+		};
+		1E5CF09128E4B9FD004D9010 /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		1E5CF09428E4BAA3004D9010 /* XCRemoteSwiftPackageReference "JGProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JonasGessner/JGProgressHUD.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		1E9DE88D28DD7C510022FCBC /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
@@ -761,14 +793,6 @@
 				minimumVersion = 3.0.0;
 			};
 		};
-		1EA4D09928CFA3DB00A9E444 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/realm-swift.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -781,6 +805,26 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1E5CF07628E2190A004D9010 /* XCRemoteSwiftPackageReference "YPImagePicker" */;
 			productName = YPImagePicker;
+		};
+		1E5CF08A28E3DCCB004D9010 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1E5CF08928E3DCCB004D9010 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		1E5CF08C28E3DCCB004D9010 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1E5CF08928E3DCCB004D9010 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+		1E5CF09228E4B9FD004D9010 /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1E5CF09128E4B9FD004D9010 /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
+		};
+		1E5CF09528E4BAA4004D9010 /* JGProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1E5CF09428E4BAA3004D9010 /* XCRemoteSwiftPackageReference "JGProgressHUD" */;
+			productName = JGProgressHUD;
 		};
 		1E9DE88E28DD7C510022FCBC /* SwiftyJSON */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -801,16 +845,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1EA4D09628CFA32500A9E444 /* XCRemoteSwiftPackageReference "Then" */;
 			productName = Then;
-		};
-		1EA4D09A28CFA3DB00A9E444 /* Realm */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1EA4D09928CFA3DB00A9E444 /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = Realm;
-		};
-		1EA4D09C28CFA3DB00A9E444 /* RealmSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1EA4D09928CFA3DB00A9E444 /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

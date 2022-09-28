@@ -8,11 +8,11 @@ import RealmSwift
 import Foundation
 
 protocol DailyRecordRepositoryType {
-    func printFileLocation()
-    func addRecord(item: DailyRecord)
-    func changeWeight(item: DailyRecord, updatedWeight: Double)
-    func updateCalorieConsumed(item: DailyRecord, updatedCalorie: Int)
-    func updateCalorieBurned(item: DailyRecord, updatedCalorie: Int)
+//    func printFileLocation()
+//    func addRecord(item: DailyRecord)
+//    func changeWeight(item: DailyRecord, updatedWeight: Double)
+//    func updateCalorieConsumed(item: DailyRecord, updatedCalorie: Int)
+//    func updateCalorieBurned(item: DailyRecord, updatedCalorie: Int)
 }
 
 final class DailyRecordRepository: DailyRecordRepositoryType {
@@ -65,7 +65,7 @@ final class DailyRecordRepository: DailyRecordRepositoryType {
         do {
             try localRealm.write {
                 item[0].weight = Double(weight)
-                item[0].caloriesConsumed = Int(calorie)
+                item[0].caloriesConsumed = Int(calorie) ?? 0
             }
         } catch {
             print(error)
@@ -83,11 +83,24 @@ final class DailyRecordRepository: DailyRecordRepositoryType {
         }
     }
     
-    // 섭취칼로리에 음식 입력할 때 마다 실행
-    func updateCalorieConsumed(item: DailyRecord, updatedCalorie: Int) {
+    // 식단 영양정보 추가
+    func addFood(item: DailyRecord, food: Food, addedCalorie: Int) {
         do {
             try localRealm.write {
-                item.caloriesConsumed = updatedCalorie
+                item.caloriesConsumed = 10000
+                item.food.append(food)
+            }
+        } catch {
+            print(error)
+        }
+    }
+    
+    // 식단 영양정보 삭제
+    func deleteFood(item: DailyRecord, food: Food, deletedCalorie: Int) {
+        do {
+            try localRealm.write {
+                item.caloriesConsumed -= deletedCalorie
+                item.food.realm?.delete(food)
             }
         } catch {
             print(error)
@@ -112,5 +125,7 @@ final class DailyRecordRepository: DailyRecordRepositoryType {
     func fetch(by date: Date) -> Results<DailyRecord> {
         return localRealm.objects(DailyRecord.self).filter("date >= %@ AND date < %@", date, Date(timeInterval: 86400, since: date))
     }
+    
+//    func fetchFood
    
 }

@@ -46,6 +46,7 @@ final class RecordView: BaseView {
             $0.layer.borderWidth = Constants.Design.borderWidth
             $0.layer.borderColor = Constants.Color.borderColor
             $0.layer.cornerRadius = Constants.Design.cornerRadius
+            $0.backgroundColor = Constants.Color.accentColor
         }
         
         self.addSubview(overallView)

@@ -12,6 +12,7 @@ final class FoodView: BaseView {
     let imageView = UIImageView()
     let cameraButton = UIButton()
     let nutritionLabel = UILabel()
+    let foodNameView = FoodCalorieView()
     let calorieView = FoodCalorieView()
     let carbView = FoodCalorieView()
     let proteinView = FoodCalorieView()
@@ -33,6 +34,11 @@ final class FoodView: BaseView {
         cameraButton.do {
             $0.setImage(UIImage(systemName: "photo.fill.on.rectangle.fill"), for: .normal)
             $0.tintColor = Constants.Color.primaryText
+        }
+        
+        foodNameView.do {
+            $0.calorieLabel.text = "음식 이름"
+            $0.calorieTextField.placeholder = "입력"
         }
         
         nutritionLabel.do {
@@ -73,9 +79,10 @@ final class FoodView: BaseView {
             $0.layer.borderWidth = Constants.Design.borderWidth
             $0.layer.borderColor = Constants.Color.borderColor
             $0.layer.cornerRadius = Constants.Design.cornerRadius
+            $0.backgroundColor = Constants.Color.accentColor
         }
         
-        [imageView, cameraButton, nutritionLabel, calorieView, carbView, proteinView, fatView, unitLabel, addButton].forEach {
+        [imageView, cameraButton, foodNameView, nutritionLabel, calorieView, carbView, proteinView, fatView, unitLabel, addButton].forEach {
             self.addSubview($0)
         }
         
@@ -95,13 +102,18 @@ final class FoodView: BaseView {
             $0.top.trailing.equalTo(imageView).inset(spacing)
         }
         
+        foodNameView.snp.makeConstraints {
+            $0.top.equalTo(imageView.snp.bottom)
+            $0.leading.equalTo(self.safeAreaLayoutGuide).offset(spacing)
+        }
+        
         nutritionLabel.snp.makeConstraints {
-            $0.top.equalTo(imageView.snp.bottom).offset(spacing)
+            $0.top.equalTo(foodNameView.snp.bottom)
             $0.leading.equalTo(self.safeAreaLayoutGuide).inset(spacing)
         }
         
         calorieView.snp.makeConstraints {
-            $0.top.equalTo(nutritionLabel.snp.bottom)
+            $0.top.equalTo(nutritionLabel.snp.bottom).offset(10)
             $0.leading.equalTo(self.safeAreaLayoutGuide).offset(spacing)
         }
         

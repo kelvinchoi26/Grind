@@ -18,6 +18,8 @@ final class HomeViewController: BaseViewController {
     
     private let homeView = HomeView()
     
+    private let foodList: List<Food> = List<Food>()
+    
 //    private let leftBarTitle = UIBarButtonItem()
     private let rightBarTitle = UIBarButtonItem()
     
@@ -51,15 +53,14 @@ final class HomeViewController: BaseViewController {
         swipeAction()
         
         configureCalendar()
-        
+    
         reloadLabel()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if !(tasks?.isEmpty ?? true) { self.tasks = self.repository.fetch(by: currentDate) }
-        
+        reloadLabel()
     }
     
     override func configureUI() {
@@ -108,7 +109,7 @@ extension HomeViewController {
         if !userDefaults.bool(forKey: "NotFirst") {
             
             let walkThrough = WalkThroughViewController()
-            walkThrough.modalPresentationStyle = .overFullScreen
+            walkThrough.modalPresentationStyle = .fullScreen
             
             self.present(walkThrough, animated: true)
         }
@@ -146,10 +147,14 @@ extension HomeViewController {
             self.repository.editWeightCalorie(item: self.tasks ?? self.repository.fetch(), weight: weight, calorie: calorie)
         }
         
+        vc.tasks = self.tasks
+        vc.currentDate = self.currentDate
+        
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func reloadLabel() {
+        
         homeView.weightView.todayWeightView.cellContent.text = String(tasks?[0].weight ?? 0.0)
         homeView.weightView.WeightDiffView.cellContent.text = String(0.0)
         homeView.calorieView.calorieConsumed.cellContent.text = String(tasks?[0].caloriesConsumed ?? 0)
@@ -159,7 +164,7 @@ extension HomeViewController {
         homeView.workoutView.todayWorkoutTextField.text = String(tasks?[0].workoutRoutine ?? "")
         homeView.workoutView.workoutTimeTextField.text = String(tasks?[0].workoutTime ?? "")
         
-        self.navigationItem.title = formatter.string(from: tasks?[0].date ?? Date())
+        self.navigationItem.title = formatter.string(from: tasks?[0].date ?? currentDate)
     }
 }
 
@@ -181,7 +186,7 @@ extension HomeViewController: FSCalendarDelegate, FSCalendarDataSource, FSCalend
         let newTasks = repository.fetch(by: currentDate)
         
         if newTasks.count == 0 {
-            let record = DailyRecord(date: currentDate, weight: 0.0, caloriesBurned: nil, caloriesConsumed: nil, photo: nil, didWorkout: false, workoutRoutine: nil, workoutTime: nil, condition: nil)
+            let record = DailyRecord(date: currentDate, weight: 0.0, caloriesBurned: 0, caloriesConsumed: 0, didWorkout: false, workoutRoutine: nil, workoutTime: nil, food: foodList)
             
             repository.addRecord(item: record)
             tasks = repository.fetch(by: currentDate)

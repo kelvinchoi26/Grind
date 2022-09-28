@@ -6,12 +6,19 @@
 //
 
 import UIKit
+import RealmSwift
 
 final class WalkThroughViewController: BaseViewController {
+    
+    var tasks: Results<DailyRecord>?
     
     private let repository = DailyRecordRepository.repository
     
     let walkThrough = WalkThroughView()
+    
+    var currentDate = Date().addingTimeInterval(-86400)
+    
+    private let foodList: List<Food> = List<Food>()
     
     override func loadView() {
         super.loadView()
@@ -33,9 +40,12 @@ final class WalkThroughViewController: BaseViewController {
             return
         }
         
-        let record = DailyRecord(date: Date(), weight: Double(weight), caloriesBurned: nil, caloriesConsumed: nil, photo: nil, didWorkout: false, workoutRoutine: nil, workoutTime: nil, condition: nil)
+        currentDate = Date()
+        let record = DailyRecord(date: currentDate, weight: Double(weight), caloriesBurned: 0, caloriesConsumed: 0, didWorkout: false, workoutRoutine: nil, workoutTime: nil, food: foodList)
         
         repository.addRecord(item: record)
+        
+        tasks = repository.fetch(by: currentDate)
         
         HealthKitManager.shared.checkAuthorization()
         HealthKitManager.shared.fetchEnergyBurned()
