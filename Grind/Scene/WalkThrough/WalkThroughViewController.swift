@@ -14,6 +14,8 @@ final class WalkThroughViewController: BaseViewController {
     
     private let repository = DailyRecordRepository.repository
     
+    var completionHandler: ((Results<DailyRecord>?) -> ())?
+    
     let walkThrough = WalkThroughView()
     
     var currentDate = Date().addingTimeInterval(-86400)
@@ -46,6 +48,8 @@ final class WalkThroughViewController: BaseViewController {
         repository.addRecord(item: record)
         
         tasks = repository.fetch(by: currentDate)
+        
+        completionHandler?(tasks)
         
         HealthKitManager.shared.checkAuthorization()
         HealthKitManager.shared.fetchEnergyBurned()

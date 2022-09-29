@@ -87,7 +87,7 @@ final class DailyRecordRepository: DailyRecordRepositoryType {
     func addFood(item: DailyRecord, food: Food, addedCalorie: Int) {
         do {
             try localRealm.write {
-                item.caloriesConsumed = 10000
+                item.caloriesConsumed += addedCalorie
                 item.food.append(food)
             }
         } catch {

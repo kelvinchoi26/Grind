@@ -15,9 +15,11 @@ final class FoodViewController: BaseViewController {
     
     private let repository = DailyRecordRepository.repository
     
+    var completionHandler: ((Results<DailyRecord>?) -> ())?
+    
     let foodView = FoodView()
     
-    var tasks: Results<DailyRecord>?
+    var tasks: Results<DailyRecord>? 
     
     var currentDate = Date().addingTimeInterval(-86400)
     
@@ -34,6 +36,13 @@ final class FoodViewController: BaseViewController {
         
         addFoodButtonTarget()
             
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        completionHandler?(tasks)
+        
     }
     
 }
@@ -81,6 +90,8 @@ extension FoodViewController {
         repository.addFood(item: tasks?[0] ?? repository.fetch()[0], food: food, addedCalorie: food.calorie)
         
         saveImageToDocumentDirectory(imageName: "\(food.objectId).png", image: image)
+        
+        self.tasks = repository.fetch(by: currentDate)
         
         self.dismiss(animated: true)
     }

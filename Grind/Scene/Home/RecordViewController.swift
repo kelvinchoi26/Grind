@@ -16,7 +16,11 @@ final class RecordViewController: BaseViewController {
     
     var completionHandler: ((String, String) -> ())?
     
-    var tasks: Results<DailyRecord>?
+    var tasks: Results<DailyRecord>? {
+        didSet {
+            reloadLabel()
+        }
+    }
     
     var currentDate = Date().addingTimeInterval(-86400)
     
@@ -38,6 +42,9 @@ final class RecordViewController: BaseViewController {
         super.viewWillDisappear(animated)
         
         completionHandler?(self.recordView.todayWeightView.cellContent.text ?? "", self.recordView.calorieView.cellContent.text ?? "")
+        
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -63,11 +70,14 @@ extension RecordViewController {
         vc.tasks = self.tasks
         vc.currentDate = self.currentDate
         
+        vc.completionHandler = { tasks in
+            self.tasks = tasks
+        }
+        
         self.present(vc, animated: true, completion: nil)
     }
     
     func reloadLabel() {
-        tasks = repository.fetch(by: currentDate)
         
         recordView.todayWeightView.cellContent.text = String(tasks?[0].weight ?? 0.0)
         recordView.calorieView.cellContent.text = String(tasks?[0].caloriesConsumed ?? 0)

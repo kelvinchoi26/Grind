@@ -53,14 +53,15 @@ final class HomeViewController: BaseViewController {
         swipeAction()
         
         configureCalendar()
-    
+        
         reloadLabel()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+    
         reloadLabel()
+        
     }
     
     override func configureUI() {
@@ -111,7 +112,13 @@ extension HomeViewController {
             let walkThrough = WalkThroughViewController()
             walkThrough.modalPresentationStyle = .fullScreen
             
+            walkThrough.completionHandler = { tasks in
+                self.tasks = tasks
+            }
+            
             self.present(walkThrough, animated: true)
+        } else {
+            self.tasks = repository.fetch(by: currentDate)
         }
     }
     
@@ -193,19 +200,6 @@ extension HomeViewController: FSCalendarDelegate, FSCalendarDataSource, FSCalend
         } else {
             tasks = repository.fetch(by: currentDate)
         }
-        
-//        var newTasks: Results<DailyRecord>?
-//        newTasks = repository.fetch(by: currentDate)
-//        print(newTasks ?? 0)
-        
-//        if newTasks?[0] != nil {
-//            tasks = repository.fetch(by: currentDate)
-//        } else {
-//            let record = DailyRecord(date: currentDate, weight: 0.0, caloriesBurned: nil, caloriesConsumed: nil, photo: nil, didWorkout: false, workoutRoutine: nil, workoutTime: nil, condition: nil)
-//
-//            repository.addRecord(item: record)
-//            tasks = repository.fetch(by: currentDate)
-//        }
         
         calendar.do {
             $0.isHidden = true
