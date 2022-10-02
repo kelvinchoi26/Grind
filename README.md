@@ -206,3 +206,13 @@
 - 홈화면의 Realm을 통한 UI 업데이트 문제 해결
 - 첫 실행 시, 해당 날짜의 객체가 안 불러지는 문제 해결
 - Realm 관련 데이터 전달 문제 완전 해결
+
+### 2022-10-02 진행상황
+--- 
+- Charts 그래프를 그릴 때 마다 아래 두 가지 오류가 발생했다
+    - type 'chartdataset' does not conform to protocol 'rangereplaceablecollection'
+    - unavailable instance method 'replacesubrange(_:with:)' was used to satisfy a requirement of protocol 'rangereplaceablecollection'
+- Charts의 설치 버전을 최신 버전으로 바꾸니까 모든 런타임에러가 해결이 되었고 설치할 때 Charts만 선택해서 설치하면 추가적인 오류 발생을 방지할 수 있다(ChartsDynamic 선택 해제)
+- 통계 탭의 그래프를 정상적으로 출력하고 있다
+    - 다만 x축의 값을 더 알아보기 쉽게 수정할 필요가 있어보임 (Double값밖에 못 들어가는지, String값 넣을 수 있는지 질문)
+- 내일 설정 탭만 완성하면 1.0 버전을 출시할 수 있게 될 것 같다!

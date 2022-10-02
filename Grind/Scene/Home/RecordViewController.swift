@@ -43,13 +43,11 @@ final class RecordViewController: BaseViewController {
         
         completionHandler?(self.recordView.todayWeightView.cellContent.text ?? "", self.recordView.calorieView.cellContent.text ?? "")
         
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
         reloadLabel()
     }
     
@@ -65,7 +63,7 @@ extension RecordViewController {
     }
     
     @objc func addCalorie() {
-        let vc = FoodViewController()
+        let vc = AddFoodViewController()
         
         vc.tasks = self.tasks
         vc.currentDate = self.currentDate

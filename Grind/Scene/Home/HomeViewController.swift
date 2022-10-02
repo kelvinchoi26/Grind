@@ -20,7 +20,6 @@ final class HomeViewController: BaseViewController {
     
     private let foodList: List<Food> = List<Food>()
     
-//    private let leftBarTitle = UIBarButtonItem()
     private let rightBarTitle = UIBarButtonItem()
     
     var tasks: Results<DailyRecord>? {
@@ -29,7 +28,7 @@ final class HomeViewController: BaseViewController {
         }
     }
     
-    let formatter: DateFormatter = {
+    private let formatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "MM월 dd일"
         return formatter
@@ -68,10 +67,6 @@ final class HomeViewController: BaseViewController {
         
         view.backgroundColor = Constants.Color.backgroundColor
         
-        
-//        let recordBarButton = UIBarButtonItem(title: "기록", style: .plain, target: self, action: nil)
-//        let cameraBarButton = UIBarButtonItem(title: "카메라", style: .plain, target: self, action: nil)
-        
         rightBarTitle.do {
             $0.title = "기록"
             $0.setTitleTextAttributes([NSAttributedString.Key.font: Constants.Font.subTitleFont as Any], for: .normal)
@@ -81,17 +76,10 @@ final class HomeViewController: BaseViewController {
             $0.action = #selector(recordButtonClicked)
         }
         
-//        rightBarTitle.do {
-//            $0.title = "카메라"
-//            $0.setTitleTextAttributes([NSAttributedString.Key.font: Constants.Font.subTitleFont as Any], for: .normal)
-//            $0.tintColor = Constants.Color.primaryText
-//        }
-        
         // 오늘의 날짜
         self.navigationItem.title = formatter.string(from: tasks?[0].date ?? Date())
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: Constants.Font.subTitleFont as Any]
         self.navigationItem.rightBarButtonItem = rightBarTitle
-//        self.navigationItem.rightBarButtonItem = rightBarTitle
         
         self.navigationItem.titleView?.tintColor = Constants.Color.primaryText
         self.navigationItem.titleView?.backgroundColor = Constants.Color.backgroundColor
@@ -100,13 +88,12 @@ final class HomeViewController: BaseViewController {
         backBarButtonItem.tintColor = Constants.Color.primaryText
         self.navigationItem.backBarButtonItem = backBarButtonItem
 
-
     }
     
 }
 
 extension HomeViewController {
-    func checkInitialRun() {
+    private func checkInitialRun() {
         if !userDefaults.bool(forKey: "NotFirst") {
             
             let walkThrough = WalkThroughViewController()
@@ -122,7 +109,7 @@ extension HomeViewController {
         }
     }
     
-    func swipeAction() {
+    private func swipeAction() {
         let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(swipeEvent(_:)))
         swipeUp.direction = .up
         self.view.addGestureRecognizer(swipeUp)
@@ -160,7 +147,7 @@ extension HomeViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    func reloadLabel() {
+    private func reloadLabel() {
         
         homeView.weightView.todayWeightView.cellContent.text = String(tasks?[0].weight ?? 0.0)
         homeView.weightView.WeightDiffView.cellContent.text = String(0.0)
@@ -177,7 +164,7 @@ extension HomeViewController {
 
 extension HomeViewController: FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelegateAppearance {
     
-    func configureCalendar() {
+    private func configureCalendar() {
         homeView.calendar.delegate = self
         homeView.calendar.dataSource = self
     }

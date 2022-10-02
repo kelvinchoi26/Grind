@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E4489A128E6A486004CA993 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4489A028E6A486004CA993 /* TabViewController.swift */; };
+		1E4489A428E6A5FD004CA993 /* Tabman in Frameworks */ = {isa = PBXBuildFile; productRef = 1E4489A328E6A5FD004CA993 /* Tabman */; };
+		1E4489A728E6A614004CA993 /* Pageboy in Frameworks */ = {isa = PBXBuildFile; productRef = 1E4489A628E6A614004CA993 /* Pageboy */; };
+		1E4489A928E6AA00004CA993 /* FoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4489A828E6AA00004CA993 /* FoodViewController.swift */; };
+		1E4489AC28E6B588004CA993 /* StatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4489AB28E6B588004CA993 /* StatView.swift */; };
+		1E4489B728E9E0E5004CA993 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 1E4489B628E9E0E5004CA993 /* Algorithms */; };
+		1E4489BA28E9E593004CA993 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 1E4489B928E9E593004CA993 /* Charts */; };
 		1E52825D28D248BF002FB4EE /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 1E52825C28D248BF002FB4EE /* .gitignore */; };
 		1E52825F28D24A0F002FB4EE /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E52825E28D24A0F002FB4EE /* Food.swift */; };
 		1E52826628D3648C002FB4EE /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E52826528D3648C002FB4EE /* HomeView.swift */; };
@@ -25,7 +32,7 @@
 		1E52829B28DA1C41002FB4EE /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 1E52829A28DA1C41002FB4EE /* FSCalendar */; };
 		1E5CF07828E2190A004D9010 /* YPImagePicker in Frameworks */ = {isa = PBXBuildFile; productRef = 1E5CF07728E2190A004D9010 /* YPImagePicker */; };
 		1E5CF07A28E21B49004D9010 /* FoodRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5CF07928E21B49004D9010 /* FoodRepository.swift */; };
-		1E5CF07F28E21E3E004D9010 /* FoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5CF07E28E21E3E004D9010 /* FoodViewController.swift */; };
+		1E5CF07F28E21E3E004D9010 /* AddFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5CF07E28E21E3E004D9010 /* AddFoodViewController.swift */; };
 		1E5CF08128E2202A004D9010 /* FoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5CF08028E2202A004D9010 /* FoodView.swift */; };
 		1E5CF08328E222EE004D9010 /* FoodCalorieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5CF08228E222EE004D9010 /* FoodCalorieView.swift */; };
 		1E5CF08B28E3DCCB004D9010 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 1E5CF08A28E3DCCB004D9010 /* Realm */; };
@@ -60,6 +67,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1E4489A028E6A486004CA993 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
+		1E4489A828E6AA00004CA993 /* FoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodViewController.swift; sourceTree = "<group>"; };
+		1E4489AB28E6B588004CA993 /* StatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatView.swift; sourceTree = "<group>"; };
 		1E52825C28D248BF002FB4EE /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		1E52825E28D24A0F002FB4EE /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		1E52826528D3648C002FB4EE /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -77,7 +87,7 @@
 		1E52829028D8DEAC002FB4EE /* DailyRecordRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyRecordRepository.swift; sourceTree = "<group>"; };
 		1E52829728D98A07002FB4EE /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
 		1E5CF07928E21B49004D9010 /* FoodRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodRepository.swift; sourceTree = "<group>"; };
-		1E5CF07E28E21E3E004D9010 /* FoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodViewController.swift; sourceTree = "<group>"; };
+		1E5CF07E28E21E3E004D9010 /* AddFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodViewController.swift; sourceTree = "<group>"; };
 		1E5CF08028E2202A004D9010 /* FoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodView.swift; sourceTree = "<group>"; };
 		1E5CF08228E222EE004D9010 /* FoodCalorieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCalorieView.swift; sourceTree = "<group>"; };
 		1E5E760728DCBFAD004EA9FD /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
@@ -112,11 +122,15 @@
 			files = (
 				1E5CF08D28E3DCCB004D9010 /* RealmSwift in Frameworks */,
 				1E5CF08B28E3DCCB004D9010 /* Realm in Frameworks */,
+				1E4489B728E9E0E5004CA993 /* Algorithms in Frameworks */,
 				1E9DE88F28DD7C510022FCBC /* SwiftyJSON in Frameworks */,
 				1E5CF09328E4B9FD004D9010 /* Toast in Frameworks */,
 				1E5CF09628E4BAA4004D9010 /* JGProgressHUD in Frameworks */,
 				1E9DE89228DD7C8D0022FCBC /* Alamofire in Frameworks */,
+				1E4489A728E6A614004CA993 /* Pageboy in Frameworks */,
 				1EA4D09528CFA2F300A9E444 /* SnapKit in Frameworks */,
+				1E4489BA28E9E593004CA993 /* Charts in Frameworks */,
+				1E4489A428E6A5FD004CA993 /* Tabman in Frameworks */,
 				1E52829B28DA1C41002FB4EE /* FSCalendar in Frameworks */,
 				1EA4D09828CFA32500A9E444 /* Then in Frameworks */,
 				1E5CF07828E2190A004D9010 /* YPImagePicker in Frameworks */,
@@ -126,6 +140,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E4489AA28E6B57A004CA993 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1E4489AB28E6B588004CA993 /* StatView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		1E52826028D24AC4002FB4EE /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -312,7 +334,9 @@
 				1E52826428D35E12002FB4EE /* View */,
 				1E7DCF8628D0F209000D43B5 /* HomeViewController.swift */,
 				1E5E760728DCBFAD004EA9FD /* RecordViewController.swift */,
-				1E5CF07E28E21E3E004D9010 /* FoodViewController.swift */,
+				1E4489A828E6AA00004CA993 /* FoodViewController.swift */,
+				1E5CF07E28E21E3E004D9010 /* AddFoodViewController.swift */,
+				1E4489A028E6A486004CA993 /* TabViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -328,6 +352,7 @@
 		1EA4D0A928CFA5C400A9E444 /* Stat */ = {
 			isa = PBXGroup;
 			children = (
+				1E4489AA28E6B57A004CA993 /* View */,
 				1E7DCF9028D0F3F6000D43B5 /* StatViewController.swift */,
 			);
 			path = Stat;
@@ -378,6 +403,10 @@
 				1E5CF08C28E3DCCB004D9010 /* RealmSwift */,
 				1E5CF09228E4B9FD004D9010 /* Toast */,
 				1E5CF09528E4BAA4004D9010 /* JGProgressHUD */,
+				1E4489A328E6A5FD004CA993 /* Tabman */,
+				1E4489A628E6A614004CA993 /* Pageboy */,
+				1E4489B628E9E0E5004CA993 /* Algorithms */,
+				1E4489B928E9E593004CA993 /* Charts */,
 			);
 			productName = Grind;
 			productReference = 1EA4D07528CF9EB500A9E444 /* Grind.app */;
@@ -417,6 +446,10 @@
 				1E5CF08928E3DCCB004D9010 /* XCRemoteSwiftPackageReference "realm-swift" */,
 				1E5CF09128E4B9FD004D9010 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 				1E5CF09428E4BAA3004D9010 /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
+				1E4489A228E6A5FD004CA993 /* XCRemoteSwiftPackageReference "Tabman" */,
+				1E4489A528E6A614004CA993 /* XCRemoteSwiftPackageReference "Pageboy" */,
+				1E4489B528E9E0E5004CA993 /* XCRemoteSwiftPackageReference "swift-algorithms" */,
+				1E4489B828E9E593004CA993 /* XCRemoteSwiftPackageReference "Charts" */,
 			);
 			productRefGroup = 1EA4D07628CF9EB500A9E444 /* Products */;
 			projectDirPath = "";
@@ -457,6 +490,8 @@
 				1EA4D0AF28CFA6B500A9E444 /* DailyRecord.swift in Sources */,
 				1E5CF07A28E21B49004D9010 /* FoodRepository.swift in Sources */,
 				1E52826628D3648C002FB4EE /* HomeView.swift in Sources */,
+				1E4489AC28E6B588004CA993 /* StatView.swift in Sources */,
+				1E4489A928E6AA00004CA993 /* FoodViewController.swift in Sources */,
 				1E52828428D78631002FB4EE /* HomeWeightView.swift in Sources */,
 				1EA4D0A328CFA47B00A9E444 /* Color.swift in Sources */,
 				1E52829828D98A07002FB4EE /* Text.swift in Sources */,
@@ -467,10 +502,11 @@
 				1E52827228D43D2B002FB4EE /* HealthKitManager.swift in Sources */,
 				1E52828828D78B1F002FB4EE /* HomeAdviceView.swift in Sources */,
 				1E52825F28D24A0F002FB4EE /* Food.swift in Sources */,
-				1E5CF07F28E21E3E004D9010 /* FoodViewController.swift in Sources */,
+				1E5CF07F28E21E3E004D9010 /* AddFoodViewController.swift in Sources */,
 				1E5CF08328E222EE004D9010 /* FoodCalorieView.swift in Sources */,
 				1E52828C28D8D433002FB4EE /* WalkThroughViewController.swift in Sources */,
 				1E5E760A28DCC1F8004EA9FD /* RecordView.swift in Sources */,
+				1E4489A128E6A486004CA993 /* TabViewController.swift in Sources */,
 				1EA4D0A528CFA49300A9E444 /* Font.swift in Sources */,
 				1E9DE88C28DD7C290022FCBC /* FoodSearchAPIManager.swift in Sources */,
 				1E7DCF8728D0F209000D43B5 /* HomeViewController.swift in Sources */,
@@ -721,6 +757,38 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		1E4489A228E6A5FD004CA993 /* XCRemoteSwiftPackageReference "Tabman" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/uias/Tabman.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+		1E4489A528E6A614004CA993 /* XCRemoteSwiftPackageReference "Pageboy" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/uias/Pageboy.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+		1E4489B528E9E0E5004CA993 /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-algorithms.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		1E4489B828E9E593004CA993 /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts.git";
+			requirement = {
+				kind = exactVersion;
+				version = 4.1.0;
+			};
+		};
 		1E52829928DA1C41002FB4EE /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/WenchaoD/FSCalendar.git";
@@ -796,6 +864,26 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		1E4489A328E6A5FD004CA993 /* Tabman */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1E4489A228E6A5FD004CA993 /* XCRemoteSwiftPackageReference "Tabman" */;
+			productName = Tabman;
+		};
+		1E4489A628E6A614004CA993 /* Pageboy */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1E4489A528E6A614004CA993 /* XCRemoteSwiftPackageReference "Pageboy" */;
+			productName = Pageboy;
+		};
+		1E4489B628E9E0E5004CA993 /* Algorithms */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1E4489B528E9E0E5004CA993 /* XCRemoteSwiftPackageReference "swift-algorithms" */;
+			productName = Algorithms;
+		};
+		1E4489B928E9E593004CA993 /* Charts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1E4489B828E9E593004CA993 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = Charts;
+		};
 		1E52829A28DA1C41002FB4EE /* FSCalendar */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 1E52829928DA1C41002FB4EE /* XCRemoteSwiftPackageReference "FSCalendar" */;
