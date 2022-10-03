@@ -21,14 +21,21 @@ final class StatView: BaseView {
             $0.leftAxis.axisLineColor = Constants.Color.primaryText ?? .black
             $0.xAxis.labelPosition = .bottom
             $0.xAxis.labelFont = Constants.Font.textFont ?? .boldSystemFont(ofSize: 12)
-            $0.xAxis.setLabelCount(6, force: false)
             
             $0.noDataText = "체중을 입력해주세요."
             $0.noDataFont = Constants.Font.subTitleFont ?? .boldSystemFont(ofSize: 12)
             $0.noDataTextColor = Constants.Color.primaryText ?? .black
             
-            // 애니메이션 기능 (3초 동안 그려짐)
-            $0.animate(xAxisDuration: 3)
+            $0.leftAxis.drawAxisLineEnabled = false
+            $0.leftAxis.drawGridLinesEnabled = false
+            $0.rightAxis.drawAxisLineEnabled = false
+            $0.rightAxis.drawGridLinesEnabled = false
+            $0.xAxis.enabled = false
+            $0.leftAxis.enabled = false
+            $0.rightAxis.enabled = false
+            
+            $0.legend.font = Constants.Font.textFont ?? .boldSystemFont(ofSize: 12)
+            
         }
         
         calorieChartView.do {
@@ -40,14 +47,20 @@ final class StatView: BaseView {
             $0.leftAxis.axisLineColor = Constants.Color.primaryText ?? .black
             $0.xAxis.labelPosition = .bottom
             $0.xAxis.labelFont = Constants.Font.textFont ?? .boldSystemFont(ofSize: 12)
-            $0.xAxis.setLabelCount(6, force: false)
             
             $0.noDataText = "섭취칼로리를 입력해주세요."
             $0.noDataFont = Constants.Font.subTitleFont ?? .boldSystemFont(ofSize: 12)
             $0.noDataTextColor = Constants.Color.primaryText ?? .black
             
-            // 애니메이션 기능 (3초 동안 그려짐)
-            $0.animate(xAxisDuration: 3)
+            $0.leftAxis.drawAxisLineEnabled = false
+            $0.leftAxis.drawGridLinesEnabled = false
+            $0.rightAxis.drawAxisLineEnabled = false
+            $0.rightAxis.drawGridLinesEnabled = false
+            $0.xAxis.enabled = false
+            $0.leftAxis.enabled = false
+            $0.rightAxis.enabled = false
+
+            $0.legend.font = Constants.Font.textFont ?? .boldSystemFont(ofSize: 12)
         }
         
         [weightChartView, calorieChartView].forEach {
@@ -63,13 +76,13 @@ final class StatView: BaseView {
         weightChartView.snp.makeConstraints {
             $0.top.equalTo(self.safeAreaLayoutGuide)
             $0.centerX.equalTo(self)
-            $0.leading.trailing.equalToSuperview().inset(spacing)
+            $0.leading.trailing.equalToSuperview()
             $0.height.equalToSuperview().multipliedBy(0.35)
         }
         
         calorieChartView.snp.makeConstraints {
             $0.centerX.equalTo(self)
-            $0.leading.trailing.equalToSuperview().inset(spacing)
+            $0.leading.trailing.equalToSuperview()
             $0.height.equalToSuperview().multipliedBy(0.35)
             $0.top.equalTo(weightChartView.snp.bottom).offset(spacing)
         }

@@ -65,12 +65,12 @@ extension StatViewController: ChartViewDelegate {
         var lineDataEntries = [ChartDataEntry]()
         
         for task in tempTasks {
-            print(task.date)
+    
             let date = Double(formatter.string(from: task.date)) ?? 0.0
-            let weight = task.weight ?? 0.0
+            let calorie = Double(task.weight ?? 0.0)
             // 체중 입력 안 한 경우 그래프에 포함 안 시킴
-            if weight != 0.0 {
-                let lineDataEntry = ChartDataEntry(x: date, y: weight)
+            if calorie != 0 {
+                let lineDataEntry = ChartDataEntry(x: date, y: calorie)
                 lineDataEntries.append(lineDataEntry)
             }
             
@@ -79,16 +79,20 @@ extension StatViewController: ChartViewDelegate {
         let lineChartDataSet = LineChartDataSet(entries: lineDataEntries, label: "체중")
         
         lineChartDataSet.do {
+            
+            $0.colors = [NSUIColor.blue]
             $0.mode = .cubicBezier
-            $0.drawCirclesEnabled = false
+            $0.cubicIntensity = 0.2
+            
+            $0.drawFilledEnabled = true
+            
+            $0.mode = .cubicBezier
             $0.lineWidth = 3
             $0.setColor(Constants.Color.primaryText ?? .black)
-
-            $0.drawFilledEnabled = true
             
             $0.drawHorizontalHighlightIndicatorEnabled = false
             $0.highlightColor = Constants.Color.primaryText ?? .black
-            
+            $0.valueFont = Constants.Font.smallFont ?? .boldSystemFont(ofSize: 12)
         }
         
         let data = LineChartData(dataSet: lineChartDataSet)
@@ -101,7 +105,7 @@ extension StatViewController: ChartViewDelegate {
         var lineDataEntries = [ChartDataEntry]()
         
         for task in tempTasks {
-            print(task.date)
+    
             let date = Double(formatter.string(from: task.date)) ?? 0.0
             let calorie = Double(task.caloriesConsumed)
             // 체중 입력 안 한 경우 그래프에 포함 안 시킴
@@ -115,16 +119,19 @@ extension StatViewController: ChartViewDelegate {
         let lineChartDataSet = LineChartDataSet(entries: lineDataEntries, label: "섭취칼로리")
         
         lineChartDataSet.do {
+            $0.colors = [NSUIColor.blue]
             $0.mode = .cubicBezier
-            $0.drawCirclesEnabled = false
+            $0.cubicIntensity = 0.2
+            
+            $0.drawFilledEnabled = true
+            
+            $0.mode = .cubicBezier
             $0.lineWidth = 3
             $0.setColor(Constants.Color.primaryText ?? .black)
-
-            $0.drawFilledEnabled = true
             
             $0.drawHorizontalHighlightIndicatorEnabled = false
             $0.highlightColor = Constants.Color.primaryText ?? .black
-            
+            $0.valueFont = Constants.Font.smallFont ?? .boldSystemFont(ofSize: 12)
         }
         
         let data = LineChartData(dataSet: lineChartDataSet)
