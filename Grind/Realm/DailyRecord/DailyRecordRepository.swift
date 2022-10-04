@@ -8,11 +8,17 @@ import RealmSwift
 import Foundation
 
 protocol DailyRecordRepositoryType {
-//    func printFileLocation()
-//    func addRecord(item: DailyRecord)
-//    func changeWeight(item: DailyRecord, updatedWeight: Double)
-//    func updateCalorieConsumed(item: DailyRecord, updatedCalorie: Int)
-//    func updateCalorieBurned(item: DailyRecord, updatedCalorie: Int)
+    func printFileLocation()
+    func addRecord(item: DailyRecord)
+    func editWorkoutRoutine(item: Results<DailyRecord>, routine: String)
+    func editWorkoutTime(item: Results<DailyRecord>, time: String)
+    func editWeightCalorie(item: Results<DailyRecord>, weight: String, calorie: String)
+    func changeWeight(item: DailyRecord, updatedWeight: Double)
+    func addFood(item: DailyRecord, food: Food, addedCalorie: Int)
+    func deleteFood(item: DailyRecord, food: Food, deletedCalorie: Int)
+    func updateCalorieBurned(item: Results<DailyRecord>, updatedCalorie: Int)
+    func fetch() -> Results<DailyRecord>
+    func fetch(by date: Date) -> Results<DailyRecord>
 }
 
 final class DailyRecordRepository: DailyRecordRepositoryType {
@@ -108,10 +114,10 @@ final class DailyRecordRepository: DailyRecordRepositoryType {
     }
     
     // 활동칼로리가 업데이트 될 때 마다 실행
-    func updateCalorieBurned(item: DailyRecord, updatedCalorie: Int) {
+    func updateCalorieBurned(item: Results<DailyRecord>, updatedCalorie: Int) {
         do {
             try localRealm.write {
-                item.caloriesBurned = updatedCalorie
+                item[0].caloriesBurned = updatedCalorie
             }
         } catch {
             print(error)
@@ -126,6 +132,5 @@ final class DailyRecordRepository: DailyRecordRepositoryType {
         return localRealm.objects(DailyRecord.self).filter("date >= %@ AND date < %@", date, Date(timeInterval: 86400, since: date))
     }
     
-//    func fetchFood
    
 }

@@ -41,7 +41,11 @@ final class RecordViewController: BaseViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        completionHandler?(self.recordView.todayWeightView.cellContent.text ?? "", self.recordView.calorieView.cellContent.text ?? "")
+        let weight = Double(self.recordView.todayWeightView.cellContent.text ?? "") ?? 0.0
+        let calorie = self.recordView.calorieView.cellContent.text ?? ""
+        
+        // 소수점 아래 한 자리까지 반올림
+        completionHandler?(String(format: "%.1f", weight), calorie)
         
     }
     

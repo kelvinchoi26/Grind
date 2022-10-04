@@ -58,18 +58,12 @@ final class HomeView: BaseView {
         
         weightView.do {
             $0.todayWeightView.cellTitle.text = "오늘의 체중"
-//            $0.todayWeightView.cellContent.text = "70.4kg"
-            $0.WeightDiffView.cellTitle.text = "체중 변화"
-//            $0.WeightDiffView.cellContent.text = "+0.2kg"
         }
         
         calorieView.do {
             $0.calorieConsumed.cellTitle.text = "섭취 칼로리"
-//            $0.calorieConsumed.cellContent.text = "2150"
             $0.calorieSurplus.cellTitle.text = "잉여 칼로리"
-//            $0.calorieSurplus.cellContent.text = "-500"
             $0.calorieBurned.cellTitle.text = "활동 칼로리"
-//            $0.calorieBurned.cellContent.text = "1000"
         }
         
         [calendar, adviceView, weightView, calorieView, workoutView].forEach {

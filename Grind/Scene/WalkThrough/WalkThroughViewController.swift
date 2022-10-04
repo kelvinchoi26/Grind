@@ -42,8 +42,12 @@ final class WalkThroughViewController: BaseViewController {
             return
         }
         
+        let doubleWeight = Double(weight) ?? 0.0
+        // 소수점 아래 한 자리까지 반올림
+        let finalWeight = String(format: "%.1f", doubleWeight)
+        
         currentDate = Date()
-        let record = DailyRecord(date: currentDate, weight: Double(weight), caloriesBurned: 0, caloriesConsumed: 0, didWorkout: false, workoutRoutine: nil, workoutTime: nil, food: foodList)
+        let record = DailyRecord(date: currentDate, weight: Double(finalWeight), caloriesBurned: 0, caloriesConsumed: 0, didWorkout: false, workoutRoutine: nil, workoutTime: nil, food: foodList)
         
         repository.addRecord(item: record)
         
@@ -52,7 +56,6 @@ final class WalkThroughViewController: BaseViewController {
         completionHandler?(tasks)
         
         HealthKitManager.shared.checkAuthorization()
-        HealthKitManager.shared.fetchEnergyBurned()
         
         userDefaults.set(true, forKey: "NotFirst")
         self.dismiss(animated: false)

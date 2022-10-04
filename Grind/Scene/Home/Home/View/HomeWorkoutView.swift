@@ -12,7 +12,8 @@ final class HomeWorkoutView: BaseView {
     let todayWorkoutLabel = UILabel()
     let todayWorkoutTextField = UITextField()
     let workoutTimeTextField = UITextField()
-    let workoutEmoji = UIButton()
+    let cameraButton = UIButton()
+    let imageView = UIImageView()
     
     override func configureUI() {
         super.configureUI()
@@ -28,25 +29,30 @@ final class HomeWorkoutView: BaseView {
         }
         
         todayWorkoutTextField.do {
-            $0.font = Constants.Font.textFont
+            $0.font = Constants.Font.subTitleFont
             $0.placeholder = "오늘은 어느 부위 운동을 하셨나요?"
             $0.textAlignment = .center
             $0.textColor = Constants.Color.primaryText
         }
         
         workoutTimeTextField.do {
-            $0.font = Constants.Font.textFont
+            $0.font = Constants.Font.subTitleFont
             $0.placeholder = "몇 분 동안 진행하셨나요?"
             $0.textAlignment = .center
             $0.textColor = Constants.Color.primaryText
         }
         
-        workoutEmoji.do {
-            $0.setImage(UIImage(systemName: "face.smiling"), for: .normal)
-            $0.tintColor = Constants.Color.emojiColor
+        cameraButton.do {
+            $0.setImage(UIImage(systemName: "photo.fill.on.rectangle.fill"), for: .normal)
+            $0.tintColor = Constants.Color.primaryText
         }
         
-        [todayWorkoutLabel, todayWorkoutTextField, workoutTimeTextField, workoutEmoji].forEach {
+        imageView.do {
+            $0.alpha = 0.3
+            $0.contentMode = .scaleToFill
+        }
+        
+        [todayWorkoutLabel, todayWorkoutTextField, workoutTimeTextField, cameraButton, imageView].forEach {
             self.addSubview($0)
         }
     }
@@ -67,11 +73,14 @@ final class HomeWorkoutView: BaseView {
             $0.centerX.equalTo(self)
         }
         
-        workoutEmoji.snp.makeConstraints {
-            $0.height.equalTo(self).multipliedBy(0.3)
-            $0.bottom.equalTo(self).inset(10)
-            $0.centerX.equalTo(self)
+        cameraButton.snp.makeConstraints {
+            $0.top.trailing.equalTo(imageView).inset(10)
         }
+        
+        imageView.snp.makeConstraints {
+            $0.edges.equalTo(self)
+        }
+
     }
     
 }

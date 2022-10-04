@@ -11,6 +11,7 @@ import Then
 import FSCalendar
 import Foundation
 import RealmSwift
+import YPImagePicker
 
 final class HomeViewController: BaseViewController {
     
@@ -36,6 +37,8 @@ final class HomeViewController: BaseViewController {
     
     var currentDate = Date().addingTimeInterval(-86400)
     
+    private var calorieBurned: Int = 1000
+    
     override func loadView() {
         super.loadView()
         
@@ -49,6 +52,10 @@ final class HomeViewController: BaseViewController {
         
         repository.printFileLocation()
         
+        addCameraButtonTarget()
+        
+        updateCalorieBurned()
+        
         swipeAction()
         
         configureCalendar()
@@ -58,7 +65,11 @@ final class HomeViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-    
+        
+        updateCalorieBurned()
+        
+        updateAdviceLabel()
+        
         reloadLabel()
         
     }
@@ -130,6 +141,10 @@ extension HomeViewController {
         
     }
     
+    func addCameraButtonTarget() {
+        homeView.workoutView.cameraButton.addTarget(self, action: #selector(YPImagePickerButtonClicked), for: .touchUpInside)
+    }
+    
     @objc func recordButtonClicked() {
     
         let vc = RecordViewController()
@@ -150,15 +165,97 @@ extension HomeViewController {
     private func reloadLabel() {
         
         homeView.weightView.todayWeightView.cellContent.text = String(tasks?[0].weight ?? 0.0)
-        homeView.weightView.WeightDiffView.cellContent.text = String(0.0)
         homeView.calorieView.calorieConsumed.cellContent.text = String(tasks?[0].caloriesConsumed ?? 0)
-        homeView.calorieView.calorieBurned.cellContent.text = String(tasks?[0].caloriesBurned ?? 1000)
+        homeView.calorieView.calorieBurned.cellContent.text = String(calorieBurned)
 
-        homeView.calorieView.calorieSurplus.cellContent.text = String(Int(tasks?[0].caloriesConsumed ?? 0) - Int(tasks?[0].caloriesBurned ?? 1000))
+        homeView.calorieView.calorieSurplus.cellContent.text = String(Int(tasks?[0].caloriesConsumed ?? 0) - calorieBurned)
         homeView.workoutView.todayWorkoutTextField.text = String(tasks?[0].workoutRoutine ?? "")
         homeView.workoutView.workoutTimeTextField.text = String(tasks?[0].workoutTime ?? "")
+        homeView.workoutView.imageView.image = getSavedImage(imageName: "\(String(describing: self.tasks?[0].objectId)).png")
         
         self.navigationItem.title = formatter.string(from: tasks?[0].date ?? currentDate)
+    }
+    
+    private func updateCalorieBurned() {
+        
+        HealthKitManager.shared.fetchEnergyBurned(date: self.currentDate) { calorie in
+            self.calorieBurned = calorie ?? 1000
+        }
+    }
+    
+    @objc func YPImagePickerButtonClicked() {
+        let picker = YPImagePicker()
+        picker.didFinishPicking { [unowned picker] items, _ in
+            if let photo = items.singlePhoto {
+                print(photo.fromCamera) // Image source (camera or library)
+                print(photo.image) // Final image selected by the user
+                print(photo.originalImage) // original image selected by the user, unfiltered
+                print(photo.modifiedImage) // Transformed image, can be nil
+                print(photo.exifMeta) // Print exif meta data of original image.
+                
+                self.homeView.workoutView.imageView.image = photo.image
+                self.saveImageToDocumentDirectory(imageName: "\(String(describing: self.tasks?[0].objectId)).png", image: photo.image)
+            }
+            picker.dismiss(animated: true, completion: nil)
+        }
+        present(picker, animated: true, completion: nil)
+    }
+        
+    func saveImageToDocumentDirectory(imageName: String, image: UIImage) {
+        // 1. 이미지를 저장할 경로를 설정해줘야함 - 도큐먼트 폴더,File 관련된건 Filemanager가 관리함(싱글톤 패턴)
+        guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {return}
+        
+        // 2. 이미지 파일 이름 & 최종 경로 설정
+        let imageURL = documentDirectory.appendingPathComponent(imageName)
+        
+        // 3. 이미지 압축(image.pngData())
+        // 압축할거면 jpegData로~(0~1 사이 값)
+        guard let data = image.pngData() else {
+            print("압축이 실패했습니다.")
+            return
+        }
+        
+        // 4. 이미지 저장: 동일한 경로에 이미지를 저장하게 될 경우, 덮어쓰기하는 경우
+        // 4-1. 이미지 경로 여부 확인
+        if FileManager.default.fileExists(atPath: imageURL.path) {
+            // 4-2. 이미지가 존재한다면 기존 경로에 있는 이미지 삭제
+            do {
+                try FileManager.default.removeItem(at: imageURL)
+                print("이미지 삭제 완료")
+            } catch {
+                print("이미지를 삭제하지 못했습니다.")
+            }
+        }
+        
+        // 5. 이미지를 도큐먼트에 저장
+        // do try catch 문으로 에러 처리
+        do {
+            try data.write(to: imageURL)
+            print("이미지 저장완료")
+        } catch {
+            print("이미지를 저장하지 못했습니다.")
+        }
+    }
+    
+    func getSavedImage(imageName: String) -> UIImage? {
+      if let dir: URL
+        = try? FileManager.default.url(for: .documentDirectory,
+                                       in: .userDomainMask,
+                                       appropriateFor: nil,
+                                       create: false) {
+        let path: String
+          = URL(fileURLWithPath: dir.absoluteString)
+              .appendingPathComponent(imageName).path
+        let image: UIImage? = UIImage(contentsOfFile: path)
+        
+        return image
+      }
+      return nil
+    }
+    
+    func updateAdviceLabel() {
+        let num = Int.random(in: 0...Constants.Text.adviceMessage.count)
+        self.homeView.adviceView.adviceLabel.text = Constants.Text.adviceMessage[num]
     }
 }
 

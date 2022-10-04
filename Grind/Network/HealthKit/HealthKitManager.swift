@@ -6,14 +6,17 @@
 //
 
 import HealthKit
+import UIKit
 
-protocol HealthStoreProtocol {
-
-}
+//protocol HealthStoreProtocol {
+//
+//}
 
 final class HealthKitManager {
     
     private init() {}
+    
+    var completionHandler: ((Int) -> ())?
     
     // Singleton
     static let shared = HealthKitManager()
@@ -44,30 +47,42 @@ final class HealthKitManager {
         print("권한 승인 되어있음")
     }
     
-    func fetchEnergyBurned() {
-        let sampleType = HKObjectType.quantityType(forIdentifier: .activeEnergyBurned)
+    func fetchEnergyBurned(date: Date, completion: @escaping (Int?) -> Void) {
+        guard let sampleType = HKObjectType.quantityType(forIdentifier: .activeEnergyBurned) else {
+            print("활동칼로리를 불러오는데 실패했습니다")
+            // query 실행이 정상적으로 안되는 경우 1000으로 기본 설정
+            return
+        }
         
-        let today = Date()
-        let startDate = Calendar.current.date(byAdding: .month, value: -3, to: today)
+        var components = Calendar.current.dateComponents([.year, .month, .day], from: date)
+        let startDate = Calendar.current.date(from: components)
         
-        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: today, options: HKQueryOptions.strictEndDate)
+        components.day = (components.day ?? 0) + 1
+        let endDate = Calendar.current.date(from: components)
         
-        let query = HKSampleQuery.init(sampleType: sampleType!,
+        let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: HKQueryOptions.strictEndDate)
+        
+        var dailyCalorie: Double = 0
+        
+        let query = HKSampleQuery.init(sampleType: sampleType,
                                        predicate: predicate,
-                                       limit: HKObjectQueryNoLimit,
-                                       sortDescriptors: [NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)]) { (query, results, error) in
-                                        print(results)
+                                       limit: 0,
+                                       sortDescriptors: nil) { (query, results, error) in
+            guard results != nil else {
+                print("활동칼로리 데이터를 불러오는데 실패했습니다.")
+                return
+            }
+            
+            for activity in results as! [HKQuantitySample]
+            {
+                dailyCalorie += activity.quantity.doubleValue(for: HKUnit.kilocalorie())
+            }
+            
+            completion(Int(dailyCalorie))
         }
         
         HealthKitManager.healthStore.execute(query)
+        
     }
     
-//    func updateCalorieBurned() -> HKObjectType {
-//        guard HKHealthStore.isHealthDataAvailable() else {
-//            requestAuthorization()
-//            return
-//        }
-//        
-////        return healthStore.
-//    }
 }

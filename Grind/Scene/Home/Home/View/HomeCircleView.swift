@@ -16,7 +16,7 @@ final class HomeCircleView: BaseView {
         super.configureUI()
         
         self.layer.borderWidth = Constants.Design.borderWidth
-        self.layer.borderColor = Constants.Color.borderColor
+        self.layer.borderColor = Constants.Color.primaryText?.cgColor
         
         cellTitle.do {
             $0.font = Constants.Font.textFont

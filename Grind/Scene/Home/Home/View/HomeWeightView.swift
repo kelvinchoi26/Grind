@@ -10,14 +10,13 @@ import UIKit
 final class HomeWeightView: BaseView {
     
     let todayWeightView = HomeCircleView()
-    let WeightDiffView = HomeCircleView()
     
     override func configureUI() {
         super.configureUI()
         
         self.backgroundColor = .clear
         
-        [todayWeightView, WeightDiffView].forEach {
+        [todayWeightView].forEach {
             self.addSubview($0)
         }
         
@@ -29,13 +28,8 @@ final class HomeWeightView: BaseView {
         todayWeightView.snp.makeConstraints {
             $0.top.bottom.equalTo(self).inset(10)
             $0.width.equalTo(self).multipliedBy(0.25)
-            $0.leading.equalTo(self).inset(30)
+            $0.centerX.equalTo(self)
         }
         
-        WeightDiffView.snp.makeConstraints {
-            $0.top.bottom.equalTo(self).inset(10)
-            $0.width.equalTo(self).multipliedBy(0.25)
-            $0.trailing.equalTo(self).inset(30)
-        }
     }
 }

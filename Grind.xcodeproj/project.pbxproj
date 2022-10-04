@@ -31,7 +31,6 @@
 		1E52829828D98A07002FB4EE /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E52829728D98A07002FB4EE /* Text.swift */; };
 		1E52829B28DA1C41002FB4EE /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 1E52829A28DA1C41002FB4EE /* FSCalendar */; };
 		1E5CF07828E2190A004D9010 /* YPImagePicker in Frameworks */ = {isa = PBXBuildFile; productRef = 1E5CF07728E2190A004D9010 /* YPImagePicker */; };
-		1E5CF07A28E21B49004D9010 /* FoodRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5CF07928E21B49004D9010 /* FoodRepository.swift */; };
 		1E5CF07F28E21E3E004D9010 /* AddFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5CF07E28E21E3E004D9010 /* AddFoodViewController.swift */; };
 		1E5CF08128E2202A004D9010 /* FoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5CF08028E2202A004D9010 /* FoodView.swift */; };
 		1E5CF08328E222EE004D9010 /* FoodCalorieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5CF08228E222EE004D9010 /* FoodCalorieView.swift */; };
@@ -86,7 +85,6 @@
 		1E52828D28D8D444002FB4EE /* WalkThroughView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkThroughView.swift; sourceTree = "<group>"; };
 		1E52829028D8DEAC002FB4EE /* DailyRecordRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyRecordRepository.swift; sourceTree = "<group>"; };
 		1E52829728D98A07002FB4EE /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
-		1E5CF07928E21B49004D9010 /* FoodRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodRepository.swift; sourceTree = "<group>"; };
 		1E5CF07E28E21E3E004D9010 /* AddFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodViewController.swift; sourceTree = "<group>"; };
 		1E5CF08028E2202A004D9010 /* FoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodView.swift; sourceTree = "<group>"; };
 		1E5CF08228E222EE004D9010 /* FoodCalorieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCalorieView.swift; sourceTree = "<group>"; };
@@ -148,16 +146,36 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		1E52826028D24AC4002FB4EE /* Network */ = {
+		1E4489BB28EADACC004CA993 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				1E9DE88A28DD7C150022FCBC /* Food */,
-				1E52827028D43D19002FB4EE /* HealthKit */,
+				1E7DCF8628D0F209000D43B5 /* HomeViewController.swift */,
+				1E4489BE28EADAE9004CA993 /* View */,
 			);
-			path = Network;
+			path = Home;
 			sourceTree = "<group>";
 		};
-		1E52826428D35E12002FB4EE /* View */ = {
+		1E4489BC28EADAD9004CA993 /* Record */ = {
+			isa = PBXGroup;
+			children = (
+				1E5E760728DCBFAD004EA9FD /* RecordViewController.swift */,
+				1E4489A828E6AA00004CA993 /* FoodViewController.swift */,
+				1E4489A028E6A486004CA993 /* TabViewController.swift */,
+				1E4489BF28EADB14004CA993 /* View */,
+			);
+			path = Record;
+			sourceTree = "<group>";
+		};
+		1E4489BD28EADADE004CA993 /* Food */ = {
+			isa = PBXGroup;
+			children = (
+				1E5CF07E28E21E3E004D9010 /* AddFoodViewController.swift */,
+				1E4489C028EADB3E004CA993 /* View */,
+			);
+			path = Food;
+			sourceTree = "<group>";
+		};
+		1E4489BE28EADAE9004CA993 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				1E52826528D3648C002FB4EE /* HomeView.swift */,
@@ -166,12 +184,35 @@
 				1E52828528D7863D002FB4EE /* HomeCalorieView.swift */,
 				1E52828728D78B1F002FB4EE /* HomeAdviceView.swift */,
 				1E52828928D797D8002FB4EE /* HomeWorkoutView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1E4489BF28EADB14004CA993 /* View */ = {
+			isa = PBXGroup;
+			children = (
 				1E5E760928DCC1F8004EA9FD /* RecordView.swift */,
 				1E5E760B28DCCED7004EA9FD /* RecordCircleView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1E4489C028EADB3E004CA993 /* View */ = {
+			isa = PBXGroup;
+			children = (
 				1E5CF08028E2202A004D9010 /* FoodView.swift */,
 				1E5CF08228E222EE004D9010 /* FoodCalorieView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		1E52826028D24AC4002FB4EE /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				1E9DE88A28DD7C150022FCBC /* Food */,
+				1E52827028D43D19002FB4EE /* HealthKit */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		1E52826828D39F01002FB4EE /* Resource */ = {
@@ -220,7 +261,6 @@
 			isa = PBXGroup;
 			children = (
 				1E52825E28D24A0F002FB4EE /* Food.swift */,
-				1E5CF07928E21B49004D9010 /* FoodRepository.swift */,
 			);
 			path = Food;
 			sourceTree = "<group>";
@@ -331,12 +371,9 @@
 		1EA4D0A728CFA5BA00A9E444 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				1E52826428D35E12002FB4EE /* View */,
-				1E7DCF8628D0F209000D43B5 /* HomeViewController.swift */,
-				1E5E760728DCBFAD004EA9FD /* RecordViewController.swift */,
-				1E4489A828E6AA00004CA993 /* FoodViewController.swift */,
-				1E5CF07E28E21E3E004D9010 /* AddFoodViewController.swift */,
-				1E4489A028E6A486004CA993 /* TabViewController.swift */,
+				1E4489BB28EADACC004CA993 /* Home */,
+				1E4489BC28EADAD9004CA993 /* Record */,
+				1E4489BD28EADADE004CA993 /* Food */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -488,7 +525,6 @@
 				1E5E760828DCBFAD004EA9FD /* RecordViewController.swift in Sources */,
 				1EA4D0AB28CFA60600A9E444 /* BaseCollectionViewCell.swift in Sources */,
 				1EA4D0AF28CFA6B500A9E444 /* DailyRecord.swift in Sources */,
-				1E5CF07A28E21B49004D9010 /* FoodRepository.swift in Sources */,
 				1E52826628D3648C002FB4EE /* HomeView.swift in Sources */,
 				1E4489AC28E6B588004CA993 /* StatView.swift in Sources */,
 				1E4489A928E6AA00004CA993 /* FoodViewController.swift in Sources */,
