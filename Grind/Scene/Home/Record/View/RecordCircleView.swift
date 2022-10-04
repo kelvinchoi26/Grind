@@ -29,6 +29,7 @@ final class RecordCircleView: BaseView {
             $0.font = Constants.Font.subTitleFont
             $0.textColor = Constants.Color.primaryText
             $0.textAlignment = .center
+            $0.keyboardType = .decimalPad
         }
         
         [cellTitle, cellContent].forEach {

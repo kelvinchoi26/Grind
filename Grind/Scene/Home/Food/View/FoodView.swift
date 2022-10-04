@@ -50,21 +50,25 @@ final class FoodView: BaseView {
         calorieView.do {
             $0.calorieLabel.text = "총 칼로리"
             $0.calorieTextField.placeholder = "입력"
+            $0.calorieTextField.keyboardType = .decimalPad
         }
         
         carbView.do {
             $0.calorieLabel.text = "탄수화물"
             $0.calorieTextField.placeholder = "입력"
+            $0.calorieTextField.keyboardType = .decimalPad
         }
         
         proteinView.do {
             $0.calorieLabel.text = "단백질"
             $0.calorieTextField.placeholder = "입력"
+            $0.calorieTextField.keyboardType = .decimalPad
         }
         
         fatView.do {
             $0.calorieLabel.text = "지방"
             $0.calorieTextField.placeholder = "입력"
+            $0.calorieTextField.keyboardType = .decimalPad
         }
         
         unitLabel.do {

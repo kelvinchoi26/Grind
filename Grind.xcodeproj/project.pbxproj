@@ -45,7 +45,6 @@
 		1E92CCFE28EBD796004B284B /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E92CCFD28EBD796004B284B /* SettingTableViewCell.swift */; };
 		1E92CD0228EBFF34004B284B /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1E92CD0128EBFF34004B284B /* IQKeyboardManagerSwift */; };
 		1E9DE88928DD79020022FCBC /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9DE88828DD79020022FCBC /* APIKey.swift */; };
-		1E9DE88C28DD7C290022FCBC /* FoodSearchAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9DE88B28DD7C290022FCBC /* FoodSearchAPIManager.swift */; };
 		1EA4D07928CF9EB500A9E444 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA4D07828CF9EB500A9E444 /* AppDelegate.swift */; };
 		1EA4D07B28CF9EB500A9E444 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA4D07A28CF9EB500A9E444 /* SceneDelegate.swift */; };
 		1EA4D07D28CF9EB500A9E444 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA4D07C28CF9EB500A9E444 /* ViewController.swift */; };
@@ -100,7 +99,6 @@
 		1E92CCFB28EBD757004B284B /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		1E92CCFD28EBD796004B284B /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		1E9DE88828DD79020022FCBC /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
-		1E9DE88B28DD7C290022FCBC /* FoodSearchAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSearchAPIManager.swift; sourceTree = "<group>"; };
 		1EA4D07528CF9EB500A9E444 /* Grind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Grind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EA4D07828CF9EB500A9E444 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1EA4D07A28CF9EB500A9E444 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -213,7 +211,6 @@
 		1E52826028D24AC4002FB4EE /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				1E9DE88A28DD7C150022FCBC /* Food */,
 				1E52827028D43D19002FB4EE /* HealthKit */,
 			);
 			path = Network;
@@ -284,14 +281,6 @@
 				1E9DE88828DD79020022FCBC /* APIKey.swift */,
 			);
 			path = Key;
-			sourceTree = "<group>";
-		};
-		1E9DE88A28DD7C150022FCBC /* Food */ = {
-			isa = PBXGroup;
-			children = (
-				1E9DE88B28DD7C290022FCBC /* FoodSearchAPIManager.swift */,
-			);
-			path = Food;
 			sourceTree = "<group>";
 		};
 		1EA4D06C28CF9EB500A9E444 = {
@@ -558,7 +547,6 @@
 				1E5E760A28DCC1F8004EA9FD /* RecordView.swift in Sources */,
 				1E4489A128E6A486004CA993 /* TabViewController.swift in Sources */,
 				1EA4D0A528CFA49300A9E444 /* Font.swift in Sources */,
-				1E9DE88C28DD7C290022FCBC /* FoodSearchAPIManager.swift in Sources */,
 				1E7DCF8728D0F209000D43B5 /* HomeViewController.swift in Sources */,
 				1E92CCF428EBD53D004B284B /* SettingView.swift in Sources */,
 				1EA4D07928CF9EB500A9E444 /* AppDelegate.swift in Sources */,
