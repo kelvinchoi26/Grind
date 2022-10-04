@@ -237,3 +237,10 @@
         - 참고 자료
 
 [Reading updated Realm ThreadSafeReference on ba...anycodings](https://www.anycodings.com/1questions/2559560/reading-updated-realm-threadsafereference-on-background-queue)
+
+### 2022-10-04 진행상황
+---
+- 초기화 해버리면 Realm 오류가 발생해서 나중에 추가
+- 그래프 양 옆 레이블 잘리는거 수정
+- 설정 뷰의 건강 앱 접근권한 변경 → 기능 수정 필요함
+    - 처음에 권한 승인 안 한 상태에서 승인한 상태로 바꾸려고 할 때 requestAuthorization이 실행 되지 않는 오류가 있음

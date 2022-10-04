@@ -19,6 +19,7 @@ protocol DailyRecordRepositoryType {
     func updateCalorieBurned(item: Results<DailyRecord>, updatedCalorie: Int)
     func fetch() -> Results<DailyRecord>
     func fetch(by date: Date) -> Results<DailyRecord>
+    func resetRealm()
 }
 
 final class DailyRecordRepository: DailyRecordRepositoryType {
@@ -132,5 +133,14 @@ final class DailyRecordRepository: DailyRecordRepositoryType {
         return localRealm.objects(DailyRecord.self).filter("date >= %@ AND date < %@", date, Date(timeInterval: 86400, since: date))
     }
     
-   
+    // 데이터 초기화
+    func resetRealm() {
+        do {
+            try localRealm.write {
+                localRealm.deleteAll()
+            }
+        } catch {
+            print(error)
+        }
+    }
 }

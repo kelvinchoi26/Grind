@@ -61,6 +61,10 @@
 		1EA4D0A528CFA49300A9E444 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA4D0A428CFA49300A9E444 /* Font.swift */; };
 		1EA4D0AB28CFA60600A9E444 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA4D0AA28CFA60600A9E444 /* BaseCollectionViewCell.swift */; };
 		1EA4D0AF28CFA6B500A9E444 /* DailyRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA4D0AE28CFA6B500A9E444 /* DailyRecord.swift */; };
+		1EE39F2728EC1FE300331DB1 /* ProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 1EE39F2628EC1FE300331DB1 /* ProgressHUD */; };
+		1EE39F2A28EC202D00331DB1 /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = 1EE39F2928EC202D00331DB1 /* Zip */; };
+		1EE39F2D28EC3AFE00331DB1 /* AcknowList in Frameworks */ = {isa = PBXBuildFile; productRef = 1EE39F2C28EC3AFE00331DB1 /* AcknowList */; };
+		1EE39F3128EC45A100331DB1 /* Package.resolved in Resources */ = {isa = PBXBuildFile; fileRef = 1EE39F3028EC45A100331DB1 /* Package.resolved */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -112,6 +116,7 @@
 		1EA4D0A428CFA49300A9E444 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		1EA4D0AA28CFA60600A9E444 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		1EA4D0AE28CFA6B500A9E444 /* DailyRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyRecord.swift; sourceTree = "<group>"; };
+		1EE39F3028EC45A100331DB1 /* Package.resolved */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Package.resolved; path = Grind.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,10 +125,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E5CF08D28E3DCCB004D9010 /* RealmSwift in Frameworks */,
+				1EE39F2D28EC3AFE00331DB1 /* AcknowList in Frameworks */,
 				1E5CF08B28E3DCCB004D9010 /* Realm in Frameworks */,
 				1E5CF09328E4B9FD004D9010 /* Toast in Frameworks */,
 				1EA4D09528CFA2F300A9E444 /* SnapKit in Frameworks */,
 				1E4489BA28E9E593004CA993 /* Charts in Frameworks */,
+				1EE39F2728EC1FE300331DB1 /* ProgressHUD in Frameworks */,
+				1EE39F2A28EC202D00331DB1 /* Zip in Frameworks */,
 				1E92CD0228EBFF34004B284B /* IQKeyboardManagerSwift in Frameworks */,
 				1E52829B28DA1C41002FB4EE /* FSCalendar in Frameworks */,
 				1EA4D09828CFA32500A9E444 /* Then in Frameworks */,
@@ -289,6 +297,7 @@
 		1EA4D06C28CF9EB500A9E444 = {
 			isa = PBXGroup;
 			children = (
+				1EE39F3028EC45A100331DB1 /* Package.resolved */,
 				1E52825C28D248BF002FB4EE /* .gitignore */,
 				1EA4D07728CF9EB500A9E444 /* Grind */,
 				1EA4D07628CF9EB500A9E444 /* Products */,
@@ -446,6 +455,9 @@
 				1E5CF09228E4B9FD004D9010 /* Toast */,
 				1E4489B928E9E593004CA993 /* Charts */,
 				1E92CD0128EBFF34004B284B /* IQKeyboardManagerSwift */,
+				1EE39F2628EC1FE300331DB1 /* ProgressHUD */,
+				1EE39F2928EC202D00331DB1 /* Zip */,
+				1EE39F2C28EC3AFE00331DB1 /* AcknowList */,
 			);
 			productName = Grind;
 			productReference = 1EA4D07528CF9EB500A9E444 /* Grind.app */;
@@ -484,6 +496,9 @@
 				1E5CF09128E4B9FD004D9010 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 				1E4489B828E9E593004CA993 /* XCRemoteSwiftPackageReference "Charts" */,
 				1E92CD0028EBFF34004B284B /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				1EE39F2528EC1FE200331DB1 /* XCRemoteSwiftPackageReference "ProgressHUD" */,
+				1EE39F2828EC202D00331DB1 /* XCRemoteSwiftPackageReference "Zip" */,
+				1EE39F2B28EC3AFE00331DB1 /* XCRemoteSwiftPackageReference "AcknowList" */,
 			);
 			productRefGroup = 1EA4D07628CF9EB500A9E444 /* Products */;
 			projectDirPath = "";
@@ -503,6 +518,7 @@
 				1EA4D08528CF9EB700A9E444 /* LaunchScreen.storyboard in Resources */,
 				1EA4D08228CF9EB700A9E444 /* Assets.xcassets in Resources */,
 				1E52826B28D39F43002FB4EE /* tway_air.ttf in Resources */,
+				1EE39F3128EC45A100331DB1 /* Package.resolved in Resources */,
 				1EA4D08028CF9EB500A9E444 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -857,6 +873,30 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		1EE39F2528EC1FE200331DB1 /* XCRemoteSwiftPackageReference "ProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/relatedcode/ProgressHUD.git";
+			requirement = {
+				kind = exactVersion;
+				version = 13.6.1;
+			};
+		};
+		1EE39F2828EC202D00331DB1 /* XCRemoteSwiftPackageReference "Zip" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marmelroy/Zip.git";
+			requirement = {
+				kind = exactVersion;
+				version = 2.1.2;
+			};
+		};
+		1EE39F2B28EC3AFE00331DB1 /* XCRemoteSwiftPackageReference "AcknowList" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/vtourraine/AcknowList.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -904,6 +944,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1EA4D09628CFA32500A9E444 /* XCRemoteSwiftPackageReference "Then" */;
 			productName = Then;
+		};
+		1EE39F2628EC1FE300331DB1 /* ProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1EE39F2528EC1FE200331DB1 /* XCRemoteSwiftPackageReference "ProgressHUD" */;
+			productName = ProgressHUD;
+		};
+		1EE39F2928EC202D00331DB1 /* Zip */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1EE39F2828EC202D00331DB1 /* XCRemoteSwiftPackageReference "Zip" */;
+			productName = Zip;
+		};
+		1EE39F2C28EC3AFE00331DB1 /* AcknowList */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1EE39F2B28EC3AFE00331DB1 /* XCRemoteSwiftPackageReference "AcknowList" */;
+			productName = AcknowList;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

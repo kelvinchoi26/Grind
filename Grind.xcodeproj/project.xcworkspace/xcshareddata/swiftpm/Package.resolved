@@ -1,6 +1,15 @@
 {
   "pins" : [
     {
+      "identity" : "acknowlist",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/vtourraine/AcknowList.git",
+      "state" : {
+        "revision" : "4db842a19478edce73ed7fed70eb9e76e02ff81e",
+        "version" : "3.0.0"
+      }
+    },
+    {
       "identity" : "charts",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/danielgindi/Charts.git",
@@ -25,6 +34,15 @@
       "state" : {
         "revision" : "1e442766a41e2948df25559eb03ab752c6d3aad0",
         "version" : "6.5.0"
+      }
+    },
+    {
+      "identity" : "progresshud",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/relatedcode/ProgressHUD.git",
+      "state" : {
+        "revision" : "22c3f83268b4c47b4623fe3a9701af7310fa8d8a",
+        "version" : "13.6.1"
       }
     },
     {
@@ -115,6 +133,15 @@
       "state" : {
         "revision" : "4dbae7a1f69db3d65c47f4106d0ca09f678edeaf",
         "version" : "5.2.1"
+      }
+    },
+    {
+      "identity" : "zip",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/marmelroy/Zip.git",
+      "state" : {
+        "revision" : "67fa55813b9e7b3b9acee9c0ae501def28746d76",
+        "version" : "2.1.2"
       }
     }
   ],

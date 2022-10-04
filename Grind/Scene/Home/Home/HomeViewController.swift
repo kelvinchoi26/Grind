@@ -254,7 +254,7 @@ extension HomeViewController {
     }
     
     func updateAdviceLabel() {
-        let num = Int.random(in: 0...Constants.Text.adviceMessage.count)
+        let num = Int.random(in: 0...Constants.Text.adviceMessage.count-1)
         self.homeView.adviceView.adviceLabel.text = Constants.Text.adviceMessage[num]
     }
 }

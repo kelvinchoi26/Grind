@@ -68,7 +68,7 @@ final class WalkThroughViewController: BaseViewController {
 
 extension WalkThroughViewController {
     func alertEmptyTextField() {
-        let alert = UIAlertController(title: "", message: "체중을 입력해주세요!", preferredStyle: .alert)
+        let alert = UIAlertController(title: "", message: "체중을 입력해주세요", preferredStyle: .alert)
         
         let done = UIAlertAction(title: "확인", style: .default)
         

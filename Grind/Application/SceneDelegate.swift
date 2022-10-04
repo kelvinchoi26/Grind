@@ -32,6 +32,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let tabBarController = UITabBarController()
         
         tabBarController.setViewControllers([statNavigationController, homeNavigationController, settingNavigationController], animated: true)
+        tabBarController.tabBar.tintColor = Constants.Color.primaryText
         
         if let items = tabBarController.tabBar.items {
             items[0].selectedImage = UIImage(systemName: "waveform.path.ecg.rectangle.fill")

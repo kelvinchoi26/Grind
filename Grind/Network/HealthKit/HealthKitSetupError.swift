@@ -6,7 +6,7 @@
 //
 
 enum HealthKitSetupError: Error {
-    case notAvailableonDevice
+    case notAvailableOnDevice
     case dataTypeNotAvailable
     case authorizationFailed
 }

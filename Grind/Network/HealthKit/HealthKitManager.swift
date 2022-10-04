@@ -78,7 +78,11 @@ final class HealthKitManager {
                 dailyCalorie += activity.quantity.doubleValue(for: HKUnit.kilocalorie())
             }
             
-            completion(Int(dailyCalorie))
+            if dailyCalorie != 0 {
+                completion(Int(dailyCalorie))
+            } else {
+                completion(1000)
+            }
         }
         
         HealthKitManager.healthStore.execute(query)
