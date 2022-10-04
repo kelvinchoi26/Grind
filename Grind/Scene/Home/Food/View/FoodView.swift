@@ -95,7 +95,7 @@ final class FoodView: BaseView {
         
         imageView.snp.makeConstraints {
             $0.top.leading.trailing.equalTo(self.safeAreaLayoutGuide).inset(spacing)
-            $0.height.equalTo(400)
+            $0.height.equalTo(self.safeAreaLayoutGuide).multipliedBy(0.4)
         }
         
         cameraButton.snp.makeConstraints {

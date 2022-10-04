@@ -99,7 +99,7 @@ final class HomeView: BaseView {
         workoutView.snp.makeConstraints {
             $0.top.equalTo(calorieView.snp.bottom)
             $0.trailing.leading.equalToSuperview().inset(spacing)
-            $0.height.equalToSuperview().multipliedBy(0.4)
+            $0.bottom.equalTo(self.safeAreaLayoutGuide)
         }
     }
 }

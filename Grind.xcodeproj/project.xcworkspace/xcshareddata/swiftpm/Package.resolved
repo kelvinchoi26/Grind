@@ -1,15 +1,6 @@
 {
   "pins" : [
     {
-      "identity" : "alamofire",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Alamofire/Alamofire.git",
-      "state" : {
-        "revision" : "8dd85aee02e39dd280c75eef88ffdb86eed4b07b",
-        "version" : "5.6.2"
-      }
-    },
-    {
       "identity" : "charts",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/danielgindi/Charts.git",
@@ -28,21 +19,12 @@
       }
     },
     {
-      "identity" : "jgprogresshud",
+      "identity" : "iqkeyboardmanager",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/JonasGessner/JGProgressHUD.git",
+      "location" : "https://github.com/hackiftekhar/IQKeyboardManager.git",
       "state" : {
-        "revision" : "78d7cd35f1d90ff74fd82e486f2cbe4b24be8cf9",
-        "version" : "2.2.0"
-      }
-    },
-    {
-      "identity" : "pageboy",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/uias/Pageboy",
-      "state" : {
-        "revision" : "af8fa81788b893205e1ff42ddd88c5b0b315d7c5",
-        "version" : "3.7.0"
+        "revision" : "1e442766a41e2948df25559eb03ab752c6d3aad0",
+        "version" : "6.5.0"
       }
     },
     {
@@ -106,24 +88,6 @@
       "state" : {
         "revision" : "0a5bc04095a675662cf24757cc0640aa2204253b",
         "version" : "1.0.2"
-      }
-    },
-    {
-      "identity" : "swiftyjson",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/SwiftyJSON/SwiftyJSON.git",
-      "state" : {
-        "revision" : "b3dcd7dbd0d488e1a7077cb33b00f2083e382f07",
-        "version" : "5.0.1"
-      }
-    },
-    {
-      "identity" : "tabman",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/uias/Tabman.git",
-      "state" : {
-        "revision" : "4a4f7c755b875ffd4f9ef10d67a67883669d2465",
-        "version" : "2.13.0"
       }
     },
     {

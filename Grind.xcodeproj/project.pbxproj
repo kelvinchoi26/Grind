@@ -8,11 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1E4489A128E6A486004CA993 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4489A028E6A486004CA993 /* TabViewController.swift */; };
-		1E4489A428E6A5FD004CA993 /* Tabman in Frameworks */ = {isa = PBXBuildFile; productRef = 1E4489A328E6A5FD004CA993 /* Tabman */; };
-		1E4489A728E6A614004CA993 /* Pageboy in Frameworks */ = {isa = PBXBuildFile; productRef = 1E4489A628E6A614004CA993 /* Pageboy */; };
 		1E4489A928E6AA00004CA993 /* FoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4489A828E6AA00004CA993 /* FoodViewController.swift */; };
 		1E4489AC28E6B588004CA993 /* StatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4489AB28E6B588004CA993 /* StatView.swift */; };
-		1E4489B728E9E0E5004CA993 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 1E4489B628E9E0E5004CA993 /* Algorithms */; };
 		1E4489BA28E9E593004CA993 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 1E4489B928E9E593004CA993 /* Charts */; };
 		1E52825D28D248BF002FB4EE /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 1E52825C28D248BF002FB4EE /* .gitignore */; };
 		1E52825F28D24A0F002FB4EE /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E52825E28D24A0F002FB4EE /* Food.swift */; };
@@ -37,17 +34,18 @@
 		1E5CF08B28E3DCCB004D9010 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 1E5CF08A28E3DCCB004D9010 /* Realm */; };
 		1E5CF08D28E3DCCB004D9010 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1E5CF08C28E3DCCB004D9010 /* RealmSwift */; };
 		1E5CF09328E4B9FD004D9010 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 1E5CF09228E4B9FD004D9010 /* Toast */; };
-		1E5CF09628E4BAA4004D9010 /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 1E5CF09528E4BAA4004D9010 /* JGProgressHUD */; };
 		1E5E760828DCBFAD004EA9FD /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5E760728DCBFAD004EA9FD /* RecordViewController.swift */; };
 		1E5E760A28DCC1F8004EA9FD /* RecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5E760928DCC1F8004EA9FD /* RecordView.swift */; };
 		1E5E760C28DCCED7004EA9FD /* RecordCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5E760B28DCCED7004EA9FD /* RecordCircleView.swift */; };
 		1E7DCF8728D0F209000D43B5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7DCF8628D0F209000D43B5 /* HomeViewController.swift */; };
 		1E7DCF8F28D0F3EB000D43B5 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7DCF8E28D0F3EB000D43B5 /* SettingViewController.swift */; };
 		1E7DCF9128D0F3F6000D43B5 /* StatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7DCF9028D0F3F6000D43B5 /* StatViewController.swift */; };
+		1E92CCF428EBD53D004B284B /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E92CCF328EBD53D004B284B /* SettingView.swift */; };
+		1E92CCFC28EBD757004B284B /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E92CCFB28EBD757004B284B /* BaseTableViewCell.swift */; };
+		1E92CCFE28EBD796004B284B /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E92CCFD28EBD796004B284B /* SettingTableViewCell.swift */; };
+		1E92CD0228EBFF34004B284B /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1E92CD0128EBFF34004B284B /* IQKeyboardManagerSwift */; };
 		1E9DE88928DD79020022FCBC /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9DE88828DD79020022FCBC /* APIKey.swift */; };
 		1E9DE88C28DD7C290022FCBC /* FoodSearchAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9DE88B28DD7C290022FCBC /* FoodSearchAPIManager.swift */; };
-		1E9DE88F28DD7C510022FCBC /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 1E9DE88E28DD7C510022FCBC /* SwiftyJSON */; };
-		1E9DE89228DD7C8D0022FCBC /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 1E9DE89128DD7C8D0022FCBC /* Alamofire */; };
 		1EA4D07928CF9EB500A9E444 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA4D07828CF9EB500A9E444 /* AppDelegate.swift */; };
 		1EA4D07B28CF9EB500A9E444 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA4D07A28CF9EB500A9E444 /* SceneDelegate.swift */; };
 		1EA4D07D28CF9EB500A9E444 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA4D07C28CF9EB500A9E444 /* ViewController.swift */; };
@@ -94,6 +92,9 @@
 		1E7DCF8628D0F209000D43B5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		1E7DCF8E28D0F3EB000D43B5 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		1E7DCF9028D0F3F6000D43B5 /* StatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatViewController.swift; sourceTree = "<group>"; };
+		1E92CCF328EBD53D004B284B /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		1E92CCFB28EBD757004B284B /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		1E92CCFD28EBD796004B284B /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		1E9DE88828DD79020022FCBC /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		1E9DE88B28DD7C290022FCBC /* FoodSearchAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSearchAPIManager.swift; sourceTree = "<group>"; };
 		1EA4D07528CF9EB500A9E444 /* Grind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Grind.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,15 +121,10 @@
 			files = (
 				1E5CF08D28E3DCCB004D9010 /* RealmSwift in Frameworks */,
 				1E5CF08B28E3DCCB004D9010 /* Realm in Frameworks */,
-				1E4489B728E9E0E5004CA993 /* Algorithms in Frameworks */,
-				1E9DE88F28DD7C510022FCBC /* SwiftyJSON in Frameworks */,
 				1E5CF09328E4B9FD004D9010 /* Toast in Frameworks */,
-				1E5CF09628E4BAA4004D9010 /* JGProgressHUD in Frameworks */,
-				1E9DE89228DD7C8D0022FCBC /* Alamofire in Frameworks */,
-				1E4489A728E6A614004CA993 /* Pageboy in Frameworks */,
 				1EA4D09528CFA2F300A9E444 /* SnapKit in Frameworks */,
 				1E4489BA28E9E593004CA993 /* Charts in Frameworks */,
-				1E4489A428E6A5FD004CA993 /* Tabman in Frameworks */,
+				1E92CD0228EBFF34004B284B /* IQKeyboardManagerSwift in Frameworks */,
 				1E52829B28DA1C41002FB4EE /* FSCalendar in Frameworks */,
 				1EA4D09828CFA32500A9E444 /* Then in Frameworks */,
 				1E5CF07828E2190A004D9010 /* YPImagePicker in Frameworks */,
@@ -265,6 +261,15 @@
 			path = Food;
 			sourceTree = "<group>";
 		};
+		1E92CCF228EBD522004B284B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1E92CCF328EBD53D004B284B /* SettingView.swift */,
+				1E92CCFD28EBD796004B284B /* SettingTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		1E9DE88728DD78F60022FCBC /* Key */ = {
 			isa = PBXGroup;
 			children = (
@@ -342,6 +347,7 @@
 				1EA4D09128CFA2CF00A9E444 /* BaseViewController.swift */,
 				1EA4D09E28CFA40900A9E444 /* BaseView.swift */,
 				1EA4D0AA28CFA60600A9E444 /* BaseCollectionViewCell.swift */,
+				1E92CCFB28EBD757004B284B /* BaseTableViewCell.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -381,6 +387,7 @@
 		1EA4D0A828CFA5BF00A9E444 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				1E92CCF228EBD522004B284B /* View */,
 				1E7DCF8E28D0F3EB000D43B5 /* SettingViewController.swift */,
 			);
 			path = Setting;
@@ -433,17 +440,12 @@
 				1EA4D09428CFA2F300A9E444 /* SnapKit */,
 				1EA4D09728CFA32500A9E444 /* Then */,
 				1E52829A28DA1C41002FB4EE /* FSCalendar */,
-				1E9DE88E28DD7C510022FCBC /* SwiftyJSON */,
-				1E9DE89128DD7C8D0022FCBC /* Alamofire */,
 				1E5CF07728E2190A004D9010 /* YPImagePicker */,
 				1E5CF08A28E3DCCB004D9010 /* Realm */,
 				1E5CF08C28E3DCCB004D9010 /* RealmSwift */,
 				1E5CF09228E4B9FD004D9010 /* Toast */,
-				1E5CF09528E4BAA4004D9010 /* JGProgressHUD */,
-				1E4489A328E6A5FD004CA993 /* Tabman */,
-				1E4489A628E6A614004CA993 /* Pageboy */,
-				1E4489B628E9E0E5004CA993 /* Algorithms */,
 				1E4489B928E9E593004CA993 /* Charts */,
+				1E92CD0128EBFF34004B284B /* IQKeyboardManagerSwift */,
 			);
 			productName = Grind;
 			productReference = 1EA4D07528CF9EB500A9E444 /* Grind.app */;
@@ -477,16 +479,11 @@
 				1EA4D09328CFA2F300A9E444 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				1EA4D09628CFA32500A9E444 /* XCRemoteSwiftPackageReference "Then" */,
 				1E52829928DA1C41002FB4EE /* XCRemoteSwiftPackageReference "FSCalendar" */,
-				1E9DE88D28DD7C510022FCBC /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
-				1E9DE89028DD7C8D0022FCBC /* XCRemoteSwiftPackageReference "Alamofire" */,
 				1E5CF07628E2190A004D9010 /* XCRemoteSwiftPackageReference "YPImagePicker" */,
 				1E5CF08928E3DCCB004D9010 /* XCRemoteSwiftPackageReference "realm-swift" */,
 				1E5CF09128E4B9FD004D9010 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
-				1E5CF09428E4BAA3004D9010 /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
-				1E4489A228E6A5FD004CA993 /* XCRemoteSwiftPackageReference "Tabman" */,
-				1E4489A528E6A614004CA993 /* XCRemoteSwiftPackageReference "Pageboy" */,
-				1E4489B528E9E0E5004CA993 /* XCRemoteSwiftPackageReference "swift-algorithms" */,
 				1E4489B828E9E593004CA993 /* XCRemoteSwiftPackageReference "Charts" */,
+				1E92CD0028EBFF34004B284B /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = 1EA4D07628CF9EB500A9E444 /* Products */;
 			projectDirPath = "";
@@ -523,6 +520,7 @@
 				1E5E760C28DCCED7004EA9FD /* RecordCircleView.swift in Sources */,
 				1E9DE88928DD79020022FCBC /* APIKey.swift in Sources */,
 				1E5E760828DCBFAD004EA9FD /* RecordViewController.swift in Sources */,
+				1E92CCFE28EBD796004B284B /* SettingTableViewCell.swift in Sources */,
 				1EA4D0AB28CFA60600A9E444 /* BaseCollectionViewCell.swift in Sources */,
 				1EA4D0AF28CFA6B500A9E444 /* DailyRecord.swift in Sources */,
 				1E52826628D3648C002FB4EE /* HomeView.swift in Sources */,
@@ -546,6 +544,7 @@
 				1EA4D0A528CFA49300A9E444 /* Font.swift in Sources */,
 				1E9DE88C28DD7C290022FCBC /* FoodSearchAPIManager.swift in Sources */,
 				1E7DCF8728D0F209000D43B5 /* HomeViewController.swift in Sources */,
+				1E92CCF428EBD53D004B284B /* SettingView.swift in Sources */,
 				1EA4D07928CF9EB500A9E444 /* AppDelegate.swift in Sources */,
 				1E52828228D77FE3002FB4EE /* HomeCircleView.swift in Sources */,
 				1E52828628D7863D002FB4EE /* HomeCalorieView.swift in Sources */,
@@ -553,6 +552,7 @@
 				1E52827428D445E1002FB4EE /* HealthKitSetupError.swift in Sources */,
 				1EA4D07B28CF9EB500A9E444 /* SceneDelegate.swift in Sources */,
 				1EA4D0A128CFA46C00A9E444 /* Constants.swift in Sources */,
+				1E92CCFC28EBD757004B284B /* BaseTableViewCell.swift in Sources */,
 				1E7DCF8F28D0F3EB000D43B5 /* SettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -793,30 +793,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		1E4489A228E6A5FD004CA993 /* XCRemoteSwiftPackageReference "Tabman" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/uias/Tabman.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
-			};
-		};
-		1E4489A528E6A614004CA993 /* XCRemoteSwiftPackageReference "Pageboy" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/uias/Pageboy.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.0;
-			};
-		};
-		1E4489B528E9E0E5004CA993 /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/apple/swift-algorithms.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
 		1E4489B828E9E593004CA993 /* XCRemoteSwiftPackageReference "Charts" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/danielgindi/Charts.git";
@@ -857,28 +833,12 @@
 				minimumVersion = 5.0.0;
 			};
 		};
-		1E5CF09428E4BAA3004D9010 /* XCRemoteSwiftPackageReference "JGProgressHUD" */ = {
+		1E92CD0028EBFF34004B284B /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/JonasGessner/JGProgressHUD.git";
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
-			};
-		};
-		1E9DE88D28DD7C510022FCBC /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
-		1E9DE89028DD7C8D0022FCBC /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
+				kind = exactVersion;
+				version = 6.5.0;
 			};
 		};
 		1EA4D09328CFA2F300A9E444 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
@@ -900,21 +860,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		1E4489A328E6A5FD004CA993 /* Tabman */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1E4489A228E6A5FD004CA993 /* XCRemoteSwiftPackageReference "Tabman" */;
-			productName = Tabman;
-		};
-		1E4489A628E6A614004CA993 /* Pageboy */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1E4489A528E6A614004CA993 /* XCRemoteSwiftPackageReference "Pageboy" */;
-			productName = Pageboy;
-		};
-		1E4489B628E9E0E5004CA993 /* Algorithms */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1E4489B528E9E0E5004CA993 /* XCRemoteSwiftPackageReference "swift-algorithms" */;
-			productName = Algorithms;
-		};
 		1E4489B928E9E593004CA993 /* Charts */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 1E4489B828E9E593004CA993 /* XCRemoteSwiftPackageReference "Charts" */;
@@ -945,20 +890,10 @@
 			package = 1E5CF09128E4B9FD004D9010 /* XCRemoteSwiftPackageReference "Toast-Swift" */;
 			productName = Toast;
 		};
-		1E5CF09528E4BAA4004D9010 /* JGProgressHUD */ = {
+		1E92CD0128EBFF34004B284B /* IQKeyboardManagerSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 1E5CF09428E4BAA3004D9010 /* XCRemoteSwiftPackageReference "JGProgressHUD" */;
-			productName = JGProgressHUD;
-		};
-		1E9DE88E28DD7C510022FCBC /* SwiftyJSON */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1E9DE88D28DD7C510022FCBC /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
-			productName = SwiftyJSON;
-		};
-		1E9DE89128DD7C8D0022FCBC /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1E9DE89028DD7C8D0022FCBC /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
+			package = 1E92CD0028EBFF34004B284B /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
 		};
 		1EA4D09428CFA2F300A9E444 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;

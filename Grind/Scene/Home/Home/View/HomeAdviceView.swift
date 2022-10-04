@@ -25,6 +25,7 @@ final class HomeAdviceView: BaseView {
             $0.textColor = Constants.Color.primaryText
             $0.textAlignment = .center
             $0.text = "운동은 주 7일 !!"
+            $0.numberOfLines = 0
         }
         
         [bubbleImage, adviceLabel].forEach {
@@ -36,8 +37,9 @@ final class HomeAdviceView: BaseView {
         
         bubbleImage.snp.makeConstraints {
             $0.top.bottom.equalTo(self).inset(10)
-            $0.width.equalTo(self).multipliedBy(0.5)
-            $0.centerX.centerY.equalTo(self.safeAreaLayoutGuide)
+            $0.width.equalToSuperview().multipliedBy(0.6)
+            $0.height.equalTo(bubbleImage.snp.width).multipliedBy(0.6)
+            $0.centerX.centerY.equalToSuperview()
         }
         
         adviceLabel.snp.makeConstraints {

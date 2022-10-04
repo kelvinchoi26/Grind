@@ -65,7 +65,7 @@ final class WalkThroughView: BaseView {
         walkThroughView.snp.makeConstraints {
             $0.centerX.centerY.equalTo(self)
             $0.width.equalToSuperview().multipliedBy(0.8)
-            $0.height.equalToSuperview().multipliedBy(0.5)
+            $0.height.equalToSuperview().multipliedBy(0.7)
         }
         
         textLabel.snp.makeConstraints {

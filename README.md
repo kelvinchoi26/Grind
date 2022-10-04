@@ -234,3 +234,6 @@
     - 활동칼로리를 클로저로 받아온 다음 realm 객체에서도 수정을 진행하려하면 잘못된 쓰레드에 접근했다는 에러가 뜸
     - 아직 객체가 수정이 되기전에 불러와서 오류가 발생하는 것이 아닌가라는 추측 (한 스레드 내에서 수정하고 읽어오는건 불가능)
     - 우선 property에 활동칼로리 저장해서 reloadLabel때 마다 업데이트 되게 구현 (추후에 GCD에 대해서 더 공부한 뒤에 수정을 해보려고 합니다)
+        - 참고 자료
+
+[Reading updated Realm ThreadSafeReference on ba...anycodings](https://www.anycodings.com/1questions/2559560/reading-updated-realm-threadsafereference-on-background-queue)
