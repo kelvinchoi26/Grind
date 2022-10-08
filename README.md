@@ -258,3 +258,84 @@
 온보딩 페이지에 페이지네이션 구현
 
 런치 스크린 추가
+
+### 2022-10-08 오류 수정 사항
+---
+```swift
+Last Exception Backtrace:
+0   CoreFoundation                        0x7ff800427368 __exceptionPreprocess + 226
+1   libobjc.A.dylib                       0x7ff80004dbaf objc_exception_throw + 48
+2   Grind                                    0x10328470c RLMThrowResultsError(NSString*) + 620
+3   Grind                                    0x103285895 auto translateRLMResultsErrors<-[RLMResults objectAtIndex:]::$_7>(-[RLMResults objectAtIndex:]::$_7&&, NSString*) + 117
+4   Grind                                    0x1032857a9 -[RLMResults objectAtIndex:] + 105
+5   Grind                                    0x103400c54 Results.subscript.getter + 228
+6   Grind                                    0x102f98742 HomeViewController.reloadLabel() + 546 (HomeViewController.swift:167)
+7   Grind                                    0x102f98519 HomeViewController.tasks.didset + 25 (HomeViewController.swift:29)
+8   Grind                                    0x102f984e5 HomeViewController.tasks.setter + 117
+9   Grind                                    0x102f9a59a HomeViewController.checkInitialRun() + 730 (HomeViewController.swift:121)
+10  Grind                                    0x102f9a25f HomeViewController.viewDidLoad() + 95 (HomeViewController.swift:51)
+11  Grind                                    0x102f9ab9c @objc HomeViewController.viewDidLoad() + 28
+12  UIKitCore                                0x1127e1ffa -[UIViewController _sendViewDidLoadWithAppearanceProxyObjectTaggingEnabled] + 80
+13  UIKitCore                                0x1127e74b0 -[UIViewController loadViewIfRequired] + 1128
+14  UIKitCore                                0x112712d7e -[UINavigationController _updateScrollViewFromViewController:toViewController:] + 162
+15  UIKitCore                                0x1127130c2 -[UINavigationController _startTransition:fromViewController:toViewController:] + 227
+16  UIKitCore                                0x1127140c3 -[UINavigationController _startDeferredTransitionIfNeeded:] + 863
+17  UIKitCore                                0x112715468 -[UINavigationController __viewWillLayoutSubviews] + 136
+18  UIKitCore                                0x1126f304c -[UILayoutContainerView layoutSubviews] + 207
+19  UIKitCore                                0x1136fc913 -[UIView(CALayerDelegate) layoutSublayersOfLayer:] + 2305
+20  QuartzCore                            0x7ff8088f8cb8 CA::Layer::layout_if_needed(CA::Transaction*) + 526
+21  QuartzCore                            0x7ff808904191 CA::Layer::layout_and_display_if_needed(CA::Transaction*) + 65
+22  QuartzCore                            0x7ff80881821d CA::Context::commit_transaction(CA::Transaction*, double, double*) + 623
+23  QuartzCore                            0x7ff80884fa56 CA::Transaction::commit() + 714
+24  UIKitCore                                0x1130f431c __34-[UIApplication _firstCommitBlock]_block_invoke_2 + 34
+25  CoreFoundation                        0x7ff800386cb1 __CFRUNLOOP_IS_CALLING_OUT_TO_A_BLOCK__ + 12
+26  CoreFoundation                        0x7ff80038646a __CFRunLoopDoBlocks + 406
+27  CoreFoundation                        0x7ff800380dc8 __CFRunLoopRun + 948
+28  CoreFoundation                        0x7ff800380637 CFRunLoopRunSpecific + 560
+29  GraphicsServices                      0x7ff809c0f28a GSEventRunModal + 139
+30  UIKitCore                                0x1130d4425 -[UIApplication _run] + 994
+31  UIKitCore                                0x1130d9301 UIApplicationMain + 123
+32  libswiftUIKit.dylib                      0x10839ac02 UIApplicationMain(_:_:_:_:) + 98
+33  Grind                                    0x102fa3328 static UIApplicationDelegate.main() + 104
+34  Grind                                    0x102fa32b7 static AppDelegate.$main() + 39
+35  Grind                                    0x102fa33a8 main + 24
+36  dyld_sim                                 0x107e7b2bf start_sim + 10
+37  dyld                                     0x11798d52e start + 462
+```
+
+- 새로운 Date를 불러올 때 realm쪽에서 오류가 발생하는 것으로 추정됨
+- 문제 해결: viewDidLoad가 실행될 때 마다 실행되는 checkInitialRun(첫 실행인지 확인하는 함수)에 realm 객체를 불러오는 기준 날짜를 업데이트 해주지 않아서 발생한 crash
+    - 해결 방법: 현재 날짜를 불러온 이후 해당 날짜에 realm 객체가 아직 생성이 되지 않은 경우 아래와 같이 객체 생성한 다음에 tasks를 업데이트 해줌
+
+```swift
+private func checkInitialRun() {
+    if !userDefaults.bool(forKey: "NotFirst") {
+            
+        let walkThrough = WalkThroughViewController()
+        walkThrough.modalPresentationStyle = .fullScreen
+            
+        walkThrough.completionHandler = { tasks in
+            self.tasks = tasks
+        }
+            
+        self.present(walkThrough, animated: true)
+    } else {
+        // ***오류 코드***
+        // self.tasks = repository.fetch(by: currentDate)
+            
+        currentDate = Date()
+            
+        let newTasks = repository.fetch(by: currentDate)
+            
+        // 해당 선택된 날짜에 realm 객체가 아직 생성이 안 된 경우
+        if newTasks.count == 0 {
+            let record = DailyRecord(date: currentDate, weight: 0.0, caloriesBurned: 0, caloriesConsumed: 0, didWorkout: false, workoutRoutine: nil, workoutTime: nil, food: foodList)
+                
+            repository.addRecord(item: record)
+            tasks = repository.fetch(by: currentDate)
+        } else {
+            tasks = repository.fetch(by: currentDate)
+        }
+    }
+}
+```

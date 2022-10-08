@@ -116,7 +116,20 @@ extension HomeViewController {
             
             self.present(walkThrough, animated: true)
         } else {
-            self.tasks = repository.fetch(by: currentDate)
+            
+            currentDate = Date()
+            
+            let newTasks = repository.fetch(by: currentDate)
+            
+            // 해당 선택된 날짜에 realm 객체가 아직 생성이 안 된 경우
+            if newTasks.count == 0 {
+                let record = DailyRecord(date: currentDate, weight: 0.0, caloriesBurned: 0, caloriesConsumed: 0, didWorkout: false, workoutRoutine: nil, workoutTime: nil, food: foodList)
+                
+                repository.addRecord(item: record)
+                tasks = repository.fetch(by: currentDate)
+            } else {
+                tasks = repository.fetch(by: currentDate)
+            }
         }
     }
     

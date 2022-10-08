@@ -53,6 +53,8 @@ final class WalkThroughViewController: BaseViewController {
         
         tasks = repository.fetch(by: currentDate)
         
+        print(tasks)
+        
         completionHandler?(tasks)
         
         HealthKitManager.shared.checkAuthorization()
