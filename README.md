@@ -261,6 +261,11 @@
 
 ### 2022-10-08 오류 수정 사항
 ---
+- 조금 더 조건처리를 꼼꼼하게 할 필요는 있을 것 같다 - ex. 칼로리 입력 받을 때 정수만 받을 수 있게
+- 일부 화면에서 reloadLabel()이 여러 번 실행됨
+
+### 다음 날에 HomeVC을 불러왔을 때 발생하는 Crash
+
 ```swift
 Last Exception Backtrace:
 0   CoreFoundation                        0x7ff800427368 __exceptionPreprocess + 226
@@ -339,3 +344,59 @@ private func checkInitialRun() {
     }
 }
 ```
+
+### 첫 실행시 식단 추가했을 때 발생하는 Crash
+
+```swift
+Last Exception Backtrace:
+0   CoreFoundation                        0x7ff800427368 __exceptionPreprocess + 226
+1   libobjc.A.dylib                       0x7ff80004dbaf objc_exception_throw + 48
+2   Grind                                    0x10df9970c RLMThrowResultsError(NSString*) + 620
+3   Grind                                    0x10df9a895 auto translateRLMResultsErrors<-[RLMResults objectAtIndex:]::$_7>(-[RLMResults objectAtIndex:]::$_7&&, NSString*) + 117
+4   Grind                                    0x10df9a7a9 -[RLMResults objectAtIndex:] + 105
+5   Grind                                    0x10e115c54 Results.subscript.getter + 228
+6   Grind                                    0x10dc80f0b RecordViewController.reloadLabel() + 379 (RecordViewController.swift:84)
+7   Grind                                    0x10dc80d89 RecordViewController.tasks.didset + 25 (RecordViewController.swift:22)
+8   Grind                                    0x10dc80d55 RecordViewController.tasks.setter + 117
+9   Grind                                    0x10dc82d67 closure #1 in RecordViewController.addCalorie() + 55 (RecordViewController.swift:77)
+10  Grind                                    0x10dca274b AddFoodViewController.viewWillDisappear(_:) + 347 (AddFoodViewController.swift:44)
+11  Grind                                    0x10dca27b2 @objc AddFoodViewController.viewWillDisappear(_:) + 50
+12  UIKitCore                                0x123aecb27 -[UIViewController _setViewAppearState:isAnimating:] + 1746
+13  UIKitCore                                0x123aed6c7 -[UIViewController __viewWillDisappear:] + 93
+14  UIKitCore                                0x1239b9001 __56-[UIPresentationController runTransitionForCurrentState]_block_invoke.411 + 876
+15  UIKitCore                                0x12498a7dd -[_UIAfterCACommitBlock run] + 54
+16  UIKitCore                                0x12498acdc -[_UIAfterCACommitQueue flush] + 190
+17  libdispatch.dylib                     0x7ff80013b7fb _dispatch_call_block_and_release + 12
+18  libdispatch.dylib                     0x7ff80013ca3a _dispatch_client_callout + 8
+19  libdispatch.dylib                     0x7ff80014c32c _dispatch_main_queue_drain + 1338
+20  libdispatch.dylib                     0x7ff80014bde4 _dispatch_main_queue_callback_4CF + 31
+21  CoreFoundation                        0x7ff8003869f7 __CFRUNLOOP_IS_SERVICING_THE_MAIN_DISPATCH_QUEUE__ + 9
+22  CoreFoundation                        0x7ff8003813c6 __CFRunLoopRun + 2482
+23  CoreFoundation                        0x7ff800380637 CFRunLoopRunSpecific + 560
+24  GraphicsServices                      0x7ff809c0f28a GSEventRunModal + 139
+25  UIKitCore                                0x1243d3425 -[UIApplication _run] + 994
+26  UIKitCore                                0x1243d8301 UIApplicationMain + 123
+27  libswiftUIKit.dylib                      0x113344c02 UIApplicationMain(_:_:_:_:) + 98
+28  Grind                                    0x10dcb8328 static UIApplicationDelegate.main() + 104
+29  Grind                                    0x10dcb82b7 static AppDelegate.$main() + 39
+30  Grind                                    0x10dcb83a8 main + 24
+31  dyld_sim                                 0x112b902bf start_sim + 10
+32  dyld                                     0x1134cc52e start + 462
+```
+
+- AddFoodVC가 Sheet 형태로 보여지다 보니 viewWillAppear, viewDidDisappear에 대한 코드가 실행되지 않아서 발생한 오류
+    - 일반적인 해결방법은 Delegate를 활용해서 데이터를 전달하거나, 아예 present 방식이 아닌 navigationController가 embed된 상태로 push를 해줘서 데이터를 전달 받을 수 있게 설계를 바꾸는 것인데 후자를 선택하게 되었습니다.
+    
+    ```swift
+    @objc func addCalorie() {
+        let vc = AddFoodViewController()
+            
+        vc.tasks = self.tasks
+        vc.currentDate = self.currentDate
+            
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    ```
+    
+    - push를 한 다음 RecordVC의 viewWillAppear 생명주기에 reloadLabel()를 포함해서 AddFoodVC에서 넘어올 때 UI상의 label이 바뀔 수 있게 변경해줌
+    - **생명주기를 잘 이해하고 활용하자**

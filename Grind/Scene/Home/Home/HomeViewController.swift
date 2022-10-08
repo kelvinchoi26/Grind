@@ -125,10 +125,10 @@ extension HomeViewController {
             if newTasks.count == 0 {
                 let record = DailyRecord(date: currentDate, weight: 0.0, caloriesBurned: 0, caloriesConsumed: 0, didWorkout: false, workoutRoutine: nil, workoutTime: nil, food: foodList)
                 
-                repository.addRecord(item: record)
-                tasks = repository.fetch(by: currentDate)
+                self.repository.addRecord(item: record)
+                self.tasks = repository.fetch(by: currentDate)
             } else {
-                tasks = repository.fetch(by: currentDate)
+                self.tasks = repository.fetch(by: currentDate)
             }
         }
     }
@@ -165,9 +165,9 @@ extension HomeViewController {
         vc.recordView.todayWeightView.cellContent.text = String(tasks?[0].weight ?? 0.0)
         vc.recordView.calorieView.cellContent.text = String(tasks?[0].caloriesConsumed ?? 0)
         
-        vc.completionHandler = { weight, calorie in
-            self.repository.editWeightCalorie(item: self.tasks ?? self.repository.fetch(), weight: weight, calorie: calorie)
-        }
+//        vc.completionHandler = { weight, calorie in
+//            self.repository.editWeightCalorie(item: self.tasks ?? self.repository.fetch(), weight: weight, calorie: calorie)
+//        }
         
         vc.tasks = self.tasks
         vc.currentDate = self.currentDate

@@ -15,8 +15,6 @@ final class AddFoodViewController: BaseViewController {
     
     private let repository = DailyRecordRepository.repository
     
-    var completionHandler: ((Results<DailyRecord>?) -> ())?
-    
     let foodView = FoodView()
     
     var tasks: Results<DailyRecord>? 
@@ -36,13 +34,6 @@ final class AddFoodViewController: BaseViewController {
         
         addFoodButtonTarget()
             
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        completionHandler?(tasks)
-        
     }
     
 }
@@ -85,15 +76,13 @@ extension AddFoodViewController {
         
         guard let image = foodView.imageView.image ?? UIImage(systemName: "photo.on.rectangle") else { return }
         
-        let food = Food(calorie: Int(calorie) ?? 0, carb: Int(carb) ?? 0, protein: Int(protein) ?? 0, fat: Int(fat) ?? 0, name: foodName, uploadedDate: tasks?[0].date ?? Date())
+        let food = Food(calorie: Int(calorie) ?? 0, carb: Int(carb) ?? 0, protein: Int(protein) ?? 0, fat: Int(fat) ?? 0, name: foodName, uploadedDate: self.tasks?[0].date ?? Date())
         
-        repository.addFood(item: tasks?[0] ?? repository.fetch()[0], food: food, addedCalorie: food.calorie)
+        repository.addFood(item: self.tasks?[0] ?? repository.fetch()[0], food: food, addedCalorie: food.calorie)
         
         saveImageToDocumentDirectory(imageName: "\(food.objectId).png", image: image)
         
-        self.tasks = repository.fetch(by: currentDate)
-        
-        self.dismiss(animated: true)
+        self.navigationController?.popViewController(animated: true)
     }
     
     @objc func YPImagePickerButtonClicked() {

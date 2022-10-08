@@ -7,14 +7,13 @@
 
 import Foundation
 import RealmSwift
+import UIKit
 
 final class RecordViewController: BaseViewController {
     
     private let repository = DailyRecordRepository.repository
     
     let recordView = RecordView()
-    
-    var completionHandler: ((String, String) -> ())?
     
     var tasks: Results<DailyRecord>? {
         didSet {
@@ -35,7 +34,6 @@ final class RecordViewController: BaseViewController {
         
         calorieAddTarget()
         
-        reloadLabel()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -45,19 +43,23 @@ final class RecordViewController: BaseViewController {
         let calorie = self.recordView.calorieView.cellContent.text ?? ""
         
         // 소수점 아래 한 자리까지 반올림
-        completionHandler?(String(format: "%.1f", weight), calorie)
+//        completionHandler?(String(format: "%.1f", weight), calorie)
+        self.repository.editWeightCalorie(item: self.tasks ?? self.repository.fetch(), weight: String(format: "%.1f", weight), calorie: calorie)
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
+    
         reloadLabel()
     }
     
     override func configureUI() {
         view.backgroundColor = Constants.Color.backgroundColor
         
+        let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+        backBarButtonItem.tintColor = Constants.Color.primaryText
+        self.navigationItem.backBarButtonItem = backBarButtonItem
     }
 }
 
@@ -72,17 +74,13 @@ extension RecordViewController {
         vc.tasks = self.tasks
         vc.currentDate = self.currentDate
         
-        vc.completionHandler = { tasks in
-            self.tasks = tasks
-        }
-        
-        self.present(vc, animated: true, completion: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func reloadLabel() {
         
-        recordView.todayWeightView.cellContent.text = String(tasks?[0].weight ?? 0.0)
-        recordView.calorieView.cellContent.text = String(tasks?[0].caloriesConsumed ?? 0)
+        recordView.todayWeightView.cellContent.text = String(self.tasks?[0].weight ?? 0.0)
+        recordView.calorieView.cellContent.text = String(self.tasks?[0].caloriesConsumed ?? 0)
     }
 }
 
