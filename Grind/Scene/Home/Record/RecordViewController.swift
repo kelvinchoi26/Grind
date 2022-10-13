@@ -17,6 +17,7 @@ final class RecordViewController: BaseViewController {
     
     var tasks: Results<DailyRecord>? {
         didSet {
+            print("tasks!!!")
             reloadLabel()
         }
     }
@@ -39,6 +40,9 @@ final class RecordViewController: BaseViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
+        print(tasks)
+        print("viewWillDisappear!!!")
+        
         let weight = Double(self.recordView.todayWeightView.cellContent.text ?? "") ?? 0.0
         let calorie = self.recordView.calorieView.cellContent.text ?? ""
         
@@ -51,6 +55,8 @@ final class RecordViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     
+        print(tasks)
+        print("viewWillAppear!!!")
         reloadLabel()
     }
     

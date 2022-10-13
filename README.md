@@ -1,16 +1,71 @@
 # Grind
 진정한 헬창을 위한 운동 일지 앱
 
-## 개발일지
+## 진행하면서 학습한 내용
+---
+<details>
+<summary>Realm Migration</summary>
+<div markdown="1">
 
-### **2022-09-13 진행상황**
-- - -
+사용자가 마이그레이션 전에 백업한 데이터가 있으면 복원할 떄도 마이그레이션 작업이 필요하나요?
+
+- 이전 코드들을 다 가지고 있어야됨, 최대한 migration하는 경우가 없게 해야됨..
+- 복구할 때 migration 진행
+
+만약 현재 앱에서 migration 진행한다면 백업/복구 기능은 없애야 될 수 있다
+
+디버깅/개발 할 때 deleteRealmIfMigrationNeeded 플래그 활용하면 편함
+
+- 출시할 때는 없애줘야함
+
+```swift
+extension AppDelegate {
+        func aboutRealmMigration() {
+                //deleteRealmIfMigrationNeeded: Migration이 필요한 경우 기존 램 삭제 (Realm Browser 닫고 다시 열기!)
+                
+                // 현재의 스키마 버전 = 2번째 버전
+                let config = Realm.Configuration(schemaVersion: 2) { migration, oldSchemaVersion in
+            
+                        if oldSchemaVersion < 1 {
+        
+                        }
+
+                        if oldSchemaVersion < 2 {
+        
+                        }
+
+                }
+
+        Realm.Configuration.defaultConfiguration = config
+        
+        }
+
+}
+```
+- appDelegate에서 사용자의 schemaVersion 확인
+- 위처럼 각 블럭마다 대응을 해줘야함 else if 없이 (avoid nesting)
+    - else if로 처리하면 참인 경우 해당 블록만 실행하고 끝냄
+    - 하지만 각 버전마다 configuration이 다르기 때문에 2인 경우 1과 2의 블록들을 다 적용시켜줘야함
+- migration을 진행하게 되면 그 이전 버전 위에 덮어쓰는 형태이기 때문에 해당 코드는 지우지 않고 끝까지 가져가야함
+
+</div>
+</details>
+---
+## 개발일지
+---
+<details>
+<summary>2022-09-13</summary>
+<div markdown="1">
+
 - 전체적인 코드 구조 잡기 - BaseViewController / BaseCollectionViewCell
 - 탭바 설정 - 통계/홈/설정
 - healthKit / fatSecretAPI - API 요청 테스트
 
-### **2022-09-14 진행상황**
-- - -
+</div>
+
+<summary>2022-09-14</summary>
+<div markdown="1">
+
 - 기획서 수정
     - 운동/식단 팁 말풍선 추가
     - 음식 개수 체크 추가 (개수 or 그램 수)
@@ -20,8 +75,11 @@
     - fileManager 활용 - 수업 내용 체크!
 - 스키마 구조 잡기
 
-### **2022-09-15 진행상황**
----
+</div>
+
+<summary>2022-09-15</summary>
+<div markdown="1">
+
 - 온보딩 페이지에 목표 체중, 목표 섭취칼로리, 목표 활동칼로리 입력
 - 말풍선에 위 목표치에 따라 텍스트 띄우기 (내일 문구 추가 예정!)
     - 친절한 앱이 아니기 때문에 헬린이들에게도 도움이 될만한 문구 준비 중!
@@ -31,14 +89,16 @@
 - 홈 뷰에서는 두 section의 컬렉션 뷰와 커스텀 뷰, 레이블 하나로 구성할 예정
 - 홈 UI 미완성
 
-내일 계획
+### 내일 계획
 
 - 홈 화면 UI 완성 후 healthKit으로 불러온 활동칼로리 화면에 적용 예정 (Realm 필요!)
 - 음식 검색 API도 화면에 적용해보자!
 
+</div>
 
-### **2022-09-18 진행상황**
----
+<summary>2022-09-18</summary>
+<div markdown="1">
+
 - 홈화면 UI 완성
 - HealthKit API 통신 완료 (테스트 프로젝트에서!)
 - HealthKit API 화면과 연결
@@ -57,8 +117,11 @@
 - fatSecretAPI 통신 완성
 - fatSecretAPI 화면과 연결
 
-### **2022-09-19 진행상황**
----
+</div>
+
+<summary>2022-09-19</summary>
+<div markdown="1">
+
 ### 진행사항
 
 - HealthKit에 관해서 참고한 사이트
@@ -84,8 +147,11 @@
 
 - 공유하기 기능 추가하면 좋을 것 같다! 코치한테 섭취칼로리/활동칼로리 오늘의 체중 보고 용으로 (사진까지 공유하면 너무 좋을듯하다!)
 
-### **2022-09-20 진행상황**
----
+</div>
+
+<summary>2022-09-20</summary>
+<div markdown="1">
+
 ### 진행사항
 
 - HealthKit 접근 허용 + 활동칼로리 불러오기 구현 완료
@@ -103,8 +169,11 @@
 
 - 나만의 추천 운동 유튜브를 테이블뷰로 보여주기?
 
-### **2022-09-21 진행상황**
----
+</div>
+
+<summary>2022-09-21</summary>
+<div markdown="1">
+
 ### 진행사항
 
 - 위 아래로 swipe했을 때 fsCalendar가 보이게 하는 기능 구현
@@ -117,8 +186,11 @@
 - fsCalendar scope이 week인 경우 height을 0으로 설정해도 Calendar의 타이틀이 뷰에 보인다
     - 해결: height이 0인 경우 isHidden을 true로 설정, 아닌 경우 false로 해서 자연스럽게 보여지게 했다.
 
-### **2022-09-22 진행상황**
----
+</div>
+
+<summary>2022-09-22</summary>
+<div markdown="1">
+
 - Realm의 primary key를 날짜로 할 수는 없는가?..
     - 혹시나 같은 날에 객체가 여러 개 생길 경우를 대비하기 위해..
 
@@ -127,8 +199,11 @@
 - 해당 날짜에 정보가 입력 안 된 경우의 조건처리를 안 해주니 fetch를 했을 때 RLMException 에러가 발생한다
     - fsCalendar의 didSelect에 날짜에 정보가 없는 경우 해당 날짜의 객체를 add해줘서 에러 발생을 방지했다.
 
-### **2022-09-22 진행상황**
----
+</div>
+
+<summary>2022-09-23</summary>
+<div markdown="1">
+
 ### 진행사항
 
 - 화면을 넘길 때 마다 데이터 전달 구현 (viewWillAppear에 tasks를 업데이트 해줬음)
@@ -148,14 +223,20 @@
 - 음식 검색 VC UI 구성
 - fatSecretAPI UI에 적용
 
-### **2022-09-23 진행상황**
----
+</div>
+
+<summary>2022-09-24</summary>
+<div markdown="1">
+
 - 어디에 weak 키워드를 사용해야 memory leak를 방지할 수 있을까?..
 - 기록 뷰컨에 tapman 사용해서 체중과 칼로리를 나눠줘볼까?..
 - 다들 캘린더를 접었다 필때 PanGesture를 사용하심
 
-### **2022-09-25 진행상황**
----
+</div>
+
+<summary>2022-09-25</summary>
+<div markdown="1">
+
 - 그램수를 어떻게 입력 받을지 고민…
     - 해당 음식의 단위를 그램으로 고정해도 괜찮을까?
     - 우선은 그램을 고정 단위로 Realm 객체를 생성하자
@@ -164,24 +245,33 @@
 - 음식의 칼로리, 양, 탄단지 입력하면 collectionView 형태로 보이게 됨 (RecordViewController의 오른쪽 tab에)
 - 알림 기능, 유튜브 추천 추가
 
-### **2022-09-26 진행상황**
---- 
+</div>
+
+<summary>2022-09-26</summary>
+<div markdown="1">
+
 - YPImagePicker로 카메라 찍기, 갤러리에서 가져오기 구현
 - DailyRecord Realm에 Food 배열 객체를 추가해서 하루의 식단 정보를 추가
 - 새로 영양정보 입력하는 뷰컨 UI 완성
 - RecordVC에 tabman 적용해서 새로운 탭에 식단 사진과 정보를 담고있는 CollectionView 추가 예정
 
-### **2022-09-27 진행상황**
----
+</div>
+
+<summary>2022-09-27</summary>
+<div markdown="1">
+
 - 식단 정보 입력 VC UI 구현 + YPImagePicker 적용
 
 ### 이슈
 
 - WalkThrough VC이 dismiss 될 때 HomeVC의 viewWillAppear이 호출이 안 되는 이슈가 있어서 홈화면에서 체중이 업데이트가 안 됐었다.
     - WalkThroughVC의 modalPresentationStyle을 .fullScreen으로 바꾸면 새로운 VC이 띄워지는 효과 때문에 viewWillAppear이 호출되게 된다.
-    
-### **2022-09-28 진행상황**
----
+
+</div>
+
+<summary>2022-09-28</summary>
+<div markdown="1">
+
 - DailyRecord 객체에 Food 객체 리스트를 추가
     - 식단 추가/삭제 기능 모두 필요함
 - 활동칼로리/섭취칼로리 column의 옵셔널 가능성을 제거했다
@@ -201,14 +291,20 @@
     - 내일 해결 예정
 - 생명주기에 대한 공부 더 많이 필요.. 데이터 업데이트 시점에 대한 고민이 너무 많이 필요해보임
 
-### **2022-09-29 진행상황**
----
+</div>
+
+<summary>2022-09-29</summary>
+<div markdown="1">
+
 - 홈화면의 Realm을 통한 UI 업데이트 문제 해결
 - 첫 실행 시, 해당 날짜의 객체가 안 불러지는 문제 해결
 - Realm 관련 데이터 전달 문제 완전 해결
 
-### 2022-10-02 진행상황
---- 
+</div>
+
+<summary>2022-10-02</summary>
+<div markdown="1">
+
 - Charts 그래프를 그릴 때 마다 아래 두 가지 오류가 발생했다
     - type 'chartdataset' does not conform to protocol 'rangereplaceablecollection'
     - unavailable instance method 'replacesubrange(_:with:)' was used to satisfy a requirement of protocol 'rangereplaceablecollection'
@@ -217,8 +313,11 @@
     - 다만 x축의 값을 더 알아보기 쉽게 수정할 필요가 있어보임 (Double값밖에 못 들어가는지, String값 넣을 수 있는지 질문)
 - 내일 설정 탭만 완성하면 1.0 버전을 출시할 수 있게 될 것 같다!
 
-### **2022-10-03 진행상황**
----
+</div>
+
+<summary>2022-10-03</summary>
+<div markdown="1">
+
 - 통계 탭 UI 수정
 - 체중 입력했을 때 소수점 아래 한 자리까지 반올림된 형태로 realm에 업데이트되게 구현
 - 활동칼로리 property에 저장해서 reloadLabel때 마다 활동칼로리가 업데이트되게 구현
@@ -238,14 +337,20 @@
 
 [Reading updated Realm ThreadSafeReference on ba...anycodings](https://www.anycodings.com/1questions/2559560/reading-updated-realm-threadsafereference-on-background-queue)
 
-### **2022-10-04 진행상황**
----
+</div>
+
+<summary>2022-10-04</summary>
+<div markdown="1">
+
 - 초기화 해버리면 Realm 오류가 발생해서 나중에 추가
 - 그래프 양 옆 레이블 잘리는거 수정
 - 설정 뷰의 건강 앱 접근권한 변경 → 기능 수정 필요함
     - 처음에 권한 승인 안 한 상태에서 승인한 상태로 바꾸려고 할 때 requestAuthorization이 실행 되지 않는 오류가 있음
-    
-### **2022-10-05 Grind 1.0 버전 출시!!**
+
+</div>
+
+<summary>2022-10-05 Grind 1.0 버전 출시!</summary>
+<div markdown="1">
 
 ### **업데이트 예정 기능**
 ---
@@ -259,8 +364,11 @@
 
 런치 스크린 추가
 
-### 2022-10-08 오류 수정 사항
----
+</div>
+
+<summary>2022-10-08</summary>
+<div markdown="1">
+
 - 조금 더 조건처리를 꼼꼼하게 할 필요는 있을 것 같다 - ex. 칼로리 입력 받을 때 정수만 받을 수 있게
 - 일부 화면에서 reloadLabel()이 여러 번 실행됨
 
@@ -400,3 +508,6 @@ Last Exception Backtrace:
     
     - push를 한 다음 RecordVC의 viewWillAppear 생명주기에 reloadLabel()를 포함해서 AddFoodVC에서 넘어올 때 UI상의 label이 바뀔 수 있게 변경해줌
     - **생명주기를 잘 이해하고 활용하자**
+
+</div>
+</details>

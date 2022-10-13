@@ -60,6 +60,10 @@
 		1EA4D0A528CFA49300A9E444 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA4D0A428CFA49300A9E444 /* Font.swift */; };
 		1EA4D0AB28CFA60600A9E444 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA4D0AA28CFA60600A9E444 /* BaseCollectionViewCell.swift */; };
 		1EA4D0AF28CFA6B500A9E444 /* DailyRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA4D0AE28CFA6B500A9E444 /* DailyRecord.swift */; };
+		1EB5049728F7CA2C004A34AA /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 1EB5049628F7CA2C004A34AA /* FirebaseAnalyticsWithoutAdIdSupport */; };
+		1EB5049928F7CA2C004A34AA /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 1EB5049828F7CA2C004A34AA /* FirebaseCrashlytics */; };
+		1EB5049B28F7CA2C004A34AA /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 1EB5049A28F7CA2C004A34AA /* FirebaseMessaging */; };
+		1EB5049D28F7CC7B004A34AA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1EB5049C28F7CC7B004A34AA /* GoogleService-Info.plist */; };
 		1EE39F2728EC1FE300331DB1 /* ProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 1EE39F2628EC1FE300331DB1 /* ProgressHUD */; };
 		1EE39F2A28EC202D00331DB1 /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = 1EE39F2928EC202D00331DB1 /* Zip */; };
 		1EE39F2D28EC3AFE00331DB1 /* AcknowList in Frameworks */ = {isa = PBXBuildFile; productRef = 1EE39F2C28EC3AFE00331DB1 /* AcknowList */; };
@@ -114,6 +118,7 @@
 		1EA4D0A428CFA49300A9E444 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		1EA4D0AA28CFA60600A9E444 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		1EA4D0AE28CFA6B500A9E444 /* DailyRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyRecord.swift; sourceTree = "<group>"; };
+		1EB5049C28F7CC7B004A34AA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1EE39F3028EC45A100331DB1 /* Package.resolved */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Package.resolved; path = Grind.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,8 +127,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EB5049728F7CA2C004A34AA /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				1E5CF08D28E3DCCB004D9010 /* RealmSwift in Frameworks */,
 				1EE39F2D28EC3AFE00331DB1 /* AcknowList in Frameworks */,
+				1EB5049928F7CA2C004A34AA /* FirebaseCrashlytics in Frameworks */,
 				1E5CF08B28E3DCCB004D9010 /* Realm in Frameworks */,
 				1E5CF09328E4B9FD004D9010 /* Toast in Frameworks */,
 				1EA4D09528CFA2F300A9E444 /* SnapKit in Frameworks */,
@@ -132,6 +139,7 @@
 				1EE39F2A28EC202D00331DB1 /* Zip in Frameworks */,
 				1E92CD0228EBFF34004B284B /* IQKeyboardManagerSwift in Frameworks */,
 				1E52829B28DA1C41002FB4EE /* FSCalendar in Frameworks */,
+				1EB5049B28F7CA2C004A34AA /* FirebaseMessaging in Frameworks */,
 				1EA4D09828CFA32500A9E444 /* Then in Frameworks */,
 				1E5CF07828E2190A004D9010 /* YPImagePicker in Frameworks */,
 			);
@@ -304,6 +312,7 @@
 		1EA4D07728CF9EB500A9E444 /* Grind */ = {
 			isa = PBXGroup;
 			children = (
+				1EB5049C28F7CC7B004A34AA /* GoogleService-Info.plist */,
 				1E9DE88728DD78F60022FCBC /* Key */,
 				1E52826C28D40853002FB4EE /* Grind.entitlements */,
 				1E52826828D39F01002FB4EE /* Resource */,
@@ -428,6 +437,7 @@
 				1EA4D07128CF9EB500A9E444 /* Sources */,
 				1EA4D07228CF9EB500A9E444 /* Frameworks */,
 				1EA4D07328CF9EB500A9E444 /* Resources */,
+				1EB5049E28F7CF2F004A34AA /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -447,6 +457,9 @@
 				1EE39F2628EC1FE300331DB1 /* ProgressHUD */,
 				1EE39F2928EC202D00331DB1 /* Zip */,
 				1EE39F2C28EC3AFE00331DB1 /* AcknowList */,
+				1EB5049628F7CA2C004A34AA /* FirebaseAnalyticsWithoutAdIdSupport */,
+				1EB5049828F7CA2C004A34AA /* FirebaseCrashlytics */,
+				1EB5049A28F7CA2C004A34AA /* FirebaseMessaging */,
 			);
 			productName = Grind;
 			productReference = 1EA4D07528CF9EB500A9E444 /* Grind.app */;
@@ -488,6 +501,7 @@
 				1EE39F2528EC1FE200331DB1 /* XCRemoteSwiftPackageReference "ProgressHUD" */,
 				1EE39F2828EC202D00331DB1 /* XCRemoteSwiftPackageReference "Zip" */,
 				1EE39F2B28EC3AFE00331DB1 /* XCRemoteSwiftPackageReference "AcknowList" */,
+				1EB5049528F7CA2C004A34AA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 1EA4D07628CF9EB500A9E444 /* Products */;
 			projectDirPath = "";
@@ -509,10 +523,33 @@
 				1E52826B28D39F43002FB4EE /* tway_air.ttf in Resources */,
 				1EE39F3128EC45A100331DB1 /* Package.resolved in Resources */,
 				1EA4D08028CF9EB500A9E444 /* Main.storyboard in Resources */,
+				1EB5049D28F7CC7B004A34AA /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1EB5049E28F7CF2F004A34AA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1EA4D07128CF9EB500A9E444 /* Sources */ = {
@@ -705,6 +742,7 @@
 				CODE_SIGN_ENTITLEMENTS = Grind/Grind.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = AFMSUTLF6S;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Grind/Info.plist;
@@ -861,6 +899,14 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		1EB5049528F7CA2C004A34AA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = exactVersion;
+				version = 9.6.0;
+			};
+		};
 		1EE39F2528EC1FE200331DB1 /* XCRemoteSwiftPackageReference "ProgressHUD" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/relatedcode/ProgressHUD.git";
@@ -932,6 +978,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1EA4D09628CFA32500A9E444 /* XCRemoteSwiftPackageReference "Then" */;
 			productName = Then;
+		};
+		1EB5049628F7CA2C004A34AA /* FirebaseAnalyticsWithoutAdIdSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1EB5049528F7CA2C004A34AA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsWithoutAdIdSupport;
+		};
+		1EB5049828F7CA2C004A34AA /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1EB5049528F7CA2C004A34AA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		1EB5049A28F7CA2C004A34AA /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1EB5049528F7CA2C004A34AA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
 		};
 		1EE39F2628EC1FE300331DB1 /* ProgressHUD */ = {
 			isa = XCSwiftPackageProductDependency;
