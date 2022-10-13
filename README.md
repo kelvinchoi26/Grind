@@ -3,7 +3,7 @@
 
 ## 진행하면서 학습한 내용
 <details>
-<summary>Realm Migration</summary>
+<summary>###Realm Migration</summary>
 <div markdown="1">
 
 사용자가 마이그레이션 전에 백업한 데이터가 있으면 복원할 떄도 마이그레이션 작업이 필요하나요?
@@ -60,7 +60,9 @@ extension AppDelegate {
 - healthKit / fatSecretAPI - API 요청 테스트
 
 </div>
+</details>
 
+<details>
 <summary>2022-09-14</summary>
 <div markdown="1">
 
@@ -74,7 +76,9 @@ extension AppDelegate {
 - 스키마 구조 잡기
 
 </div>
+</details>
 
+<details>
 <summary>2022-09-15</summary>
 <div markdown="1">
 
@@ -93,7 +97,9 @@ extension AppDelegate {
 - 음식 검색 API도 화면에 적용해보자!
 
 </div>
+</details>
 
+<details>
 <summary>2022-09-18</summary>
 <div markdown="1">
 
@@ -116,7 +122,9 @@ extension AppDelegate {
 - fatSecretAPI 화면과 연결
 
 </div>
+</details>
 
+<details>
 <summary>2022-09-19</summary>
 <div markdown="1">
 
@@ -146,7 +154,9 @@ extension AppDelegate {
 - 공유하기 기능 추가하면 좋을 것 같다! 코치한테 섭취칼로리/활동칼로리 오늘의 체중 보고 용으로 (사진까지 공유하면 너무 좋을듯하다!)
 
 </div>
+</details>
 
+<details>
 <summary>2022-09-20</summary>
 <div markdown="1">
 
@@ -168,7 +178,9 @@ extension AppDelegate {
 - 나만의 추천 운동 유튜브를 테이블뷰로 보여주기?
 
 </div>
+</details>
 
+<details>
 <summary>2022-09-21</summary>
 <div markdown="1">
 
@@ -185,7 +197,9 @@ extension AppDelegate {
     - 해결: height이 0인 경우 isHidden을 true로 설정, 아닌 경우 false로 해서 자연스럽게 보여지게 했다.
 
 </div>
+</details>
 
+<details>
 <summary>2022-09-22</summary>
 <div markdown="1">
 
@@ -198,7 +212,9 @@ extension AppDelegate {
     - fsCalendar의 didSelect에 날짜에 정보가 없는 경우 해당 날짜의 객체를 add해줘서 에러 발생을 방지했다.
 
 </div>
+</details>
 
+<details>
 <summary>2022-09-23</summary>
 <div markdown="1">
 
@@ -222,7 +238,9 @@ extension AppDelegate {
 - fatSecretAPI UI에 적용
 
 </div>
+</details>
 
+<details>
 <summary>2022-09-24</summary>
 <div markdown="1">
 
@@ -231,7 +249,9 @@ extension AppDelegate {
 - 다들 캘린더를 접었다 필때 PanGesture를 사용하심
 
 </div>
+</details>
 
+<details>
 <summary>2022-09-25</summary>
 <div markdown="1">
 
@@ -244,7 +264,9 @@ extension AppDelegate {
 - 알림 기능, 유튜브 추천 추가
 
 </div>
+</details>
 
+<details>
 <summary>2022-09-26</summary>
 <div markdown="1">
 
@@ -254,7 +276,9 @@ extension AppDelegate {
 - RecordVC에 tabman 적용해서 새로운 탭에 식단 사진과 정보를 담고있는 CollectionView 추가 예정
 
 </div>
+</details>
 
+<details>
 <summary>2022-09-27</summary>
 <div markdown="1">
 
@@ -266,7 +290,9 @@ extension AppDelegate {
     - WalkThroughVC의 modalPresentationStyle을 .fullScreen으로 바꾸면 새로운 VC이 띄워지는 효과 때문에 viewWillAppear이 호출되게 된다.
 
 </div>
+</details>
 
+<details>
 <summary>2022-09-28</summary>
 <div markdown="1">
 
@@ -290,7 +316,9 @@ extension AppDelegate {
 - 생명주기에 대한 공부 더 많이 필요.. 데이터 업데이트 시점에 대한 고민이 너무 많이 필요해보임
 
 </div>
+</details>
 
+<details>
 <summary>2022-09-29</summary>
 <div markdown="1">
 
@@ -299,7 +327,9 @@ extension AppDelegate {
 - Realm 관련 데이터 전달 문제 완전 해결
 
 </div>
+</details>
 
+<details>
 <summary>2022-10-02</summary>
 <div markdown="1">
 
@@ -312,7 +342,9 @@ extension AppDelegate {
 - 내일 설정 탭만 완성하면 1.0 버전을 출시할 수 있게 될 것 같다!
 
 </div>
+</details>
 
+<details>
 <summary>2022-10-03</summary>
 <div markdown="1">
 
@@ -336,7 +368,9 @@ extension AppDelegate {
 [Reading updated Realm ThreadSafeReference on ba...anycodings](https://www.anycodings.com/1questions/2559560/reading-updated-realm-threadsafereference-on-background-queue)
 
 </div>
+</details>
 
+<details>
 <summary>2022-10-04</summary>
 <div markdown="1">
 
@@ -346,7 +380,9 @@ extension AppDelegate {
     - 처음에 권한 승인 안 한 상태에서 승인한 상태로 바꾸려고 할 때 requestAuthorization이 실행 되지 않는 오류가 있음
 
 </div>
+</details>
 
+<details>
 <summary>2022-10-05 Grind 1.0 버전 출시!</summary>
 <div markdown="1">
 
@@ -363,7 +399,9 @@ extension AppDelegate {
 런치 스크린 추가
 
 </div>
+</details>
 
+<details>
 <summary>2022-10-08</summary>
 <div markdown="1">
 
