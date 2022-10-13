@@ -3,7 +3,7 @@
 
 ## 진행하면서 학습한 내용
 <details>
-<summary>###Realm Migration</summary>
+<summary>Realm Migration</summary>
 <div markdown="1">
 
 사용자가 마이그레이션 전에 백업한 데이터가 있으면 복원할 떄도 마이그레이션 작업이 필요하나요?
@@ -47,6 +47,50 @@ extension AppDelegate {
     - 하지만 각 버전마다 configuration이 다르기 때문에 2인 경우 1과 2의 블록들을 다 적용시켜줘야함
 - migration을 진행하게 되면 그 이전 버전 위에 덮어쓰는 형태이기 때문에 해당 코드는 지우지 않고 끝까지 가져가야함
 
+</div>
+</details>
+
+<details>
+<summary>Push Notification</summary>
+<div markdown="1">
+
+Firebase의 Cloud Messaging을 이용해 push notification 구현
+
+### 고려해볼만한 부분
+
+- 사용자가 현재 머무르고 있는 화면에 따라 foreground 상태에서 푸시를 보여줄지 여부를 별도로 처리할 수 있다
+    - ex. 카카오톡에서 현재 머무리고 있는 채팅방에 대한 푸시를 foreground에서 띄워주지 않는다
+- 최상단 뷰가 무엇인지 파악하고 push의 종류에 따라 특정 화면으로 전환해줄 수 있다.
+    - ex. 쿠팡에서 특정 상품에 대한 push를 클릭하면 상품 상세 페이지가 띄워집니다.
+- Interruption Level
+    - iOS15부터 알림의 수준을 다르게 설정할 수 있다.
+        - Critical: ex. 재난알림문자 (거의 사용되지 않음)
+        - TimeSensitive: 사용자가 방해금지모드를 사용해도 전달됨, 긴급 알림 수신 거부하면 일반 알림과 똑같이 전달
+        - Active: 일반적인 알림
+        - Passive: 광고성 알림, 화면을 켜거나 소리를 재생하지 않은 채 알림만 전달
+- Remove Badge Number
+    - 앱 뱃지 제거, 기존에 쌓여있는 알림 센터의 스택을 제거하는 기능을 직접 구현할 수 있음
+    
+    ```swift
+    func sceneWillEnterForeground(_ scene: UIScene) {
+            UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+            UNUserNotificationCenter.current().removeAllDeliveredNotifications()
+            UIApplication.shared.applicationIconBadgeNumber = 0
+    }
+    ```
+    
+- Token
+    - 앱 삭제/재설치, 새 기기에서 앱 복원, 로그아웃이나 탈퇴하는 경우 토큰을 제거하거나 새롭게 발급받아야 하는 경우
+    
+    ```swift
+    Installations.installations().delete { error in
+            if let error = error {
+                    print("Error deleting installation: \(error)")
+                    return
+            }
+            print("Installation deleted");
+    }
+    ```
 </div>
 </details>
 
