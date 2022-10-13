@@ -2,7 +2,6 @@
 진정한 헬창을 위한 운동 일지 앱
 
 ## 진행하면서 학습한 내용
----
 <details>
 <summary>Realm Migration</summary>
 <div markdown="1">
@@ -50,9 +49,8 @@ extension AppDelegate {
 
 </div>
 </details>
----
+
 ## 개발일지
----
 <details>
 <summary>2022-09-13</summary>
 <div markdown="1">
