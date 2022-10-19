@@ -11,18 +11,50 @@ import Zip
 import MessageUI
 import AcknowList
 
+struct Setting: Hashable {
+    let id = UUID().uuidString
+    let title: String
+    let image: String
+}
+
 final class SettingViewController: BaseViewController {
+    
+    var collectionView = UICollectionView()
+    
+    let setting = [
+        Setting(title: "데이터 백업", image: "externaldrive"),
+        Setting(title: "데이터 복구", image: "arrow.counterclockwise.icloud"),
+        Setting(title: "버전 정보", image: "doc"),
+        Setting(title: "건강 앱 접근권한 변경", image: "person.badge.shield.checkmark"),
+        Setting(title: "오픈소스 라이선스", image: "line.3.crossed.swirl.circle.fill"),
+        Setting(title: "개발자에게 문의하기", image: "envelope.badge")
+    ]
     
     private let repository = DailyRecordRepository.repository
     
-    private let settingView = SettingView()
+//    private let settingView = SettingView()
+    
+    // cell 등록
+//    private var cellRegistration: UICollectionView.CellRegistration<UICollectionViewListCell, String>!
+    
+    // Int: section 번호, String: 각 row 당 데이터
+    private var dataSource: UICollectionViewDiffableDataSource<Int, Setting>!
     
     override func configureUI() {
-        self.view = settingView
+//        self.view = settingView
+        view.addSubview(collectionView)
         
-        settingView.tableView.delegate = self
-        settingView.tableView.dataSource = self
-        settingView.tableView.register(SettingTableViewCell.self, forCellReuseIdentifier: "cell")
+        collectionView.collectionViewLayout = createLayout()
+        configureDataSource()
+        collectionView.delegate = self
+        
+        collectionView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
+        
+//        settingView.tableView.delegate = self
+//        settingView.tableView.dataSource = self
+//        settingView.tableView.register(SettingTableViewCell.self, forCellReuseIdentifier: "cell")
         
         self.navigationItem.title = "설정"
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: Constants.Font.subTitleFont as Any]
@@ -30,13 +62,73 @@ final class SettingViewController: BaseViewController {
     }
 }
 
+extension SettingViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        // 새로 추가된 row를 클릭했을 때 오류 생김 (indexPath 기준으로 실행이 돼서)
+        // let item = list[indexPath.item]
+        // dataSource에서 업데이트된 리스트에서 itemIdentifier를 통해 item을 불러온다
+        
+        guard let item = dataSource.itemIdentifier(for: indexPath) else { return }
+        
+//        let alert = UIAlertController(title: item, message: "클릭!", preferredStyle: .alert)
+//        let ok = UIAlertAction(title: "확인", style: .cancel)
+//        alert.addAction(ok)
+//        present(alert, animated: true)
+    }
+}
+
 extension SettingViewController {
-    func documentDirectoryPath() -> URL? {
+    
+    private func createLayout() -> UICollectionViewLayout {
+        var config = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
+        config.showsSeparators = false
+        config.backgroundColor = .brown
+        let layout = UICollectionViewCompositionalLayout.list(using: config)
+        return layout
+    }
+    
+    private func configureDataSource() {
+        // 여기서 선언해줄거면 타입 추론을 할 수 있게 명시를 해줘야함 (string)
+        let cellRegistration = UICollectionView.CellRegistration<UICollectionViewListCell, Setting>(handler: { cell, indexPath, itemIdentifier in
+            
+            var content = UIListContentConfiguration.valueCell()
+            
+            content.text = itemIdentifier.title
+            content.image = UIImage(systemName: "\(itemIdentifier.image)")
+            content.secondaryText = indexPath.item == 2 ? "1.1.0" : nil
+            cell.contentConfiguration = content
+            
+            var background = UIBackgroundConfiguration.listPlainCell()
+            background.strokeWidth = 2
+            background.strokeColor = .brown
+            cell.backgroundConfiguration = background
+        })
+        
+        // collectionView.dataSource = self -> 더 이상 안 써도 됨
+        // numberOfItemsInSection, cellForItemAt Method 대신에 여기 안에서 모두 처리함
+        dataSource = UICollectionViewDiffableDataSource(collectionView: collectionView, cellProvider: { collectionView, indexPath, itemIdentifier in
+            
+            // cellForItemAt 역할
+            // 이 해당 코드가 실행되면 (셀 재사용), 위에 있는 cellRegistration의 클로져가 실행이 돼서 셀이 그려짐)
+            let cell = collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: itemIdentifier)
+            return cell
+        })
+        
+        // Initial
+        var snapshot = NSDiffableDataSourceSnapshot<Int, Setting>()
+        snapshot.appendSections([0])
+        snapshot.appendItems(setting)
+        // reloadData 코드의 역할을 한다고 생각하면 됨
+        dataSource.apply(snapshot)
+    }
+    
+    private func documentDirectoryPath() -> URL? {
         guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return nil } // Document 경로
         return documentDirectory
     }
     
-    func backupButtonClicked() {
+    private func backupButtonClicked() {
         
         var urlPaths = [URL]()
         
@@ -77,7 +169,7 @@ extension SettingViewController {
         showActivityViewController()
     }
     
-    func showActivityViewController() {
+    private func showActivityViewController() {
         // 도큐먼트 경로 가져와라.
         guard let path = documentDirectoryPath() else {
             print("Document 위치에 오류가 있습니다.")
@@ -93,7 +185,7 @@ extension SettingViewController {
     
     
     // 복구 버튼을 눌렀을 때에는 Document Picker를 가져와서 백업 파일을 확인할 수 있어야 함.
-    func restoreButtonClicked() {
+    private func restoreButtonClicked() {
         let documentPicker = UIDocumentPickerViewController(forOpeningContentTypes: [.archive], asCopy: true)
         documentPicker.delegate = self
         documentPicker.allowsMultipleSelection = false
@@ -101,7 +193,7 @@ extension SettingViewController {
     }
     
     // 오픈소스 라이선스 띄우기
-    func showOpenSourceLicense() {
+    private func showOpenSourceLicense() {
         
         let vc = AcknowListViewController(fileNamed: "Package.resolved")
         let navigationController = UINavigationController(rootViewController: vc)
