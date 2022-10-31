@@ -76,5 +76,145 @@
             </Actions>
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F145EED9-CF05-490F-A700-33B10A7374CC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Grind/Scene/Setting/SettingViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "createLayout()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DEFB09F3-05ED-48C5-BEDA-37D9F31826D8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Grind/Scene/Setting/View/SettingView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "createLayout()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "70645B44-673C-48C3-AB9F-B0543C982A1D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Grind/Scene/Setting/View/SettingView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "collectionView"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "70645B44-673C-48C3-AB9F-B0543C982A1D - 5a407a8818a7ae41"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Grind.SettingView.collectionView.getter : __C.UICollectionView"
+                  moduleName = "Grind"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hyungminchoi/Desktop/%E1%84%89%E1%85%A2%E1%84%8A%E1%85%A1%E1%86%A8iOS/Grind/Grind/Scene/Setting/View/SettingView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "94">
+               </Location>
+               <Location
+                  uuid = "70645B44-673C-48C3-AB9F-B0543C982A1D - 15c636a3fe6efeb5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Grind.SettingView.collectionView.setter : __C.UICollectionView"
+                  moduleName = "Grind"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hyungminchoi/Desktop/%E1%84%89%E1%85%A2%E1%84%8A%E1%85%A1%E1%86%A8iOS/Grind/Grind/Scene/Setting/View/SettingView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "132">
+               </Location>
+               <Location
+                  uuid = "70645B44-673C-48C3-AB9F-B0543C982A1D - 33277dad51036246"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Grind.SettingView.collectionView.modify : __C.UICollectionView"
+                  moduleName = "Grind"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hyungminchoi/Desktop/%E1%84%89%E1%85%A2%E1%84%8A%E1%85%A1%E1%86%A8iOS/Grind/Grind/Scene/Setting/View/SettingView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "70645B44-673C-48C3-AB9F-B0543C982A1D - ff22a216e1a9d736"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Grind.SettingView.collectionView.modify : __C.UICollectionView with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Grind"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hyungminchoi/Desktop/%E1%84%89%E1%85%A2%E1%84%8A%E1%85%A1%E1%86%A8iOS/Grind/Grind/Scene/Setting/View/SettingView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "15">
+               </Location>
+               <Location
+                  uuid = "70645B44-673C-48C3-AB9F-B0543C982A1D - c97cf2d071a77bca"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Grind.SettingView.init(frame: __C.CGRect) -&gt; Grind.SettingView"
+                  moduleName = "Grind"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hyungminchoi/Desktop/%E1%84%89%E1%85%A2%E1%84%8A%E1%85%A1%E1%86%A8iOS/Grind/Grind/Scene/Setting/View/SettingView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "117">
+               </Location>
+               <Location
+                  uuid = "70645B44-673C-48C3-AB9F-B0543C982A1D - 3656ab0db45cd1b6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Grind.SettingView.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Grind.SettingView&gt;"
+                  moduleName = "Grind"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hyungminchoi/Desktop/%E1%84%89%E1%85%A2%E1%84%8A%E1%85%A1%E1%86%A8iOS/Grind/Grind/Scene/Setting/View/SettingView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "80">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

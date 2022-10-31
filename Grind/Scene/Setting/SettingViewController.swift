@@ -19,9 +19,9 @@ struct Setting: Hashable {
 
 final class SettingViewController: BaseViewController {
     
-    var collectionView = UICollectionView()
+    private let settingView = SettingView()
     
-    let setting = [
+    private let setting = [
         Setting(title: "데이터 백업", image: "externaldrive"),
         Setting(title: "데이터 복구", image: "arrow.counterclockwise.icloud"),
         Setting(title: "버전 정보", image: "doc"),
@@ -41,16 +41,13 @@ final class SettingViewController: BaseViewController {
     private var dataSource: UICollectionViewDiffableDataSource<Int, Setting>!
     
     override func configureUI() {
-//        self.view = settingView
-        view.addSubview(collectionView)
+        super.configureUI()
         
-        collectionView.collectionViewLayout = createLayout()
+        settingView.collectionView.collectionViewLayout = createLayout()
         configureDataSource()
-        collectionView.delegate = self
+        settingView.collectionView.delegate = self
         
-        collectionView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
-        }
+        self.view = settingView
         
 //        settingView.tableView.delegate = self
 //        settingView.tableView.dataSource = self
@@ -82,8 +79,6 @@ extension SettingViewController {
     
     private func createLayout() -> UICollectionViewLayout {
         var config = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
-        config.showsSeparators = false
-        config.backgroundColor = .brown
         let layout = UICollectionViewCompositionalLayout.list(using: config)
         return layout
     }
@@ -107,7 +102,7 @@ extension SettingViewController {
         
         // collectionView.dataSource = self -> 더 이상 안 써도 됨
         // numberOfItemsInSection, cellForItemAt Method 대신에 여기 안에서 모두 처리함
-        dataSource = UICollectionViewDiffableDataSource(collectionView: collectionView, cellProvider: { collectionView, indexPath, itemIdentifier in
+        dataSource = UICollectionViewDiffableDataSource(collectionView: settingView.collectionView, cellProvider: { collectionView, indexPath, itemIdentifier in
             
             // cellForItemAt 역할
             // 이 해당 코드가 실행되면 (셀 재사용), 위에 있는 cellRegistration의 클로져가 실행이 돼서 셀이 그려짐)
