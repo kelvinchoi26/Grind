@@ -66,7 +66,27 @@ extension SettingViewController: UICollectionViewDelegate {
         // let item = list[indexPath.item]
         // dataSource에서 업데이트된 리스트에서 itemIdentifier를 통해 item을 불러온다
         
-        guard let item = dataSource.itemIdentifier(for: indexPath) else { return }
+//        guard let item = dataSource.itemIdentifier(for: indexPath) else { return }
+        
+        let row = indexPath.row
+        
+        switch row {
+        case 0:
+            backupButtonClicked()
+        case 1:
+            restoreButtonClicked()
+//        case 2:
+//            self.repository.resetRealm()
+//            self.repository.addRecord(item: <#T##DailyRecord#>)
+        case 3:
+            HealthKitManager.shared.checkAuthorization()
+        case 4:
+            showOpenSourceLicense()
+        case 5:
+            mailButtonClicked()
+        default:
+            break
+        }
         
 //        let alert = UIAlertController(title: item, message: "클릭!", preferredStyle: .alert)
 //        let ok = UIAlertAction(title: "확인", style: .cancel)
@@ -95,8 +115,8 @@ extension SettingViewController {
             cell.contentConfiguration = content
             
             var background = UIBackgroundConfiguration.listPlainCell()
-            background.strokeWidth = 2
-            background.strokeColor = .brown
+//            background.strokeWidth = 2
+//            background.strokeColor = .brown
             cell.backgroundConfiguration = background
         })
         
