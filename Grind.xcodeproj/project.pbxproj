@@ -37,6 +37,9 @@
 		1E5E760828DCBFAD004EA9FD /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5E760728DCBFAD004EA9FD /* RecordViewController.swift */; };
 		1E5E760A28DCC1F8004EA9FD /* RecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5E760928DCC1F8004EA9FD /* RecordView.swift */; };
 		1E5E760C28DCCED7004EA9FD /* RecordCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5E760B28DCCED7004EA9FD /* RecordCircleView.swift */; };
+		1E7696142910DB0D00859B4A /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7696132910DB0D00859B4A /* SettingViewModel.swift */; };
+		1E76961729118E9D00859B4A /* Differentiator in Frameworks */ = {isa = PBXBuildFile; productRef = 1E76961629118E9D00859B4A /* Differentiator */; };
+		1E76961929118E9D00859B4A /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = 1E76961829118E9D00859B4A /* RxDataSources */; };
 		1E7DCF8728D0F209000D43B5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7DCF8628D0F209000D43B5 /* HomeViewController.swift */; };
 		1E7DCF8F28D0F3EB000D43B5 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7DCF8E28D0F3EB000D43B5 /* SettingViewController.swift */; };
 		1E7DCF9128D0F3F6000D43B5 /* StatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7DCF9028D0F3F6000D43B5 /* StatViewController.swift */; };
@@ -96,6 +99,7 @@
 		1E5E760728DCBFAD004EA9FD /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 		1E5E760928DCC1F8004EA9FD /* RecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordView.swift; sourceTree = "<group>"; };
 		1E5E760B28DCCED7004EA9FD /* RecordCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCircleView.swift; sourceTree = "<group>"; };
+		1E7696132910DB0D00859B4A /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
 		1E7DCF8628D0F209000D43B5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		1E7DCF8E28D0F3EB000D43B5 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		1E7DCF9028D0F3F6000D43B5 /* StatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatViewController.swift; sourceTree = "<group>"; };
@@ -131,12 +135,14 @@
 				1E5CF08D28E3DCCB004D9010 /* RealmSwift in Frameworks */,
 				1EE39F2D28EC3AFE00331DB1 /* AcknowList in Frameworks */,
 				1EB5049928F7CA2C004A34AA /* FirebaseCrashlytics in Frameworks */,
+				1E76961729118E9D00859B4A /* Differentiator in Frameworks */,
 				1E5CF08B28E3DCCB004D9010 /* Realm in Frameworks */,
 				1E5CF09328E4B9FD004D9010 /* Toast in Frameworks */,
 				1EA4D09528CFA2F300A9E444 /* SnapKit in Frameworks */,
 				1E4489BA28E9E593004CA993 /* Charts in Frameworks */,
 				1EE39F2728EC1FE300331DB1 /* ProgressHUD in Frameworks */,
 				1EE39F2A28EC202D00331DB1 /* Zip in Frameworks */,
+				1E76961929118E9D00859B4A /* RxDataSources in Frameworks */,
 				1E92CD0228EBFF34004B284B /* IQKeyboardManagerSwift in Frameworks */,
 				1E52829B28DA1C41002FB4EE /* FSCalendar in Frameworks */,
 				1EB5049B28F7CA2C004A34AA /* FirebaseMessaging in Frameworks */,
@@ -274,6 +280,14 @@
 			path = Food;
 			sourceTree = "<group>";
 		};
+		1E7696122910DAFD00859B4A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1E7696132910DB0D00859B4A /* SettingViewModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		1E92CCF228EBD522004B284B /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -394,6 +408,7 @@
 		1EA4D0A828CFA5BF00A9E444 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				1E7696122910DAFD00859B4A /* Model */,
 				1E92CCF228EBD522004B284B /* View */,
 				1E7DCF8E28D0F3EB000D43B5 /* SettingViewController.swift */,
 			);
@@ -460,6 +475,8 @@
 				1EB5049628F7CA2C004A34AA /* FirebaseAnalyticsWithoutAdIdSupport */,
 				1EB5049828F7CA2C004A34AA /* FirebaseCrashlytics */,
 				1EB5049A28F7CA2C004A34AA /* FirebaseMessaging */,
+				1E76961629118E9D00859B4A /* Differentiator */,
+				1E76961829118E9D00859B4A /* RxDataSources */,
 			);
 			productName = Grind;
 			productReference = 1EA4D07528CF9EB500A9E444 /* Grind.app */;
@@ -502,6 +519,7 @@
 				1EE39F2828EC202D00331DB1 /* XCRemoteSwiftPackageReference "Zip" */,
 				1EE39F2B28EC3AFE00331DB1 /* XCRemoteSwiftPackageReference "AcknowList" */,
 				1EB5049528F7CA2C004A34AA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				1E76961529118E9D00859B4A /* XCRemoteSwiftPackageReference "RxDataSources" */,
 			);
 			productRefGroup = 1EA4D07628CF9EB500A9E444 /* Products */;
 			projectDirPath = "";
@@ -591,6 +609,7 @@
 				1E52828628D7863D002FB4EE /* HomeCalorieView.swift in Sources */,
 				1E52828E28D8D444002FB4EE /* WalkThroughView.swift in Sources */,
 				1E52827428D445E1002FB4EE /* HealthKitSetupError.swift in Sources */,
+				1E7696142910DB0D00859B4A /* SettingViewModel.swift in Sources */,
 				1EA4D07B28CF9EB500A9E444 /* SceneDelegate.swift in Sources */,
 				1EA4D0A128CFA46C00A9E444 /* Constants.swift in Sources */,
 				1E92CCFC28EBD757004B284B /* BaseTableViewCell.swift in Sources */,
@@ -763,7 +782,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sesac.Grind;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -803,7 +822,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sesac.Grind;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -877,6 +896,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 5.0.0;
+			};
+		};
+		1E76961529118E9D00859B4A /* XCRemoteSwiftPackageReference "RxDataSources" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxDataSources.git";
+			requirement = {
+				kind = exactVersion;
+				version = 5.0.2;
 			};
 		};
 		1E92CD0028EBFF34004B284B /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
@@ -967,6 +994,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1E5CF09128E4B9FD004D9010 /* XCRemoteSwiftPackageReference "Toast-Swift" */;
 			productName = Toast;
+		};
+		1E76961629118E9D00859B4A /* Differentiator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1E76961529118E9D00859B4A /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = Differentiator;
+		};
+		1E76961829118E9D00859B4A /* RxDataSources */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1E76961529118E9D00859B4A /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = RxDataSources;
 		};
 		1E92CD0128EBFF34004B284B /* IQKeyboardManagerSwift */ = {
 			isa = XCSwiftPackageProductDependency;

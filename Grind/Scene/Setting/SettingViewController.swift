@@ -10,6 +10,7 @@ import ProgressHUD
 import Zip
 import MessageUI
 import AcknowList
+import RxDataSources
 
 struct Setting: Hashable {
     let id = UUID().uuidString
@@ -32,7 +33,6 @@ final class SettingViewController: BaseViewController {
     
     private let repository = DailyRecordRepository.repository
     
-//    private let settingView = SettingView()
     
     // cell 등록
 //    private var cellRegistration: UICollectionView.CellRegistration<UICollectionViewListCell, String>!
@@ -53,9 +53,13 @@ final class SettingViewController: BaseViewController {
 //        settingView.tableView.dataSource = self
 //        settingView.tableView.register(SettingTableViewCell.self, forCellReuseIdentifier: "cell")
         
+        view.backgroundColor = Constants.Color.backgroundColor
+        
         self.navigationItem.title = "설정"
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: Constants.Font.subTitleFont as Any]
+        
         self.navigationItem.titleView?.tintColor = Constants.Color.primaryText
+        self.navigationItem.titleView?.backgroundColor = Constants.Color.backgroundColor
     }
 }
 
@@ -110,8 +114,9 @@ extension SettingViewController {
             var content = UIListContentConfiguration.valueCell()
             
             content.text = itemIdentifier.title
+            content.textProperties.font = Constants.Font.textFont ?? .systemFont(ofSize: 12)
             content.image = UIImage(systemName: "\(itemIdentifier.image)")
-            content.secondaryText = indexPath.item == 2 ? "1.1.0" : nil
+            content.secondaryText = indexPath.item == 2 ? "1.1.1" : nil
             cell.contentConfiguration = content
             
             var background = UIBackgroundConfiguration.listPlainCell()

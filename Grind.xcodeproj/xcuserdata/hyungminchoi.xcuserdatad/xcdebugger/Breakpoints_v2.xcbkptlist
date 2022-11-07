@@ -86,8 +86,8 @@
             filePath = "Grind/Scene/Setting/SettingViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
             landmarkName = "createLayout()"
             landmarkType = "7">
          </BreakpointContent>
