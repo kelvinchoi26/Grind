@@ -43,6 +43,7 @@ final class WalkThroughViewController: BaseViewController {
         }
         
         let doubleWeight = Double(weight) ?? 0.0
+        
         // 소수점 아래 한 자리까지 반올림
         let finalWeight = String(format: "%.1f", doubleWeight)
         

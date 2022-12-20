@@ -8,10 +8,6 @@
 import HealthKit
 import UIKit
 
-//protocol HealthStoreProtocol {
-//
-//}
-
 final class HealthKitManager {
     
     private init() {}
