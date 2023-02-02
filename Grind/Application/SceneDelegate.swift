@@ -26,12 +26,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let statViewController = StatViewController()
         let statNavigationController = UINavigationController(rootViewController: statViewController)
         
+        let videoViewController = VideoViewController()
+        let videoNavigationController = UINavigationController(rootViewController: videoViewController)
+        
         let settingViewController = SettingViewController()
         let settingNavigationController = UINavigationController(rootViewController: settingViewController)
         
         let tabBarController = UITabBarController()
         
-        tabBarController.setViewControllers([statNavigationController, homeNavigationController, settingNavigationController], animated: true)
+        tabBarController.setViewControllers([statNavigationController, homeNavigationController, settingNavigationController, videoNavigationController], animated: true)
         tabBarController.tabBar.tintColor = Constants.Color.primaryText
         
         if let items = tabBarController.tabBar.items {
@@ -45,10 +48,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             items[1].title = "홈"
             items[1].setTitleTextAttributes([NSAttributedString.Key.font: Constants.Font.textFont as Any], for: .normal)
             
-            items[2].selectedImage = UIImage(systemName: "gearshape.fill")
-            items[2].image = UIImage(systemName: "gearshape")
-            items[2].title = "설정"
+            items[2].selectedImage = UIImage(systemName: "video.square.fill")
+            items[2].image = UIImage(systemName: "video.square")
+            items[2].title = "추천 영상"
             items[2].setTitleTextAttributes([NSAttributedString.Key.font: Constants.Font.textFont as Any], for: .normal)
+            
+            items[3].selectedImage = UIImage(systemName: "gearshape.fill")
+            items[3].image = UIImage(systemName: "gearshape")
+            items[3].title = "설정"
+            items[3].setTitleTextAttributes([NSAttributedString.Key.font: Constants.Font.textFont as Any], for: .normal)
         }
         
         // 홈 탭을 기본 탭으로 설정

@@ -47,6 +47,9 @@
 		1E92CCFC28EBD757004B284B /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E92CCFB28EBD757004B284B /* BaseTableViewCell.swift */; };
 		1E92CCFE28EBD796004B284B /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E92CCFD28EBD796004B284B /* SettingTableViewCell.swift */; };
 		1E92CD0228EBFF34004B284B /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1E92CD0128EBFF34004B284B /* IQKeyboardManagerSwift */; };
+		1E9A51EF298BD448004560ED /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9A51EE298BD448004560ED /* VideoViewController.swift */; };
+		1E9A51F2298BD49E004560ED /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9A51F1298BD49E004560ED /* VideoView.swift */; };
+		1E9A51F5298BD61E004560ED /* YouTubeiOSPlayerHelper in Frameworks */ = {isa = PBXBuildFile; productRef = 1E9A51F4298BD61E004560ED /* YouTubeiOSPlayerHelper */; };
 		1E9DE88928DD79020022FCBC /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9DE88828DD79020022FCBC /* APIKey.swift */; };
 		1EA4D07928CF9EB500A9E444 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA4D07828CF9EB500A9E444 /* AppDelegate.swift */; };
 		1EA4D07B28CF9EB500A9E444 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA4D07A28CF9EB500A9E444 /* SceneDelegate.swift */; };
@@ -106,6 +109,8 @@
 		1E92CCF328EBD53D004B284B /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		1E92CCFB28EBD757004B284B /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		1E92CCFD28EBD796004B284B /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
+		1E9A51EE298BD448004560ED /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
+		1E9A51F1298BD49E004560ED /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
 		1E9DE88828DD79020022FCBC /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		1EA4D07528CF9EB500A9E444 /* Grind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Grind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EA4D07828CF9EB500A9E444 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -148,6 +153,7 @@
 				1EB5049B28F7CA2C004A34AA /* FirebaseMessaging in Frameworks */,
 				1EA4D09828CFA32500A9E444 /* Then in Frameworks */,
 				1E5CF07828E2190A004D9010 /* YPImagePicker in Frameworks */,
+				1E9A51F5298BD61E004560ED /* YouTubeiOSPlayerHelper in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,6 +303,23 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		1E9A51ED298BD41A004560ED /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				1E9A51F0298BD44D004560ED /* Video */,
+				1E9A51EE298BD448004560ED /* VideoViewController.swift */,
+			);
+			path = Video;
+			sourceTree = "<group>";
+		};
+		1E9A51F0298BD44D004560ED /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				1E9A51F1298BD49E004560ED /* VideoView.swift */,
+			);
+			path = Video;
+			sourceTree = "<group>";
+		};
 		1E9DE88728DD78F60022FCBC /* Key */ = {
 			isa = PBXGroup;
 			children = (
@@ -387,6 +410,7 @@
 		1EA4D0A628CFA5A700A9E444 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				1E9A51ED298BD41A004560ED /* Video */,
 				1EA4D0AC28CFA68900A9E444 /* WalkThrough */,
 				1EA4D0A928CFA5C400A9E444 /* Stat */,
 				1EA4D0A828CFA5BF00A9E444 /* Setting */,
@@ -477,6 +501,7 @@
 				1EB5049A28F7CA2C004A34AA /* FirebaseMessaging */,
 				1E76961629118E9D00859B4A /* Differentiator */,
 				1E76961829118E9D00859B4A /* RxDataSources */,
+				1E9A51F4298BD61E004560ED /* YouTubeiOSPlayerHelper */,
 			);
 			productName = Grind;
 			productReference = 1EA4D07528CF9EB500A9E444 /* Grind.app */;
@@ -520,6 +545,7 @@
 				1EE39F2B28EC3AFE00331DB1 /* XCRemoteSwiftPackageReference "AcknowList" */,
 				1EB5049528F7CA2C004A34AA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				1E76961529118E9D00859B4A /* XCRemoteSwiftPackageReference "RxDataSources" */,
+				1E9A51F3298BD61E004560ED /* XCRemoteSwiftPackageReference "youtube-ios-player-helper" */,
 			);
 			productRefGroup = 1EA4D07628CF9EB500A9E444 /* Products */;
 			projectDirPath = "";
@@ -589,6 +615,7 @@
 				1E52828428D78631002FB4EE /* HomeWeightView.swift in Sources */,
 				1EA4D0A328CFA47B00A9E444 /* Color.swift in Sources */,
 				1E52829828D98A07002FB4EE /* Text.swift in Sources */,
+				1E9A51EF298BD448004560ED /* VideoViewController.swift in Sources */,
 				1EA4D09F28CFA40900A9E444 /* BaseView.swift in Sources */,
 				1E52828A28D797D8002FB4EE /* HomeWorkoutView.swift in Sources */,
 				1E5CF08128E2202A004D9010 /* FoodView.swift in Sources */,
@@ -609,6 +636,7 @@
 				1E52828628D7863D002FB4EE /* HomeCalorieView.swift in Sources */,
 				1E52828E28D8D444002FB4EE /* WalkThroughView.swift in Sources */,
 				1E52827428D445E1002FB4EE /* HealthKitSetupError.swift in Sources */,
+				1E9A51F2298BD49E004560ED /* VideoView.swift in Sources */,
 				1E7696142910DB0D00859B4A /* SettingViewModel.swift in Sources */,
 				1EA4D07B28CF9EB500A9E444 /* SceneDelegate.swift in Sources */,
 				1EA4D0A128CFA46C00A9E444 /* Constants.swift in Sources */,
@@ -914,6 +942,14 @@
 				version = 6.5.0;
 			};
 		};
+		1E9A51F3298BD61E004560ED /* XCRemoteSwiftPackageReference "youtube-ios-player-helper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/youtube/youtube-ios-player-helper.git";
+			requirement = {
+				kind = exactVersion;
+				version = 1.0.4;
+			};
+		};
 		1EA4D09328CFA2F300A9E444 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -1009,6 +1045,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1E92CD0028EBFF34004B284B /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
 			productName = IQKeyboardManagerSwift;
+		};
+		1E9A51F4298BD61E004560ED /* YouTubeiOSPlayerHelper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1E9A51F3298BD61E004560ED /* XCRemoteSwiftPackageReference "youtube-ios-player-helper" */;
+			productName = YouTubeiOSPlayerHelper;
 		};
 		1EA4D09428CFA2F300A9E444 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
