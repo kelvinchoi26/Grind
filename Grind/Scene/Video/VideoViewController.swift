@@ -6,37 +6,28 @@
 //
 
 import UIKit
+import YouTubeiOSPlayerHelper
 
 final class VideoViewController: BaseViewController {
     
-    private let repository = DailyRecordRepository.repository
-    
-    private let statView = StatView()
-    
-    private let formatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "MMdd"
-        return formatter
-    }()
+    let videoView = VideoView()
     
     override func loadView() {
         super.loadView()
-        
-        self.view = statView
+   
+        self.view = videoView
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        queryWeightData()
-        queryCalorieData()
+        videoView.benchVideoView.load(withVideoId: "3xaSY1ze8k8")
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        queryWeightData()
-        queryCalorieData()
+      
     }
     
     override func configureUI() {

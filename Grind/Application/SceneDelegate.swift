@@ -34,7 +34,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let tabBarController = UITabBarController()
         
-        tabBarController.setViewControllers([statNavigationController, homeNavigationController, settingNavigationController, videoNavigationController], animated: true)
+        tabBarController.setViewControllers([statNavigationController, homeNavigationController, videoNavigationController, settingNavigationController], animated: true)
         tabBarController.tabBar.tintColor = Constants.Color.primaryText
         
         if let items = tabBarController.tabBar.items {
