@@ -50,6 +50,10 @@
 		1E9A51EF298BD448004560ED /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9A51EE298BD448004560ED /* VideoViewController.swift */; };
 		1E9A51F2298BD49E004560ED /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9A51F1298BD49E004560ED /* VideoView.swift */; };
 		1E9A51F5298BD61E004560ED /* YouTubeiOSPlayerHelper in Frameworks */ = {isa = PBXBuildFile; productRef = 1E9A51F4298BD61E004560ED /* YouTubeiOSPlayerHelper */; };
+		1E9A51F8298BF20C004560ED /* Tabman in Frameworks */ = {isa = PBXBuildFile; productRef = 1E9A51F7298BF20C004560ED /* Tabman */; };
+		1E9A51FA298BF2C6004560ED /* FrontVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9A51F9298BF2C6004560ED /* FrontVideoViewController.swift */; };
+		1E9A51FC298BF2E9004560ED /* BackVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9A51FB298BF2E9004560ED /* BackVideoViewController.swift */; };
+		1E9A51FE298BF2FF004560ED /* LegVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9A51FD298BF2FF004560ED /* LegVideoViewController.swift */; };
 		1E9DE88928DD79020022FCBC /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9DE88828DD79020022FCBC /* APIKey.swift */; };
 		1EA4D07928CF9EB500A9E444 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA4D07828CF9EB500A9E444 /* AppDelegate.swift */; };
 		1EA4D07B28CF9EB500A9E444 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA4D07A28CF9EB500A9E444 /* SceneDelegate.swift */; };
@@ -111,6 +115,9 @@
 		1E92CCFD28EBD796004B284B /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		1E9A51EE298BD448004560ED /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		1E9A51F1298BD49E004560ED /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
+		1E9A51F9298BF2C6004560ED /* FrontVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontVideoViewController.swift; sourceTree = "<group>"; };
+		1E9A51FB298BF2E9004560ED /* BackVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackVideoViewController.swift; sourceTree = "<group>"; };
+		1E9A51FD298BF2FF004560ED /* LegVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegVideoViewController.swift; sourceTree = "<group>"; };
 		1E9DE88828DD79020022FCBC /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		1EA4D07528CF9EB500A9E444 /* Grind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Grind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EA4D07828CF9EB500A9E444 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -146,6 +153,7 @@
 				1EA4D09528CFA2F300A9E444 /* SnapKit in Frameworks */,
 				1E4489BA28E9E593004CA993 /* Charts in Frameworks */,
 				1EE39F2728EC1FE300331DB1 /* ProgressHUD in Frameworks */,
+				1E9A51F8298BF20C004560ED /* Tabman in Frameworks */,
 				1EE39F2A28EC202D00331DB1 /* Zip in Frameworks */,
 				1E76961929118E9D00859B4A /* RxDataSources in Frameworks */,
 				1E92CD0228EBFF34004B284B /* IQKeyboardManagerSwift in Frameworks */,
@@ -306,18 +314,21 @@
 		1E9A51ED298BD41A004560ED /* Video */ = {
 			isa = PBXGroup;
 			children = (
-				1E9A51F0298BD44D004560ED /* Video */,
+				1E9A51F0298BD44D004560ED /* View */,
 				1E9A51EE298BD448004560ED /* VideoViewController.swift */,
+				1E9A51F9298BF2C6004560ED /* FrontVideoViewController.swift */,
+				1E9A51FB298BF2E9004560ED /* BackVideoViewController.swift */,
+				1E9A51FD298BF2FF004560ED /* LegVideoViewController.swift */,
 			);
 			path = Video;
 			sourceTree = "<group>";
 		};
-		1E9A51F0298BD44D004560ED /* Video */ = {
+		1E9A51F0298BD44D004560ED /* View */ = {
 			isa = PBXGroup;
 			children = (
 				1E9A51F1298BD49E004560ED /* VideoView.swift */,
 			);
-			path = Video;
+			path = View;
 			sourceTree = "<group>";
 		};
 		1E9DE88728DD78F60022FCBC /* Key */ = {
@@ -502,6 +513,7 @@
 				1E76961629118E9D00859B4A /* Differentiator */,
 				1E76961829118E9D00859B4A /* RxDataSources */,
 				1E9A51F4298BD61E004560ED /* YouTubeiOSPlayerHelper */,
+				1E9A51F7298BF20C004560ED /* Tabman */,
 			);
 			productName = Grind;
 			productReference = 1EA4D07528CF9EB500A9E444 /* Grind.app */;
@@ -546,6 +558,7 @@
 				1EB5049528F7CA2C004A34AA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				1E76961529118E9D00859B4A /* XCRemoteSwiftPackageReference "RxDataSources" */,
 				1E9A51F3298BD61E004560ED /* XCRemoteSwiftPackageReference "youtube-ios-player-helper" */,
+				1E9A51F6298BF20B004560ED /* XCRemoteSwiftPackageReference "Tabman" */,
 			);
 			productRefGroup = 1EA4D07628CF9EB500A9E444 /* Products */;
 			projectDirPath = "";
@@ -629,7 +642,9 @@
 				1E5E760A28DCC1F8004EA9FD /* RecordView.swift in Sources */,
 				1E4489A128E6A486004CA993 /* TabViewController.swift in Sources */,
 				1EA4D0A528CFA49300A9E444 /* Font.swift in Sources */,
+				1E9A51FA298BF2C6004560ED /* FrontVideoViewController.swift in Sources */,
 				1E7DCF8728D0F209000D43B5 /* HomeViewController.swift in Sources */,
+				1E9A51FC298BF2E9004560ED /* BackVideoViewController.swift in Sources */,
 				1E92CCF428EBD53D004B284B /* SettingView.swift in Sources */,
 				1EA4D07928CF9EB500A9E444 /* AppDelegate.swift in Sources */,
 				1E52828228D77FE3002FB4EE /* HomeCircleView.swift in Sources */,
@@ -642,6 +657,7 @@
 				1EA4D0A128CFA46C00A9E444 /* Constants.swift in Sources */,
 				1E92CCFC28EBD757004B284B /* BaseTableViewCell.swift in Sources */,
 				1E7DCF8F28D0F3EB000D43B5 /* SettingViewController.swift in Sources */,
+				1E9A51FE298BF2FF004560ED /* LegVideoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -950,6 +966,14 @@
 				version = 1.0.4;
 			};
 		};
+		1E9A51F6298BF20B004560ED /* XCRemoteSwiftPackageReference "Tabman" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/uias/Tabman.git";
+			requirement = {
+				kind = exactVersion;
+				version = 3.0.1;
+			};
+		};
 		1EA4D09328CFA2F300A9E444 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -1050,6 +1074,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1E9A51F3298BD61E004560ED /* XCRemoteSwiftPackageReference "youtube-ios-player-helper" */;
 			productName = YouTubeiOSPlayerHelper;
+		};
+		1E9A51F7298BF20C004560ED /* Tabman */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1E9A51F6298BF20B004560ED /* XCRemoteSwiftPackageReference "Tabman" */;
+			productName = Tabman;
 		};
 		1EA4D09428CFA2F300A9E444 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
