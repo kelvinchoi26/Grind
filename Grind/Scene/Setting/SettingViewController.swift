@@ -116,7 +116,7 @@ extension SettingViewController {
             content.text = itemIdentifier.title
             content.textProperties.font = Constants.Font.textFont ?? .systemFont(ofSize: 12)
             content.image = UIImage(systemName: "\(itemIdentifier.image)")
-            content.secondaryText = indexPath.item == 2 ? "1.1.1" : nil
+            content.secondaryText = indexPath.item == 2 ? "1.2.0" : nil
             cell.contentConfiguration = content
             
             var background = UIBackgroundConfiguration.listPlainCell()
