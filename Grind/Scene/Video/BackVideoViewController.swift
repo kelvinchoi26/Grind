@@ -29,6 +29,8 @@ final class BackVideoViewController: BaseViewController {
     }
     
     func loadYTVideo() {
-        videoView.videoView.load(withVideoId: "xEmpSLk4TdA")
+        DispatchQueue.main.async { [weak self] in
+            self?.videoView.videoView.load(withVideoId: "xEmpSLk4TdA")
+        }
     }
 }

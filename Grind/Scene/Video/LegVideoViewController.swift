@@ -29,6 +29,8 @@ final class LegVideoViewController: BaseViewController {
     }
     
     func loadYTVideo() {
-        videoView.videoView.load(withVideoId: "3xaSY1ze8k8")
+        DispatchQueue.main.async { [weak self] in
+            self?.videoView.videoView.load(withVideoId: "3xaSY1ze8k8")
+        }
     }
 }
