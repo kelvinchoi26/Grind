@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E444A2D2A170D7B00E20B54 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E444A2C2A170D7B00E20B54 /* WidgetKit.framework */; };
+		1E444A2F2A170D7B00E20B54 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E444A2E2A170D7B00E20B54 /* SwiftUI.framework */; };
+		1E444A322A170D7B00E20B54 /* GrindWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E444A312A170D7B00E20B54 /* GrindWidgetBundle.swift */; };
+		1E444A342A170D7B00E20B54 /* GrindWidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E444A332A170D7B00E20B54 /* GrindWidgetLiveActivity.swift */; };
+		1E444A362A170D7B00E20B54 /* GrindWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E444A352A170D7B00E20B54 /* GrindWidget.swift */; };
+		1E444A392A170D7C00E20B54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E444A382A170D7C00E20B54 /* Assets.xcassets */; };
+		1E444A3B2A170D7C00E20B54 /* GrindWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 1E444A372A170D7B00E20B54 /* GrindWidget.intentdefinition */; };
+		1E444A3C2A170D7C00E20B54 /* GrindWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 1E444A372A170D7B00E20B54 /* GrindWidget.intentdefinition */; };
+		1E444A3F2A170D7C00E20B54 /* GrindWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 1E444A2A2A170D7B00E20B54 /* GrindWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		1E4489A128E6A486004CA993 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4489A028E6A486004CA993 /* TabViewController.swift */; };
 		1E4489A928E6AA00004CA993 /* FoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4489A828E6AA00004CA993 /* FoodViewController.swift */; };
 		1E4489AC28E6B588004CA993 /* StatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4489AB28E6B588004CA993 /* StatView.swift */; };
@@ -35,6 +44,7 @@
 		1E5E760828DCBFAD004EA9FD /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5E760728DCBFAD004EA9FD /* RecordViewController.swift */; };
 		1E5E760A28DCC1F8004EA9FD /* RecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5E760928DCC1F8004EA9FD /* RecordView.swift */; };
 		1E5E760C28DCCED7004EA9FD /* RecordCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5E760B28DCCED7004EA9FD /* RecordCircleView.swift */; };
+		1E7270D22A175F00002C3FA0 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7270D12A175F00002C3FA0 /* Date+Extension.swift */; };
 		1E7696142910DB0D00859B4A /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7696132910DB0D00859B4A /* SettingViewModel.swift */; };
 		1E76961729118E9D00859B4A /* Differentiator in Frameworks */ = {isa = PBXBuildFile; productRef = 1E76961629118E9D00859B4A /* Differentiator */; };
 		1E76961929118E9D00859B4A /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = 1E76961829118E9D00859B4A /* RxDataSources */; };
@@ -81,7 +91,40 @@
 		1EE39F3128EC45A100331DB1 /* Package.resolved in Resources */ = {isa = PBXBuildFile; fileRef = 1EE39F3028EC45A100331DB1 /* Package.resolved */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		1E444A3D2A170D7C00E20B54 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1EA4D06D28CF9EB500A9E444 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1E444A292A170D7B00E20B54;
+			remoteInfo = GrindWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1E444A402A170D7C00E20B54 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				1E444A3F2A170D7C00E20B54 /* GrindWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		1E444A2A2A170D7B00E20B54 /* GrindWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = GrindWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E444A2C2A170D7B00E20B54 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		1E444A2E2A170D7B00E20B54 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		1E444A312A170D7B00E20B54 /* GrindWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrindWidgetBundle.swift; sourceTree = "<group>"; };
+		1E444A332A170D7B00E20B54 /* GrindWidgetLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrindWidgetLiveActivity.swift; sourceTree = "<group>"; };
+		1E444A352A170D7B00E20B54 /* GrindWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrindWidget.swift; sourceTree = "<group>"; };
+		1E444A372A170D7B00E20B54 /* GrindWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = GrindWidget.intentdefinition; sourceTree = "<group>"; };
+		1E444A382A170D7C00E20B54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1E444A3A2A170D7C00E20B54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1E4489A028E6A486004CA993 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		1E4489A828E6AA00004CA993 /* FoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodViewController.swift; sourceTree = "<group>"; };
 		1E4489AB28E6B588004CA993 /* StatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatView.swift; sourceTree = "<group>"; };
@@ -107,6 +150,7 @@
 		1E5E760728DCBFAD004EA9FD /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 		1E5E760928DCC1F8004EA9FD /* RecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordView.swift; sourceTree = "<group>"; };
 		1E5E760B28DCCED7004EA9FD /* RecordCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCircleView.swift; sourceTree = "<group>"; };
+		1E7270D12A175F00002C3FA0 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		1E7696132910DB0D00859B4A /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
 		1E7DCF8628D0F209000D43B5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		1E7DCF8E28D0F3EB000D43B5 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +184,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1E444A272A170D7B00E20B54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E444A2F2A170D7B00E20B54 /* SwiftUI.framework in Frameworks */,
+				1E444A2D2A170D7B00E20B54 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1EA4D07228CF9EB500A9E444 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -170,6 +223,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E444A2B2A170D7B00E20B54 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1E444A2C2A170D7B00E20B54 /* WidgetKit.framework */,
+				1E444A2E2A170D7B00E20B54 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1E444A302A170D7B00E20B54 /* GrindWidget */ = {
+			isa = PBXGroup;
+			children = (
+				1E444A312A170D7B00E20B54 /* GrindWidgetBundle.swift */,
+				1E444A332A170D7B00E20B54 /* GrindWidgetLiveActivity.swift */,
+				1E444A352A170D7B00E20B54 /* GrindWidget.swift */,
+				1E444A372A170D7B00E20B54 /* GrindWidget.intentdefinition */,
+				1E444A382A170D7C00E20B54 /* Assets.xcassets */,
+				1E444A3A2A170D7C00E20B54 /* Info.plist */,
+			);
+			path = GrindWidget;
+			sourceTree = "<group>";
+		};
 		1E4489AA28E6B57A004CA993 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -347,6 +422,8 @@
 				1EE39F3028EC45A100331DB1 /* Package.resolved */,
 				1E52825C28D248BF002FB4EE /* .gitignore */,
 				1EA4D07728CF9EB500A9E444 /* Grind */,
+				1E444A302A170D7B00E20B54 /* GrindWidget */,
+				1E444A2B2A170D7B00E20B54 /* Frameworks */,
 				1EA4D07628CF9EB500A9E444 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -355,6 +432,7 @@
 			isa = PBXGroup;
 			children = (
 				1EA4D07528CF9EB500A9E444 /* Grind.app */,
+				1E444A2A2A170D7B00E20B54 /* GrindWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -394,6 +472,7 @@
 			children = (
 				1EA4D09028CFA28E00A9E444 /* Constants */,
 				1EA4D08F28CFA28200A9E444 /* CustomView */,
+				1E7270D12A175F00002C3FA0 /* Date+Extension.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -482,6 +561,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		1E444A292A170D7B00E20B54 /* GrindWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1E444A432A170D7C00E20B54 /* Build configuration list for PBXNativeTarget "GrindWidgetExtension" */;
+			buildPhases = (
+				1E444A262A170D7B00E20B54 /* Sources */,
+				1E444A272A170D7B00E20B54 /* Frameworks */,
+				1E444A282A170D7B00E20B54 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GrindWidgetExtension;
+			productName = GrindWidgetExtension;
+			productReference = 1E444A2A2A170D7B00E20B54 /* GrindWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		1EA4D07428CF9EB500A9E444 /* Grind */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1EA4D08928CF9EB700A9E444 /* Build configuration list for PBXNativeTarget "Grind" */;
@@ -490,10 +586,12 @@
 				1EA4D07228CF9EB500A9E444 /* Frameworks */,
 				1EA4D07328CF9EB500A9E444 /* Resources */,
 				1EB5049E28F7CF2F004A34AA /* ShellScript */,
+				1E444A402A170D7C00E20B54 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				1E444A3E2A170D7C00E20B54 /* PBXTargetDependency */,
 			);
 			name = Grind;
 			packageProductDependencies = (
@@ -529,9 +627,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1340;
+				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
+					1E444A292A170D7B00E20B54 = {
+						CreatedOnToolsVersion = 14.2;
+					};
 					1EA4D07428CF9EB500A9E444 = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
@@ -568,11 +669,20 @@
 			projectRoot = "";
 			targets = (
 				1EA4D07428CF9EB500A9E444 /* Grind */,
+				1E444A292A170D7B00E20B54 /* GrindWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1E444A282A170D7B00E20B54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E444A392A170D7C00E20B54 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1EA4D07328CF9EB500A9E444 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -612,6 +722,17 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1E444A262A170D7B00E20B54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E444A362A170D7B00E20B54 /* GrindWidget.swift in Sources */,
+				1E444A3B2A170D7C00E20B54 /* GrindWidget.intentdefinition in Sources */,
+				1E444A322A170D7B00E20B54 /* GrindWidgetBundle.swift in Sources */,
+				1E444A342A170D7B00E20B54 /* GrindWidgetLiveActivity.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1EA4D07128CF9EB500A9E444 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -623,6 +744,7 @@
 				1E9DE88928DD79020022FCBC /* APIKey.swift in Sources */,
 				1E5E760828DCBFAD004EA9FD /* RecordViewController.swift in Sources */,
 				1E92CCFE28EBD796004B284B /* SettingTableViewCell.swift in Sources */,
+				1E444A3C2A170D7C00E20B54 /* GrindWidget.intentdefinition in Sources */,
 				1EA4D0AB28CFA60600A9E444 /* BaseCollectionViewCell.swift in Sources */,
 				1EA4D0AF28CFA6B500A9E444 /* DailyRecord.swift in Sources */,
 				1E52826628D3648C002FB4EE /* HomeView.swift in Sources */,
@@ -660,11 +782,20 @@
 				1EA4D0A128CFA46C00A9E444 /* Constants.swift in Sources */,
 				1E92CCFC28EBD757004B284B /* BaseTableViewCell.swift in Sources */,
 				1E7DCF8F28D0F3EB000D43B5 /* SettingViewController.swift in Sources */,
+				1E7270D22A175F00002C3FA0 /* Date+Extension.swift in Sources */,
 				1E9A51FE298BF2FF004560ED /* LegVideoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1E444A3E2A170D7C00E20B54 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1E444A292A170D7B00E20B54 /* GrindWidgetExtension */;
+			targetProxy = 1E444A3D2A170D7C00E20B54 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		1EA4D07E28CF9EB500A9E444 /* Main.storyboard */ = {
@@ -686,6 +817,64 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		1E444A412A170D7C00E20B54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AFMSUTLF6S;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GrindWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = GrindWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sesac.Grind.GrindWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1E444A422A170D7C00E20B54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AFMSUTLF6S;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GrindWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = GrindWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sesac.Grind.GrindWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		1EA4D08728CF9EB700A9E444 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -803,6 +992,7 @@
 		1EA4D08A28CF9EB700A9E444 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Grind/Grind.entitlements;
@@ -844,6 +1034,7 @@
 		1EA4D08B28CF9EB700A9E444 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Grind/Grind.entitlements;
@@ -884,6 +1075,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1E444A432A170D7C00E20B54 /* Build configuration list for PBXNativeTarget "GrindWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E444A412A170D7C00E20B54 /* Debug */,
+				1E444A422A170D7C00E20B54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		1EA4D07028CF9EB500A9E444 /* Build configuration list for PBXProject "Grind" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

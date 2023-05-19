@@ -26,7 +26,7 @@ final class DailyRecordRepository: DailyRecordRepositoryType {
     
     private init() { }
     
-    static let repository = DailyRecordRepository()
+    static let repository: DailyRecordRepositoryType = DailyRecordRepository()
     
     private let localRealm = try! Realm()
     
