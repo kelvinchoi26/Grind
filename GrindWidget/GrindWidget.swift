@@ -23,10 +23,8 @@ struct Provider: IntentTimelineProvider {
         var entries: [SimpleEntry] = []
 
         // Generate a timeline consisting of five entries an hour apart, starting from the current date.
-        let realm = try! Realm()
         let currentDate = Date()
-        let entries = realm.objects(DailyRecord.self).filter("date >= %@", currentDate.startOfDay).sorted(byKeyPath: "date", ascending: true)
-        for hourOffset in 0 ..< 5 {
+        for hourOffset in 0..<5 {
             let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
             let entry = SimpleEntry(date: entryDate, configuration: configuration)
             entries.append(entry)
@@ -48,8 +46,8 @@ struct GrindWidgetEntryView : View {
     var body: some View {
         VStack {
             Text(entry.date, style: .time)
-            Text("Weight: \()")
-            Text("Calories: \()")
+            Text("Weight: ")
+            Text("Calories: ")
         }
     }
 }

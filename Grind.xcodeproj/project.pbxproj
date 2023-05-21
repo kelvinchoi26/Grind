@@ -45,6 +45,8 @@
 		1E5E760A28DCC1F8004EA9FD /* RecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5E760928DCC1F8004EA9FD /* RecordView.swift */; };
 		1E5E760C28DCCED7004EA9FD /* RecordCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5E760B28DCCED7004EA9FD /* RecordCircleView.swift */; };
 		1E7270D22A175F00002C3FA0 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7270D12A175F00002C3FA0 /* Date+Extension.swift */; };
+		1E7270D52A176275002C3FA0 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 1E7270D42A176275002C3FA0 /* Realm */; };
+		1E7270D72A176275002C3FA0 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1E7270D62A176275002C3FA0 /* RealmSwift */; };
 		1E7696142910DB0D00859B4A /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7696132910DB0D00859B4A /* SettingViewModel.swift */; };
 		1E76961729118E9D00859B4A /* Differentiator in Frameworks */ = {isa = PBXBuildFile; productRef = 1E76961629118E9D00859B4A /* Differentiator */; };
 		1E76961929118E9D00859B4A /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = 1E76961829118E9D00859B4A /* RxDataSources */; };
@@ -62,8 +64,6 @@
 		1E9A51FA298BF2C6004560ED /* FrontVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9A51F9298BF2C6004560ED /* FrontVideoViewController.swift */; };
 		1E9A51FC298BF2E9004560ED /* BackVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9A51FB298BF2E9004560ED /* BackVideoViewController.swift */; };
 		1E9A51FE298BF2FF004560ED /* LegVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9A51FD298BF2FF004560ED /* LegVideoViewController.swift */; };
-		1E9A5201298C127E004560ED /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 1E9A5200298C127E004560ED /* Realm */; };
-		1E9A5203298C127E004560ED /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1E9A5202298C127E004560ED /* RealmSwift */; };
 		1E9DE88928DD79020022FCBC /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9DE88828DD79020022FCBC /* APIKey.swift */; };
 		1EA4D07928CF9EB500A9E444 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA4D07828CF9EB500A9E444 /* AppDelegate.swift */; };
 		1EA4D07B28CF9EB500A9E444 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA4D07A28CF9EB500A9E444 /* SceneDelegate.swift */; };
@@ -128,6 +128,9 @@
 		1E4489A028E6A486004CA993 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		1E4489A828E6AA00004CA993 /* FoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodViewController.swift; sourceTree = "<group>"; };
 		1E4489AB28E6B588004CA993 /* StatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatView.swift; sourceTree = "<group>"; };
+		1E46729F2A1A5EAA00EC0FCA /* GrindRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GrindRelease.entitlements; sourceTree = "<group>"; };
+		1E4672A02A1A5EDD00EC0FCA /* GrindWidgetExtensionRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GrindWidgetExtensionRelease.entitlements; sourceTree = "<group>"; };
+		1E4672A12A1A607B00EC0FCA /* GrindWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GrindWidgetExtension.entitlements; sourceTree = "<group>"; };
 		1E52825C28D248BF002FB4EE /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		1E52825E28D24A0F002FB4EE /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		1E52826528D3648C002FB4EE /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -197,15 +200,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1E9A5203298C127E004560ED /* RealmSwift in Frameworks */,
 				1EE39F2D28EC3AFE00331DB1 /* AcknowList in Frameworks */,
+				1E7270D52A176275002C3FA0 /* Realm in Frameworks */,
 				1E76961729118E9D00859B4A /* Differentiator in Frameworks */,
 				1E5CF09328E4B9FD004D9010 /* Toast in Frameworks */,
 				1EA4D09528CFA2F300A9E444 /* SnapKit in Frameworks */,
-				1E9A5201298C127E004560ED /* Realm in Frameworks */,
 				1E4489BA28E9E593004CA993 /* Charts in Frameworks */,
 				1EE39F2728EC1FE300331DB1 /* ProgressHUD in Frameworks */,
 				1E9A51F8298BF20C004560ED /* Tabman in Frameworks */,
+				1E7270D72A176275002C3FA0 /* RealmSwift in Frameworks */,
 				1EAEA2C8298FF4000070A3AE /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				1EE39F2A28EC202D00331DB1 /* Zip in Frameworks */,
 				1E76961929118E9D00859B4A /* RxDataSources in Frameworks */,
@@ -419,6 +422,8 @@
 		1EA4D06C28CF9EB500A9E444 = {
 			isa = PBXGroup;
 			children = (
+				1E4672A12A1A607B00EC0FCA /* GrindWidgetExtension.entitlements */,
+				1E4672A02A1A5EDD00EC0FCA /* GrindWidgetExtensionRelease.entitlements */,
 				1EE39F3028EC45A100331DB1 /* Package.resolved */,
 				1E52825C28D248BF002FB4EE /* .gitignore */,
 				1EA4D07728CF9EB500A9E444 /* Grind */,
@@ -440,6 +445,7 @@
 		1EA4D07728CF9EB500A9E444 /* Grind */ = {
 			isa = PBXGroup;
 			children = (
+				1E46729F2A1A5EAA00EC0FCA /* GrindRelease.entitlements */,
 				1E9DE88728DD78F60022FCBC /* Key */,
 				1E52826C28D40853002FB4EE /* Grind.entitlements */,
 				1E52826828D39F01002FB4EE /* Resource */,
@@ -574,6 +580,8 @@
 			dependencies = (
 			);
 			name = GrindWidgetExtension;
+			packageProductDependencies = (
+			);
 			productName = GrindWidgetExtension;
 			productReference = 1E444A2A2A170D7B00E20B54 /* GrindWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -609,12 +617,12 @@
 				1E76961829118E9D00859B4A /* RxDataSources */,
 				1E9A51F4298BD61E004560ED /* YouTubeiOSPlayerHelper */,
 				1E9A51F7298BF20C004560ED /* Tabman */,
-				1E9A5200298C127E004560ED /* Realm */,
-				1E9A5202298C127E004560ED /* RealmSwift */,
 				1EAEA2C7298FF4000070A3AE /* FirebaseAnalyticsWithoutAdIdSupport */,
 				1EAEA2C9298FF4000070A3AE /* FirebaseAuth */,
 				1EAEA2CB298FF4000070A3AE /* FirebaseCrashlytics */,
 				1EAEA2CD298FF4000070A3AE /* FirebaseMessaging */,
+				1E7270D42A176275002C3FA0 /* Realm */,
+				1E7270D62A176275002C3FA0 /* RealmSwift */,
 			);
 			productName = Grind;
 			productReference = 1EA4D07528CF9EB500A9E444 /* Grind.app */;
@@ -661,8 +669,8 @@
 				1E76961529118E9D00859B4A /* XCRemoteSwiftPackageReference "RxDataSources" */,
 				1E9A51F3298BD61E004560ED /* XCRemoteSwiftPackageReference "youtube-ios-player-helper" */,
 				1E9A51F6298BF20B004560ED /* XCRemoteSwiftPackageReference "Tabman" */,
-				1E9A51FF298C127E004560ED /* XCRemoteSwiftPackageReference "realm-swift" */,
 				1EAEA2C6298FF3FF0070A3AE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				1E7270D32A176275002C3FA0 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = 1EA4D07628CF9EB500A9E444 /* Products */;
 			projectDirPath = "";
@@ -823,6 +831,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = GrindWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = AFMSUTLF6S;
@@ -852,6 +861,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = GrindWidgetExtensionRelease.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = AFMSUTLF6S;
@@ -1037,7 +1047,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Grind/Grind.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Grind/GrindRelease.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = AFMSUTLF6S;
@@ -1137,6 +1147,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		1E7270D32A176275002C3FA0 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = exactVersion;
+				version = 10.39.1;
+			};
+		};
 		1E76961529118E9D00859B4A /* XCRemoteSwiftPackageReference "RxDataSources" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/RxSwiftCommunity/RxDataSources.git";
@@ -1167,14 +1185,6 @@
 			requirement = {
 				kind = exactVersion;
 				version = 3.0.1;
-			};
-		};
-		1E9A51FF298C127E004560ED /* XCRemoteSwiftPackageReference "realm-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/realm-swift.git";
-			requirement = {
-				kind = exactVersion;
-				version = 10.34.1;
 			};
 		};
 		1EA4D09328CFA2F300A9E444 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
@@ -1248,6 +1258,16 @@
 			package = 1E5CF09128E4B9FD004D9010 /* XCRemoteSwiftPackageReference "Toast-Swift" */;
 			productName = Toast;
 		};
+		1E7270D42A176275002C3FA0 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1E7270D32A176275002C3FA0 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		1E7270D62A176275002C3FA0 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1E7270D32A176275002C3FA0 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
 		1E76961629118E9D00859B4A /* Differentiator */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 1E76961529118E9D00859B4A /* XCRemoteSwiftPackageReference "RxDataSources" */;
@@ -1272,16 +1292,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1E9A51F6298BF20B004560ED /* XCRemoteSwiftPackageReference "Tabman" */;
 			productName = Tabman;
-		};
-		1E9A5200298C127E004560ED /* Realm */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1E9A51FF298C127E004560ED /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = Realm;
-		};
-		1E9A5202298C127E004560ED /* RealmSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1E9A51FF298C127E004560ED /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = RealmSwift;
 		};
 		1EA4D09428CFA2F300A9E444 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
